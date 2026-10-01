@@ -1,0 +1,1 @@
+# genexus-opencode-skills
