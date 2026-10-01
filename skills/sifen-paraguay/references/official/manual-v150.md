@@ -1,22 +1,49 @@
-# Manual Técnico V150
+# Manual Técnico V150 — mapa operativo
 
-## Scope
+Fuente: Manual Técnico Sistema Integrado de Facturación Electrónica Nacional (SIFEN), Versión 150, 10/09/2019.
 
-The supplied Manual Técnico Version 150 is dated 10/09/2019 and covers the SIFEN architecture, legal/operational model, electronic documents, XML format, certificates/signatures, web services, validations, events, QR, KuDE, contingency and related technical definitions.
+## Secciones relevantes
 
-## Version discipline
+- 6: Modelo Operativo.
+- 7: Características tecnológicas del formato.
+- 8: Aspectos tecnológicos de los Servicios Web.
+- 9: Descripción de los Servicios Web.
+- 10: Código de Control (CDC).
+- 11: Gestión de eventos.
+- 12: Validaciones.
+- 13: KuDE y representación gráfica / QR.
 
-The Manual contains a control-of-versions section and describes version-specific XML schemas. The applicable schema/version must be confirmed before implementing or diagnosing a document.
+## Schemas identificados en el índice del Manual
 
-## Core concepts
+- `xmldsig-core-schema-v150.xsd`
+- `siRecepDE_v150.xsd`
+- `resRecepDE_v150.xsd`
+- `ProtProcesDE_v150.xsd`
+- `SiRecepLoteDE_v150.xsd`
+- `ProtProcesLoteDE_v150.xsd`
+- `resRecepLoteDE_v150.xsd`
+- `SiResultLoteDE_v150.xsd`
+- `resResultLoteDE_v150.xsd`
+- `siConsDE_v150.xsd`
+- `resConsDE_v150.xsd`
+- `ContenedorDE_v150.xsd`
+- `ContenedorEvento_v150.xsd`
+- `siRecepEvento_v150.xsd`
+- `resRecepEvento_v150.xsd`
+- `siConsRUC_v150.xsd`
+- `resConsRUC_v150.xsd`
+- `ContenedorRUC_v150.xsd`
+- `DE_v150.xsd`
+- `Evento_v150.xsd`
 
-Distinguish:
-- DE — Documento Electrónico: electronic document transmitted to SIFEN.
-- DTE — Documento Tributario Electrónico: the electronic tax document after the applicable SIFEN validation/approval process.
-- CDC — Código de Control: identifier used for consultation/correlation.
-- Events — records associated with DE/DTE according to SIFEN rules.
-- KuDE — graphical representation of the applicable DTE.
+## Modelo operativo
 
-## Implementation rule
+El DE es el archivo electrónico firmado digitalmente. La aprobación por SIFEN convierte el DE en DTE. El receptor debe poder verificar la existencia y correspondencia del DTE mediante los mecanismos de consulta establecidos.
 
-Do not infer an XML node, field type, length, cardinality or validation only from a code sample. Use the applicable Manual/XSD and later Technical Notes.
+## Servicios
+
+El Manual distingue servicios síncronos y asíncronos. En el flujo asíncrono, la recepción del lote y la consulta posterior del resultado son operaciones separadas.
+
+## Regla de diagnóstico
+
+Cuando una respuesta de transporte no es concluyente, no inferir aprobación ni rechazo. Debe determinarse el estado mediante el mecanismo de consulta correspondiente.

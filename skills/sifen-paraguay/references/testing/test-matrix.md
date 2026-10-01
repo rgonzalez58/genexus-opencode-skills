@@ -1,21 +1,14 @@
-# Suggested SIFEN acceptance matrix
+# Matriz de pruebas recomendada
 
-Use the supplied DNIT test guide as the baseline.
-
-| Area | Minimum verification |
-|---|---|
-| Connectivity | mutual TLS/authentication |
-| XML | schema-valid DE |
-| Signature | valid signed DE |
-| Reception | individual/lote service as applicable |
-| Async | lot received and later consulted |
-| Validation | approved and rejected cases |
-| Errors | intentionally invalid DE cases |
-| Events | registration and association |
-| Consultation | DTE and events |
-| QR | validation |
-| KuDE | generation/transmission where applicable |
-| Recovery | timeout/ECONNRESET without duplicate blind resend |
-| Audit | correlation between internal document, lot, CDC and SIFEN result |
-
-A single successful invoice is not sufficient acceptance evidence.
+| Área | Caso positivo | Caso negativo | Recuperación |
+|---|---|---|---|
+| Certificado | válido | no válido/no autorizado | renovar/configurar |
+| XML | XSD válido | campo/estructura inválida | corregir/generar |
+| Firma | válida | firma/certificado inválido | firmar nuevamente |
+| Síncrono | aprobado | rechazo | consultar según caso |
+| Lote | 0300 | 0301 | diagnosticar/reintentar cuando corresponda |
+| Consulta lote | definitivo | aún procesando/error | esperar intervalo |
+| CDC | encontrado | inexistente | revisar CDC |
+| QR | consulta válida | QR inválido | revisar generación |
+| Evento | aceptado | rechazado | revisar estado/reglas |
+| Transporte | respuesta | timeout/ECONNRESET | consulta antes de reenviar |

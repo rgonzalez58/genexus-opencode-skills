@@ -1,240 +1,150 @@
 ---
 name: sifen-paraguay
-description: Expert skill for Paraguay SIFEN/e-Kuatia electronic invoicing, Manual Técnico V150, XML/XSD, digital signatures, web services, asynchronous lots, validation, CDC, events, QR, KuDE, contingency, testing, and production diagnostics. Use when analyzing, designing, implementing, reviewing, or troubleshooting SIFEN integrations, especially Node.js/GeneXus projects.
+description: Expert skill for Paraguay SIFEN/e-Kuatia electronic invoicing, Manual Técnico V150, XML/XSD, digital signature, QR, synchronous and asynchronous web services, batch processing, CDC, events, KuDE, contingencies, validation, testing, troubleshooting, and Node.js integration.
 metadata:
   version: 1.0.0
-  author: Custom project skill
-  language: es
+  author: Custom
+  domain: SIFEN Paraguay / DNIT
+  source_priority: official-dnit-first
 ---
 
 # SIFEN Paraguay — Expert Skill
 
-## Purpose
+## Propósito
 
-Provide implementation and diagnostic guidance for Paraguay's SIFEN/e-Kuatia electronic invoicing system, prioritizing the official DNIT technical documentation supplied with this skill.
+Asistir en el análisis, diseño, implementación y diagnóstico de integraciones con el Sistema Integrado de Facturación Electrónica Nacional (SIFEN/e-Kuatia) de Paraguay.
 
-This skill is designed to work together with:
-- `nodejs` for Node.js architecture, async processing, HTTP, workers, logging, PDF and email.
-- `sqlserver` for SQL Server transactions, blocking, batches, retries and diagnostics.
-- `nexa` for GeneXus objects, syntax, KB operations and GeneXus-specific implementation.
-- `gam` only when the problem is specifically GAM/security-manager related.
+La referencia principal es la documentación oficial de DNIT/SIFEN. Los patrones observados en proyectos reales (incluido GNB) son evidencia de implementación, no reglas oficiales de SIFEN.
 
-## Source hierarchy
+## Jerarquía de fuentes
 
-Always distinguish these layers:
+1. Documentación oficial DNIT/SIFEN vigente.
+2. Notas Técnicas posteriores al Manual Técnico vigente.
+3. XSD/XML oficiales publicados por DNIT.
+4. Guía oficial de pruebas y mejores prácticas.
+5. Implementaciones reales del proyecto (GNB, facturapy, iCopyFE).
+6. Conocimiento general de Node.js/SOAP/XML/PKI únicamente para complementar, nunca para contradecir una regla oficial.
 
-1. **OFICIAL DNIT/SIFEN** — Manual Técnico V150, Technical Notes, XSD/XML structures, test guide and DNIT recommendations.
-2. **PATRÓN GNB** — the supplied GNB project example. It is an implementation reference, not an official SIFEN rule.
-3. **PROYECTO ACTUAL** — facturapy/iCopyFE or another project supplied by the user.
-4. **INFERENCIA/BUENA PRÁCTICA** — engineering recommendations that are not explicitly required by DNIT.
+Si existe conflicto, señalarlo explícitamente y priorizar la fuente oficial vigente.
 
-Never convert a GNB implementation detail into an official SIFEN requirement.
+## Regla crítica de versión
 
-When official documentation and project code disagree, identify the difference explicitly and prioritize the applicable official DNIT rule.
+El Manual Técnico V150 y sus schemas son específicos de versión. No asumir que una estructura de otra versión sigue siendo válida. Antes de diagnosticar XML, confirmar versión del Manual, XSD y Nota Técnica aplicable.
 
-## Core rules
+## Separación obligatoria
 
-- Identify the SIFEN version before changing XML, XSD, service URLs, validations or business rules.
-- Treat Technical Notes as amendments/corrections to the Manual Técnico and check them before relying on an older rule.
-- Use the XSD as a structural validation source; do not invent XML nodes or attributes.
-- Preserve exact XML element names and case.
-- Do not silently omit mandatory fields.
-- Do not add formatting whitespace/comments/prefixes or empty elements when the applicable SIFEN documentation prohibits them.
-- Never assume that a successful HTTP/SOAP response means that a DE was approved.
-- Separate:
-  - transport/connection result,
-  - reception result,
-  - asynchronous lot processing result,
-  - DE validation result,
-  - DTE approval,
-  - event result.
-- For asynchronous lots, persist enough state to correlate the submitted lot with its returned lot number/CDC and later consultation.
-- Design retries to avoid duplicate submissions. A timeout or ECONNRESET does not prove that SIFEN did not receive the request.
-- For uncertain reception, use the applicable SIFEN consultation mechanism before blindly resending.
-- Keep logs and audit/control records intact when troubleshooting.
-- For batch processing, prefer bounded concurrency and explicit state transitions.
-- Never recommend `NOLOCK`, disabling integrity, deleting audit logs, or blindly resending documents as a generic SIFEN fix.
-- Never expose private keys, passwords, P12/PFX contents, CSC secrets or certificate credentials in logs.
+Distinguir siempre:
 
-## SIFEN workflow
+- `[OFICIAL DNIT]`: exigencia, estructura, validación o recomendación documentada por DNIT.
+- `[IMPLEMENTACIÓN GNB]`: patrón observado en el ejemplo de proyecto GNB.
+- `[IMPLEMENTACIÓN PROPIA]`: comportamiento de facturapy/iCopyFE u otro proyecto del usuario.
+- `[RECOMENDACIÓN TÉCNICA]`: decisión de ingeniería que no constituye regla SIFEN.
 
-Typical flow:
+No convertir una decisión de código de GNB en requisito de SIFEN.
 
-1. Build DE XML according to the applicable version and XSD.
-2. Validate structure and business prerequisites.
-3. Sign the DE using the required digital-signature mechanism.
-4. Generate/prepare QR data when applicable.
-5. Send DE individually or as an asynchronous lot according to the required service.
-6. Record the immediate SIFEN response.
-7. If the service is asynchronous, query the lot result separately.
-8. Process each DE result.
-9. Persist CDC/status/error information.
-10. For approved DTEs, generate/deliver KuDE as required.
-11. Register and process applicable events.
-12. Support later CDC/DTE/event consultation and audit.
+## Dominios
 
-## Asynchronous lots
+- XML y XSD del DE
+- CDC
+- firma digital y certificados
+- QR
+- recepción síncrona
+- recepción asíncrona y lotes
+- consulta de lote
+- consulta por CDC
+- consulta RUC
+- eventos
+- KuDE
+- contingencia
+- validaciones y códigos de respuesta
+- pruebas e-kuatia
+- integración Node.js
+- procesamiento masivo, workers y reintentos
+- observabilidad y diagnóstico
 
-The supplied DNIT best-practices document states that lots can contain up to 50 DE and are processed asynchronously. The result must be consulted separately from submission.
+## Flujo de trabajo
 
-Important documented reception codes:
-- `0300`: lot received successfully and queued for processing; consult the returned lot identifier.
-- `0301`: lot was not queued; investigate the documented reason before retrying.
+1. Identificar si la pregunta es normativa SIFEN, XML/XSD, servicio, operación, arquitectura o implementación.
+2. Identificar versión (V150 por defecto solo si el proyecto/documentación lo confirma).
+3. Cargar únicamente las referencias necesarias.
+4. Para XML: validar contra XSD antes de culpar al servicio.
+5. Para firma/TLS: separar errores de certificado, TLS, firma XML y validación de negocio.
+6. Para lotes: diferenciar recepción del lote, procesamiento del lote y resultado de cada DE.
+7. Para `ECONNRESET`/timeout: distinguir transporte de aceptación/rechazo SIFEN y evitar reenvíos ciegos.
+8. Para duplicados: verificar estado mediante consulta antes de reenviar el mismo CDC.
+9. Para eventos: comprobar que el tipo de evento y los campos correspondan a la versión vigente y a las Notas Técnicas.
+10. Para Node.js: revisar timeouts, TLS, SOAP/HTTP, concurrencia, idempotencia, logs y persistencia del estado.
+11. Dar causa probable, evidencia, acción y validación.
 
-The best-practices guide recommends sending the maximum possible number of documents per lot, up to 50, and avoiding premature repeated queries. It also describes temporary blocking conditions and recommends appropriate intervals between consultations.
+## Lotes — reglas que no deben perderse
 
-Do not turn these values into hard-coded application rules without checking the version of the official documentation currently applicable to the project.
+Según la guía oficial de mejores prácticas V150 revisada:
 
-## Diagnostics
+- Un lote admite hasta 50 DE.
+- Un lote debe contener un único RUC emisor.
+- Un lote debe contener un único tipo de documento.
+- El mensaje de datos del WS no debe superar 1000 KB.
+- `0300`: lote recibido con éxito; consultar su resultado mediante el número de lote.
+- `0301`: lote no encolado; no asumir que será procesado.
+- Si se pierde la respuesta y no se obtuvo número de lote, consultar usando un CDC del lote antes de reenviar.
+- Se recomienda comenzar la consulta después de unos 10 minutos y usar intervalos no menores a 10 minutos.
+- No reenviar un mismo CDC mientras su resultado no sea definitivo.
+- Evitar operaciones que provoquen bloqueo temporal por RUC.
 
-When the user reports a failure, classify it first:
+Estas reglas son operativas y deben verificarse contra la documentación vigente antes de implementarlas como constantes de producción.
 
-### A. XML/XSD
-Symptoms:
-- schema validation error
-- missing/extra node
-- wrong type/length
-- namespace/version mismatch
+## Seguridad
 
-Action:
-- identify the exact node and applicable XSD/manual section;
-- compare generated XML against the official structure;
-- check Technical Notes.
+La integración debe contemplar TLS 1.2 con autenticación mutua y certificado digital cualificado conforme a los requisitos oficiales. La firma del DE utiliza XML Digital Signature y debe validarse como parte del diagnóstico.
 
-### B. Signature/certificate/TLS
-Symptoms:
-- certificate error
-- mutual TLS failure
-- signature invalid
-- certificate revoked/expired
-- TLS handshake failure
+Nunca registrar claves privadas, contraseñas de certificados, tokens sensibles ni XML completos si contienen información que no deba quedar en logs.
 
-Action:
-- separate transport authentication from XML digital signature;
-- verify certificate chain, validity, private-key access and environment;
-- never log secrets.
+## Node.js
 
-### C. HTTP/SOAP/service
-Symptoms:
-- timeout
-- ECONNRESET
-- connection refused
-- HTTP 4xx/5xx
-- SOAP fault
+Patrón recomendado para este dominio:
 
-Action:
-- capture endpoint, environment, timestamp, timeout, HTTP/SOAP response and correlation data;
-- determine whether SIFEN may have received the request before retrying;
-- do not equate transport failure with business rejection.
+- Separar generación XML, firma, QR, transporte SIFEN, persistencia y procesamiento de resultados.
+- Usar límites de concurrencia para lotes y consultas.
+- Mantener estado idempotente por CDC y número de lote.
+- Persistir el número de lote y respuesta de recepción antes de lanzar procesamiento posterior.
+- No reenviar automáticamente ante un error de transporte sin determinar si SIFEN pudo haber recibido el lote.
+- Para proyectos Windows con PM2, mantener workers y jobs observables y reiniciables.
+- SQL Server/DB2 específico debe delegarse a las Skills `sqlserver` o al conocimiento de DB2 cuando corresponda.
+- GeneXus debe delegarse a `nexa`; GAM a `gam`.
 
-### D. Asynchronous lot
-Symptoms:
-- lot accepted but result pending
-- lot not queued
-- individual DE rejected after lot reception
-- repeated consultation
+## Diagnóstico de errores
 
-Action:
-- persist lot identifier;
-- track state transitions;
-- query according to documented timing;
-- separate lot state from individual DE state.
+### Error XML/XSD
+Revisar namespace, versión XSD, nombre/case de campos, obligatoriedad, tipos, longitud, valores y estructura.
 
-### E. Business validation
-Symptoms:
-- SIFEN returns validation/rejection codes.
+### Error de firma
+Separar: certificado no válido, cadena/PSC, RUC del certificado, XML modificado después de firmar, canonicalización, transformaciones y algoritmo.
 
-Action:
-- preserve code/message;
-- map it to the applicable manual/Technical Note;
-- identify the XML field/group involved;
-- fix generation logic, not only the response handling.
+### Error TLS / ECONNRESET
+Separar conectividad, TLS/mTLS, certificado cliente, proxy/firewall, timeout y estado real de la solicitud. Si el envío pudo haber llegado, consultar antes de reenviar.
 
-### F. QR/KuDE
-Treat QR validation and KuDE rendering as downstream concerns. A visually correct PDF does not prove that the DTE is approved, and a generated QR does not replace SIFEN validation.
+### Lote rechazado/no encolado
+Verificar RUC único, tipo único, máximo 50, tamaño <= 1000 KB, XML válidos, duplicados y bloqueos.
 
-## Testing
+### Lote aceptado pero DE rechazados
+No confundir `0300` con aprobación de los DE. El lote fue recibido; el resultado individual se obtiene en la consulta de lote.
 
-Use the official test guide as the baseline for test coverage. It describes testing of:
-- mutual authentication/communication;
-- DE transmission and validation/rejection;
-- events;
-- DTE and event consultation;
-- KuDE generation/transmission;
-- error scenarios;
-- QR validation.
+## Pruebas
 
-Do not declare a SIFEN implementation complete based only on one successful invoice.
+Usar la Guía de Pruebas e-kuatia para cubrir al menos: certificado, autenticación, recepción síncrona/asíncrona, resultados de validación, consulta por CDC, consulta QR, eventos y escenarios de rechazo.
 
-## GNB implementation reference
+No declarar una integración lista solo porque un envío positivo funciona: probar también certificados inválidos, XML inválido, firma inválida, duplicados, rechazo de negocio, consulta y recuperación después de pérdida de respuesta.
 
-The supplied GNB example contains:
-- controllers for XML generation, lot sending and consultation;
-- services for lot processing, consultation workers, state updates, documents and email;
-- iSeries/database access;
-- worker-pool utilities;
-- daemon executables;
-- workaround scripts for regeneration and mass consultation.
+## Arquitectura GNB como referencia
 
-Use this architecture only as an implementation pattern. In particular, GNB demonstrates separation of generation, sending, asynchronous consultation, state update and delivery concerns.
+El ejemplo GNB muestra una separación por controllers, services, workers, base de datos, utils, routes y un cliente SIFEN. La estructura observada incluye `genxmllote.js`, `envioMasivo.controller.js`, `consultaLote.service.js`, `consultaLote.worker.js`, `procesarLote.js`, `estadoEnvio.service.js` y `sifenClient.js`. Esto se usa como patrón de implementación, no como normativa SIFEN.
 
-## Node.js implementation
+## Reglas de respuesta
 
-For Node.js:
-- delegate generic Node architecture to `nodejs`;
-- keep SIFEN-specific rules here;
-- use bounded workers for lots/consultations;
-- use explicit idempotency and state transitions;
-- keep request timeout/retry policy separate from SIFEN business status;
-- persist raw/diagnostic responses where appropriate, without secrets;
-- use PM2 or the project's established process manager when appropriate;
-- do not introduce Redis/Bull merely because a queue exists conceptually.
-
-## GeneXus implementation
-
-For GeneXus:
-- delegate GeneXus syntax/object work to `nexa`;
-- this skill owns SIFEN rules, XML semantics, service behavior and integration requirements;
-- if embedded Java is required, preserve the project's GeneXus Java syntax conventions and let `nexa` validate the actual GeneXus syntax.
-
-## Security
-
-Never print:
-- private keys;
-- P12/PFX passwords;
-- CSC secrets;
-- access tokens;
-- full certificate/private-key material.
-
-When showing XML or SOAP examples, redact credentials and sensitive identifiers.
-
-## Output style
-
-When solving a SIFEN problem:
-1. State the likely category of the problem.
-2. State the documented rule/evidence.
-3. Explain the impact on the current implementation.
-4. Give the smallest safe change.
-5. Provide validation steps.
-6. Clearly label whether a statement is `OFICIAL DNIT`, `PATRÓN GNB`, `PROYECTO ACTUAL`, or `RECOMENDACIÓN`.
-
-Do not fabricate a SIFEN code, field, endpoint, validation or rule.
-
-## References
-
-Load only the references relevant to the question. Prefer focused references over reproducing the full Manual Técnico.
-
-- `references/official/source-map.md`
-- `references/official/manual-v150.md`
-- `references/official/best-practices.md`
-- `references/official/test-guide.md`
-- `references/official/technical-note-026.md`
-- `references/official/technical-note-027.md`
-- `references/services/asynchronous-lots.md`
-- `references/services/diagnostics.md`
-- `references/xml/xml-generation.md`
-- `references/security/signature-tls.md`
-- `references/testing/test-matrix.md`
-- `references/implementation/gnb-pattern.md`
-- `references/implementation/nodejs-pattern.md`
-- `references/implementation/project-boundaries.md`
+- Responder en español salvo que el usuario solicite otro idioma.
+- Ser concreto y orientado a acción.
+- Citar la referencia oficial utilizada cuando la respuesta depende de una regla SIFEN.
+- No inventar endpoints, códigos, campos, restricciones ni tiempos.
+- Si una regla no está en las fuentes cargadas, decirlo.
+- Si se propone código, indicar qué parte es oficial y qué parte es implementación.
+- No exponer secretos de certificados ni credenciales.

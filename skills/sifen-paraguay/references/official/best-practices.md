@@ -1,43 +1,35 @@
-# DNIT best practices — asynchronous DE sending
+# Mejores prácticas oficiales para envío de DE
 
-Source: supplied `Guía de Mejores Prácticas para la Gestión del Envío de DE`, October 2024.
+Fuente: Recomendaciones y mejores prácticas para SIFEN — Guía para el desarrollador — octubre 2024.
 
-## Document generation
+## Generación XML
 
-The guide assumes knowledge of XML, SOAP 1.2, HTTP, TLS 1.2 mutual authentication and XML Digital Signature.
+La guía advierte evitar espacios al inicio/final de campos, comentarios/documentación XML innecesarios, caracteres de formato entre etiquetas, prefijos de namespace, etiquetas sin valor cuando no correspondan y valores no numéricos/negativos en campos numéricos. Los nombres de campos son sensibles a mayúsculas/minúsculas.
 
-For DE XML generation it warns against:
-- leading/trailing whitespace in numeric/alphanumeric fields;
-- comments/annotations/documentation;
-- formatting characters such as line-feed, carriage-return, tabs and spaces between tags;
-- namespace prefixes;
-- empty field tags where the field is not required;
-- negative/non-numeric values in numeric fields;
-- incorrect case in field names.
+## Lotes
 
-It also points to the DNIT SIFEN pre-validator for development-time validation.
+- Hasta 50 DE por lote.
+- Un único RUC emisor por lote.
+- Un único tipo de documento por lote.
+- El mensaje de datos de entrada del WS no debe superar 1000 KB.
 
-## Lot generation
+## Respuestas
 
-The guide states:
-- lots are processed asynchronously;
-- up to 50 DE can be included in a lot;
-- production and test environments use different domains;
-- the reception service and lot-consultation service are separate;
-- the individual CDC consultation is separate.
+- `0300`: lote recibido con éxito; consultar por número de lote.
+- `0301`: lote no encolado; no será procesado.
 
-## Reception responses
+## Pérdida de respuesta
 
-Documented examples include:
-- `0300`: lot received successfully and will be processed; the returned lot number must be consulted.
-- `0301`: lot was not queued for processing; investigate before retrying.
+Si el envío se realizó pero no se recibió respuesta/número de lote, la guía indica consultar utilizando un CDC incluido en el lote. Esta opción debe utilizarse solo cuando no se obtuvo el número de lote.
 
-## Retry principle
+## Consulta
 
-If the application does not receive a response after sending a lot, do not automatically assume that SIFEN did not receive it. Determine whether the lot can be identified/consulted before resending.
+Se recomienda comenzar la consulta del lote pasados 10 minutos y utilizar intervalos no menores a 10 minutos.
 
-## Consultation timing
+## Duplicados y bloqueos
 
-The guide recommends not hammering the consultation service. It describes beginning consultation after an initial waiting period and using intervals no shorter than 10 minutes in the documented scenario.
+No reenviar un mismo CDC sin resultado definitivo (Aprobado, Aprobado con Observación o Rechazado). La guía identifica bloqueos temporales por RUC asociados a lotes vacíos/no válidos, CDC repetidos, CDC repetidos mientras siguen en procesamiento y reenvío de lotes.
 
-Always verify whether later DNIT documentation changes these recommendations.
+## TLS y firma
+
+La guía describe TLS 1.2 con autenticación mutua, XML Digital Signature Enveloped, certificado de PSC habilitada, RSA 2048, SHA-256, Base64 y transformaciones Enveloped/C14N para la firma.

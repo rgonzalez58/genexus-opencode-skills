@@ -1,28 +1,26 @@
-# Digital signature, certificates and TLS
+# Firma digital, certificado y TLS
 
-The supplied best-practices guide assumes:
-- TLS 1.2;
-- mutual authentication;
-- XML Digital Signature in Enveloped format;
-- X509Data certificate representation;
-- RSA 2048;
-- SHA-2/SHA-256 message digest;
-- Base64 encoding;
-- Enveloped and exclusive C14N transformations as described in the guide.
+La documentación cargada describe:
 
-## Diagnostic separation
+- TLS 1.2 con autenticación mutua.
+- Certificado digital cualificado emitido por una PSC habilitada.
+- XML Digital Signature en formato Enveloped.
+- RSA 2048 para cifrado por software.
+- SHA-256 para message digest.
+- Base64.
+- Transformaciones Enveloped y C14N.
 
-There are at least two different security layers:
-1. transport authentication/TLS;
-2. XML digital signature.
+## Diagnóstico
 
-Do not diagnose a signature error as a TLS error or vice versa.
+Separar:
 
-## Secrets
+1. certificado ausente/incorrecto;
+2. RUC del certificado;
+3. cadena/PSC/validez;
+4. autenticación mTLS;
+5. canonicalización y transforms;
+6. XML modificado después de firmar;
+7. firma inválida;
+8. validación de negocio posterior.
 
-Never expose:
-- P12/PFX contents;
-- private key;
-- certificate password;
-- CSC;
-- access credentials.
+Nunca guardar certificados privados o contraseñas en el repositorio. En logs registrar solo identificadores no sensibles.
