@@ -1,0 +1,407 @@
+---
+name: object-api
+description: API endpoints delegating to implementation objects
+---
+
+Defines API services delegating implementation to callable objects, with REST as default priority
+
+---
+
+# DEFINITION
+An `API` object (or `API`) consists of entry points defining services delegating implementation to callable objects
+
+Protocol guidance:
+- Prefer `REST` as default protocol
+	* Applies to public/external integrations and standard HTTP clients
+	* Set `RESTProtocol = true`
+	* Set `GRPCProtocol = false`
+- Choose `gRPC` only when explicitly requested and satisfies backend support
+	* Applies to internal service-to-service contracts with strict typing
+	* Set `GRPCProtocol = true`
+	* Set `GenerateOpenAPIInterface = "No"`
+- Keep one service definition mode:
+	* Prefer `API` object exposure layer with reference to implementation objects
+	* Define `Web Service` exposure in target object only when explicitly requested
+
+---
+
+# SYNTAX
+~~~
+API <name>
+{
+	<name>
+	{
+		<services>
+	}
+
+	#Events
+		<events>
+	#End
+
+	#Variables
+		<variables>
+	#End
+
+	#Properties
+		<properties>
+	#End
+
+	#Documentation
+		<documentation>
+	#End
+}
+~~~
+
+Where:
+- `<name>`: Object name using alphanumeric or underscore, starting with letter
+- `<services>`: Service definition list; see [SERVICE](#service) section
+- `<events>`: Event handlers (Before, After, service-specific)
+- `<variables>`: Variable definitions with mandatory `DataType`
+- `<properties>`: Optional object properties in TOML syntax; see [properties](./properties.md) for `api` object
+- `<documentation>`: Optional object documentation; see [markdown](./common-markdown.md)
+
+---
+
+# SERVICE
+Defines one exposed service delegated to one implementation call
+
+Syntax:
+~~~
+<annotations>
+<name>(<parameters>)
+	=> <implementation>(<arguments>);
+~~~
+
+Where:
+- `<annotations>`: Breakline separated annotations; see [ANNOTATIONS](#annotations)
+- `<name>`: Service exposed name with parameters
+- `<parameters>`: Comma-separated variable parameters with operator (`in`, `out`, `inout`); optional parameters in brackets
+- `<implementation>`: Implementation object (`Procedure`, `DataProvider`, or other callable object)
+- `<arguments>`: Comma-separated variables or constants for implementation call
+
+Rules:
+- Write annotations immediately before the service declaration
+- Keep one implementation call per service
+- Give all implementation arguments explicitly; use constants when no binding exists
+- Bind implementation outputs (when present) using return-by-reference scheme only:
+	* Detect output contract from implementation definition
+		* For `DataProvider` objects, check `Output` and `Collection` properties
+		* For other callable objects, check `parm` rule `out` variables
+	* Derive service `out` argument from detected output
+	* Assign service variable to inferred `out` parameter
+	* Invoke service implementation using service that variable as `out` argument
+
+---
+
+# ANNOTATIONS
+Defines optional protocol-specific metadata for a service declaration
+
+## RestMethod
+Defines REST method
+
+Syntax: `[RestMethod(<method>)]`
+
+Where:
+- `<method>`: HTTP verb (`GET`, `POST`, `PUT`, `DELETE`)
+- Default: `GET` if omitted
+
+Example:
+~~~
+[RestMethod(POST)]
+~~~
+
+## RestPath
+Defines custom REST path
+
+Syntax: `[RestPath(<path>)]`
+
+Where:
+- `<path>`: Custom REST path with variable interpolation using `{&varname}`
+- Default: service name if omitted
+
+Example:
+~~~
+[RestPath('/customers/{&CustomerId}')]
+~~~
+
+## Header
+Service parameter received from an HTTP header
+
+Syntax: `[Header(<name>, <value>)]`
+
+Where:
+- `<name>`: Header name (constant string)
+- `<value>`: Variable receiving header value
+
+Example:
+~~~
+[Header('Logged-User', &UserId)]
+~~~
+
+## Description
+Short, simple, and concise service description
+
+Syntax: `[Description(<description>)]`
+
+Where:
+- `<description>`: Short service description
+- Strongly recommended; mandatory when `Included in MCP Server` property enabled
+
+## SecurityLevel
+Level required for executing the service
+
+Syntax: `[SecurityLevel(<level>)]`
+
+Where:
+- `<level>`: Access requirement
+	* `None`: No authentication (default)
+	* `Authentication`: User must be authenticated
+	* `Authorization`: User must be authenticated and authorized
+
+Example:
+~~~
+[SecurityLevel(Authentication)]
+~~~
+
+## SecurityPermission
+Permission required for executing the service
+
+Syntax: `[SecurityPermission(<permission>)]`
+
+Where:
+- `<permission>`: Permission name or role required
+
+Example:
+~~~
+[SecurityPermission("Read_Permission")]
+~~~
+
+---
+
+# EVENTS
+See [common-events](./common-events.md)
+
+Allowed event names:
+- `Before`
+- `<service>.Before`
+- `<service>.After`
+- `After`
+
+Execution sequence:
+1. `Before`
+2. `<service>.Before`
+3. Service implementation call
+4. `<service>.After`
+5. `After`
+
+Notes:
+- Service `in` parameters can be initialized in `Before`
+- Service `out` parameters can be initialized in `After`
+- API event code must not use direct DB access commands (`For each`, `New`, `Delete`, `Commit`, `Rollback`)
+
+Example:
+~~~
+Event Before
+	msg(format(!"[INFO] Receive: %1", &RestMethod), status)
+EndEvent
+~~~
+
+---
+
+# OUTPUT
+Use [global-output](./global-output.md)
+
+---
+
+# CONSTRAINTS
+- Use [global-constraints](./global-constraints.md)
+- Include [common-standard-variables](./common-standard-variables.md) according to API context
+- Implementation calls match object `Parm` rule signature
+- Annotations written before service declaration
+- Service parameters can omit `in` params (initialized in Before event)
+- Service can define `out` params not in implementation (initialized in After event)
+- Event code must be orchestration only; never include direct DB access commands
+- Keep API execution under HTTP semantics by setting `RESTProtocol = true` when exposing REST behavior
+- Keep either `API` object references or object-level `Web Service` definition, never both
+
+---
+
+# EXAMPLES
+
+## Example 1
+Simple API
+~~~
+API CustomerAPI
+{
+	CustomerAPI
+	{
+		[Description("List all customers")]
+		ListCustomers(out: &CustomerList)
+			=> GetAllCustomers(&CustomerList);
+
+		[Description("Get information on a particular customer")]
+		GetCustomer(in: &CustomerId, out: &CustomerInfo)
+			=> GetCustomer(&CustomerId, &CustomerInfo);
+	}
+
+	#Events
+	#End
+
+	#Variables
+		Pgmname [ DataType = 'Character(128)' ]
+		Pgmdesc [ DataType = 'Character(256)' ]
+		RestMethod [ DataType = 'HttpMethod, GeneXus' ]
+		RestCode [ DataType = 'Numeric(3.0)' ]
+		CustomerList
+		[
+			DataType = 'CustomerInfo',
+			Collection = 'True'
+		]
+		CustomerInfo [ DataType = 'CustomerInfo' ]
+		CustomerId [ DataType = 'Numeric(8.0)' ]
+	#End
+
+	#Properties
+		MainProgram = true
+	#End
+}
+~~~
+
+## Example 2
+CRUD API with Custom Paths
+~~~
+API CustomerAPI
+{
+	CustomerAPI
+	{
+		[Description("List all Customers")]
+		[RestPath("/customers")]
+		ListCustomers(out: &CustomerList)
+			=> GetAllCustomers(&CustomerList);
+
+		[Description("Get information on a particular Customer")]
+		[RestMethod(GET)]
+		[RestPath("/customers/{&CustomerId}")]
+		GetCustomer(in: &CustomerId, out: &CustomerInfo)
+			=> GetCustomer(&CustomerId, &CustomerInfo);
+
+		[Description("Add a new customer")]
+		[RestMethod(POST)]
+		[RestPath("/customers")]
+		AddCustomer(in: &CustomerInfo, out: &CustomerId)
+			=> CreateCustomer(&CustomerInfo, &CustomerId);
+
+		[Description("Update an existing customer")]
+		[RestMethod(PUT)]
+		[RestPath("/customers/{&CustomerId}")]
+		UpdateCustomer(in: &CustomerId, in: &CustomerInfo)
+			=> UpdateCustomer(&CustomerId, &CustomerInfo);
+
+		[Description("Delete a customer")]
+		[RestMethod(DELETE)]
+		[RestPath("/customer/{&CustomerId}")]
+		DeleteCustomer(in: &CustomerId)
+			=> DeleteCustomer(&CustomerId);
+	}
+
+	#Events
+	#End
+
+	#Variables
+		Pgmname [ DataType = 'Character(128)' ]
+		Pgmdesc [ DataType = 'Character(256)' ]
+		RestMethod [ DataType = 'HttpMethod, GeneXus' ]
+		RestCode [ DataType = 'Numeric(3.0)' ]
+		CustomerList
+		[
+			DataType = 'CustomerInfo',
+			Collection = 'True'
+		]
+		CustomerInfo [ DataType = 'CustomerInfo' ]
+		CustomerId [ DataType = 'Numeric(8.0)' ]
+	#End
+}
+~~~
+
+## Example 3
+API with Header and Events
+~~~
+API BookAPI
+{
+	BookAPI
+	{
+		[Description("Get all books written by a given Author")]
+		[RestPath("author/{&AuthorId}/books")]
+		[Header('Logged-User', &UserId)]
+		SearchBooksByAuthor(in: &UserId, in: &AuthorId, out: &BookList)
+			=> GetBooksByAuthor(&AuthorId, &BookList);
+	}
+
+	#Events
+		Event SearchBooksByAuthor.Before
+			If NOT IsRegisteredUser(&UserId)
+				&RestCode = 403
+				Return
+			EndIf
+		EndEvent
+	#End
+
+	#Variables
+		Pgmname [ DataType = 'Character(128)' ]
+		Pgmdesc [ DataType = 'Character(256)' ]
+		RestMethod [ DataType = 'HttpMethod, GeneXus' ]
+		RestCode [ DataType = 'Numeric(3.0)' ]
+		BookList
+		[
+			DataType = 'Book',
+			Collection = 'True'
+		]
+		AuthorId [ DataType = 'Attribute:AuthorId' ]
+		UserId [ DataType = 'Attribute:UserId' ]
+	#End
+}
+~~~
+
+---
+
+# RUNTIME URL
+Guideline for building the invocation URL for an `API` object service
+
+Pattern:
+~~~
+<host>:<port>/<name><path>
+~~~
+
+Where:
+- `<host>:<port>`: Host and port where the app is deployed; e.g. `http://localhost:8080`
+- `<name>`: Name from the target `API` object
+- `<path>`: Path given by `RestPath` annotation value for the target service
+
+Steps:
+1. Read the `API` object definition
+2. Take `<name>` from `API <name>` header
+3. Find target service
+4. Read `<method>` from `[RestMethod(<method>)]`
+5. Read `<path>` from `[RestPath(<path>)]`
+6. Fill `{&VarName}` placeholders in `<path>` with proper values
+7. Build `<server>:<port>/<name><path>` as invocation URL
+
+Example:
+~~~
+API CustomerAPI
+{
+	CustomerAPI
+	{
+		[RestMethod(GET)]
+		[RestPath("/customers/{&CustomerId}")]
+		GetCustomer(in: &CustomerId, out: &CustomerInfo)
+			=> GetCustomer(&CustomerId, &CustomerInfo);
+	}
+	…
+}
+~~~
+
+The runtime URL for getting customer with Id 5:
+~~~
+GET http://localhost:8080/CustomerAPI/customers/5
+~~~

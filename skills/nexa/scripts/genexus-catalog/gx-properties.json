@@ -1,0 +1,4440 @@
+{
+	"AccessTechnologyToSet": {
+		"Type": "enum{ADO.NET;JDBC;ODBC;Embedded SQL;iSeries Native;Ruby}",
+		"Description": "Select the access technology for this Data Store",
+		"Options": {
+			"ADO.NET": "Used by the .NET generator defined in the Environment",
+			"JDBC": "Used by the Java generator defined in the Environment",
+			"ODBC": "Used by the Visual FoxPro generator defined in the Environment",
+			"Embedded SQL": "Embedded SQL access",
+			"iSeries Native": "Used by RPG and Cobol generators defined in the Environment",
+			"Ruby": "Used by the Ruby generator defined in the Environment (until GeneXus X Evolution 3)"
+		}
+	},
+	"AddButtonBitmap": {
+		"Type": "string",
+		"Description": "Bitmap used by add action"
+	},
+	"AdditionalConnectionStringAttributes": {
+		"Type": "string",
+		"Description": "Add extra connection string attributes"
+	},
+	"AdditionalThemes": {
+		"Type": "string",
+		"Description": "Comma-separated list of additional design system styles applied over the primary platform style"
+	},
+	"AdsPosition": {
+		"Type": "enum{Top;Bottom}",
+		"Description": "The Position of the Advertising Banner",
+		"Options": {
+			"Top": "At the Top",
+			"Bottom": "At the Bottom"
+		}
+	},
+	"AfterCommit": {
+		"Type": "string",
+		"Description": "Set the procedure to run after commit"
+	},
+	"AfterConnect": {
+		"Type": "string",
+		"Description": "Set the procedure to run after connect"
+	},
+	"AfterDelete": {
+		"Type": "enum{Return to Caller;Go to Selection}",
+		"Description": "Navigation target after a successful deletion",
+		"Default": "Return to Caller",
+		"Options": {
+			"Return to Caller": "Navigate back to the calling object",
+			"Go to Selection": "Navigate to the Selection panel"
+		}
+	},
+	"AfterInsert": {
+		"Type": "enum{Return to Caller;Go to View;Go to Selection}",
+		"Description": "Navigation target after a successful insert",
+		"Default": "Return to Caller",
+		"Options": {
+			"Return to Caller": "Navigate back to the calling object",
+			"Go to View": "Navigate to the View panel of the inserted record",
+			"Go to Selection": "Navigate to the Selection panel"
+		}
+	},
+	"AfterRollback": {
+		"Type": "string",
+		"Description": "Set the procedure to run after rollback"
+	},
+	"AfterUpdate": {
+		"Type": "enum{Return to Caller;Go to View;Go to Selection}",
+		"Description": "Navigation target after a successful update",
+		"Default": "Return to Caller",
+		"Options": {
+			"Return to Caller": "Navigate back to the calling object",
+			"Go to View": "Navigate to the View panel of the updated record",
+			"Go to Selection": "Navigate to the Selection panel"
+		}
+	},
+	"AIModel": {
+		"Type": "string",
+		"Description": "Agent model name; check [Supported Chat Models](https://docs.globant.ai/en/wiki?200)",
+		"Default": "openai/gpt-4.1"
+	},
+	"AIProviderAddress": {
+		"Type": "string",
+		"Description": "Set the AI provider address"
+	},
+	"AIProviderAPIKey": {
+		"Type": "string",
+		"Description": "Set the AI provider API key"
+	},
+	"AIProviderProjectId": {
+		"Type": "string",
+		"Description": "Set the AI provider project id"
+	},
+	"AIProviderProjectName": {
+		"Type": "string",
+		"Description": "Set the AI provider project name"
+	},
+	"AllInCombo": {
+		"Type": "string",
+		"Description": "Caption for the 'All' option in filter combo boxes",
+		"Default": "GX_AllItems"
+	},
+	"AllowNull": {
+		"Type": "boolean",
+		"Description": "Allows Null Values In Persistence And Runtime",
+		"Default": "False"
+	},
+	"AllowUserToCancelProcessing": {
+		"Type": "enum{Yes;No}",
+		"Description": "Allows user cancellation during execution",
+		"Default": "Yes",
+		"Options": {
+			"Yes": "Enables this behavior",
+			"No": "Disables this behavior"
+		}
+	},
+	"AlwaysVisible": {
+		"Type": "boolean",
+		"Description": "Keep the search box permanently visible (`True`) or hidden until triggered (`False`)",
+		"Default": "False"
+	},
+	"AndroidExternalName": {
+		"Type": "string",
+		"Description": "Android class name used to bind the external implementation"
+	},
+	"AndroidPublicKeyFile": {
+		"Type": "string",
+		"Description": "File used to verify Mini App signatures on Android"
+	},
+	"AndroidSDKDirectory": {
+		"Type": "string",
+		"Description": "Set the local path to the Android SDK"
+	},
+	"ApplicationBarsClass": {
+		"Type": "string",
+		"Description": "Style class applied to the application bar",
+		"Require": {
+			"ShowApplicationBars": "True"
+		}
+	},
+	"ApplicationID": {
+		"Type": "string",
+		"Description": "Integrated security application ID"
+	},
+	"ApplyWorkWithForWebPatternOnSave": {
+		"Type": "boolean",
+		"Description": "Automatically apply the Work With for Web pattern when saving",
+		"Default": "False",
+		"Constraints": {
+			"After setting, must import the target object and force export to retrieve generated objects": null,
+			"Generated objects will be placed in `<Transaction>/` directory containing:": [
+				"WorkWithForWeb object: `WorkWithWeb<Transaction>` (instance definition)",
+				"WebPanel object: `WorkWithWeb<Transaction>/WW<Transaction>` (selection screen)",
+				"WebPanel object: `WorkWithWeb<Transaction>/View<Transaction>` (view/detail screen)",
+				"WebComponent object: `WorkWithWeb<Transaction>/<Transaction>General` (for main level)",
+				"WebComponent objects: `WorkWithWeb<Transaction>/<Transaction><Level>WC` (for each sublevel)",
+				"Procedure object: `WorkWithWeb<Transaction>/ExportWW<Transaction>`"
+			]
+		}
+	},
+	"ApplyWorkWithPatternOnSave": {
+		"Type": "boolean",
+		"Description": "Automatically apply the Work With for Devices pattern when saving",
+		"Default": "False",
+		"Constraints": {
+			"After setting, must import the target object and force export to retrieve generated objects": null,
+			"Generated objects will be placed in `<Transaction>/` directory containing:": [
+				"WorkWith object: `WorkWith<Transaction>` (instance definition)"
+			]
+		}
+	},
+	"Ascending": {
+		"Type": "boolean",
+		"Description": "Sort direction for the attribute",
+		"Default": "True",
+		"Options": {
+			"True": "Ascending order",
+			"False": "Descending order"
+		}
+	},
+	"AssemblyName": {
+		"Type": "string",
+		"Description": ".NET assembly name that contains the external implementation"
+	},
+	"AssignFunctionKeysToStandardEvents": {
+		"Type": "enum{Yes;No;Use Environment property value}",
+		"Description": "Maps function keys to standard events",
+		"Default": "No",
+		"Options": {
+			"Yes": "Enables this behavior",
+			"No": "Disables this behavior",
+			"Use Environment property value": "Uses the setting defined at environment level"
+		}
+	},
+	"AssociatedTable": {
+		"Type": "string",
+		"Description": "Associated table"
+	},
+	"Attribute": {
+		"Type": "string",
+		"Description": "Name used as record description, sort key, and source attribute"
+	},
+	"AttributeFont": {
+		"Type": "string",
+		"Description": "Default font for Attribute controls",
+		"Default": "Courier New,9"
+	},
+	"AutocenterObjectsIn": {
+		"Type": "enum{Use Environment property value;No;Yes}",
+		"Description": "Centers report controls around origin",
+		"Default": "No",
+		"Options": {
+			"Use Environment property value": "Uses the setting defined at environment level",
+			"No": "Disables this behavior",
+			"Yes": "Enables this behavior"
+		}
+	},
+	"AutoCompressHttpTraffic": {
+		"Type": "enum{Yes;No;Use Environment property value}",
+		"Description": "Compresses HTTP responses to reduce payload size",
+		"Default": "Yes",
+		"Options": {
+			"Yes": "Enables this behavior",
+			"No": "Disables this behavior",
+			"Use Environment property value": "Uses the setting defined at environment level"
+		}
+	},
+	"AutoCompressHttpTraffic#frontend": {
+		"Type": "boolean",
+		"Description": "Enable HTTP compression"
+	},
+	"Autolink": {
+		"Type": "boolean",
+		"Description": "Automatically navigate to `View<transaction>` when the cell value is clicked",
+		"Default": "False"
+	},
+	"AutomaticRefresh": {
+		"Type": "enum{Yes;No}",
+		"Description": "Automatically Refresh Grids On Dependency Changes",
+		"Default": "Yes",
+		"Options": {
+			"Yes": "Enables This Behavior",
+			"No": "Disables This Behavior"
+		}
+	},
+	"AutomaticWidthScaleFactor": {
+		"Type": "enum{Use Environment property value;1x;2x}",
+		"Description": "Scale factor for automatic width calculation",
+		"Default": "1x",
+		"Options": {
+			"Use Environment property value": "Uses the automatic width scale defined at environment level",
+			"1x": "Uses base width factor for automatic control sizing",
+			"2x": "Uses double width factor for automatic control sizing"
+		}
+	},
+	"AutonumbeForReplication": {
+		"Type": "boolean",
+		"Description": "Replicates autonumber values across environments",
+		"Default": "True"
+	},
+	"Autonumber": {
+		"Type": "boolean",
+		"Description": "Enables automatic sequential value generation"
+	},
+	"AutonumberForReplication": {
+		"Type": "boolean",
+		"Description": "Replicates autonumber values across environments",
+		"Default": "True"
+	},
+	"AutonumberStart": {
+		"Type": "integer",
+		"Description": "Initial value used by autonumber sequence"
+	},
+	"AutonumberStep": {
+		"Type": "integer",
+		"Description": "Increment used by autonumber sequence"
+	},
+	"AutoResize": {
+		"Type": "boolean",
+		"Description": "Adjusts control size automatically to content"
+	},
+	"AutoresizeFormControls": {
+		"Type": "enum{Based on message code;Based on current translation;Based on longest available translation}",
+		"Description": "Strategy used to determine control size when Auto Resize is enabled",
+		"Default": "Based on current translation",
+		"Options": {
+			"Based on message code": "Calculates control size from the message code text",
+			"Based on current translation": "Calculates control size from the active language translation",
+			"Based on longest available translation": "Calculates control size from the longest translation found"
+		}
+	},
+	"BackColor": {
+		"Type": "string",
+		"Description": "Background color applied to the control"
+	},
+	"BackColorStyle": {
+		"Type": "enum{None;Uniform;Header;Report}",
+		"Description": "Row background coloring style applied to generated selection grids",
+		"Default": "Report",
+		"Options": {
+			"None": "No alternating row colors",
+			"Uniform": "Uniform row color throughout the grid",
+			"Header": "Apply color to header rows only",
+			"Report": "Alternating row colors in report style"
+		}
+	},
+	"BackendOnly": {
+		"Type": "boolean",
+		"Description": "Prevent (`True`) or allow (`False`) UI object creation and modification",
+		"Default": "False"
+	},
+	"Background": {
+		"Type": "string",
+		"Description": "Background image used by the menu"
+	},
+	"BackToSelection": {
+		"Type": "boolean",
+		"Description": "Show a back link to the `WW<transaction>` selection screen",
+		"Default": "True"
+	},
+	"BaseClasspath": {
+		"Type": "string",
+		"Description": "Set base classpath entries generated from Modules"
+	},
+	"BaseControlType": {
+		"Type": "enum{None;Button;ComboBox;CheckBox;Edit;ErrorViewer;Grid;Group;HorizontalRule;HyperLink;Image;ListBox;RadioButton;Section;Tab;Table;TextBlock}",
+		"Description": "Specify the standard GeneXus control behavior extended by this control",
+		"Options": {
+			"None": "No base control type",
+			"Button": "Clickable action control",
+			"ComboBox": "Dropdown selection control",
+			"CheckBox": "Boolean selection control",
+			"Edit": "Text input control",
+			"ErrorViewer": "Error display control",
+			"Grid": "Tabular data control",
+			"Group": "Container grouping control",
+			"HorizontalRule": "Horizontal separator line",
+			"HyperLink": "Navigable link control",
+			"Image": "Image display control",
+			"ListBox": "List selection control",
+			"RadioButton": "Exclusive selection control",
+			"Section": "Section container control",
+			"Tab": "Tab page control",
+			"Table": "Table layout control",
+			"TextBlock": "Read-only text display control"
+		}
+	},
+	"BaseCSS": {
+		"Type": "enum{None;Bootstrap v3;Bootstrap v3 RTL}",
+		"Description": "A CSS library to include as a base style",
+		"Default": "None",
+		"Options": {
+			"None": "Disables additional behavior for this setting",
+			"Bootstrap v3": "Uses the Bootstrap v3 design system",
+			"Bootstrap v3 RTL": "Uses the Bootstrap v3 RTL design system"
+		}
+	},
+	"BasedOn": {
+		"Type": "string",
+		"Description": "Base attribute or domain used for definition"
+	},
+	"BaseImagePath": {
+		"Type": "string",
+		"Description": "Base path for image files"
+	},
+	"BaseLocation": {
+		"Type": "string",
+		"Description": "Base file system path used for generated export files; omit to use the server default"
+	},
+	"BaseStyle": {
+		"Type": "string",
+		"Description": "Base style for this `UserControl` object"
+	},
+	"BaseTrn": {
+		"Type": "string",
+		"Description": "Source `Transaction` object that drives the grid navigation"
+	},
+	"BeepOnMessages": {
+		"Type": "enum{Use Environment property value;No;Yes}",
+		"Description": "Plays sound for runtime messages",
+		"Default": "No",
+		"Options": {
+			"Use Environment property value": "Uses the setting defined at environment level",
+			"No": "Disables this behavior",
+			"Yes": "Enables this behavior"
+		}
+	},
+	"BeforeCommit": {
+		"Type": "string",
+		"Description": "Set the procedure to run before commit"
+	},
+	"BeforeConnect": {
+		"Type": "string",
+		"Description": "Set the procedure to run before connect"
+	},
+	"BeforeRollback": {
+		"Type": "string",
+		"Description": "Set the procedure to run before rollback"
+	},
+	"BlankWhenEmpty": {
+		"Type": "string",
+		"Description": "Return blank when empty"
+	},
+	"BorderStyle": {
+		"Type": "enum{Sizable;None;Fixed Single;Fixed Dialog}",
+		"Description": "Window border style in Win interface",
+		"Default": "Fixed Single",
+		"Options": {
+			"Sizable": "Allows the window to be resized",
+			"None": "Disables additional behavior for this setting",
+			"Fixed Single": "Uses a fixed single-border window",
+			"Fixed Dialog": "Uses a fixed dialog-style window"
+		}
+	},
+	"BoundsName": {
+		"Type": "string",
+		"Description": "Identifier for the responsive bounds group this platform entry belongs to; omit if not applicable"
+	},
+	"BreakBy": {
+		"Type": "boolean",
+		"Description": "Enable control-break grouping on this order; groups rows by the break attribute(s)",
+		"Default": "False"
+	},
+	"BreakBy#wwd": {
+		"Type": "enum{Disabled;Use order's break by;Platform Default}",
+		"Description": "How the search result interacts with the order's break-by grouping",
+		"Default": "Platform Default",
+		"Options": {
+			"Disabled": "ignores any break-by grouping during search",
+			"Use order's break by": "applies the break-by defined in the active Order",
+			"Platform Default": "Android behaves like `Use order's break by`; iOS behaves like `Disabled`"
+		}
+	},
+	"BreakByUpTo": {
+		"Type": "string",
+		"Description": "Attribute defining the grouping boundary in multi-attribute orders; later attributes only sort within groups"
+	},
+	"BuildMode": {
+		"Type": "enum{Prototype;Development;Distribution}",
+		"Description": "Select Angular build mode",
+		"Options": {
+			"Prototype": "Import minimum dependencies for prototyping",
+			"Development": "Include testing/debug packages",
+			"Distribution": "Build for deployment (ng build --configuration production)"
+		}
+	},
+	"BusinessComponent": {
+		"Type": "boolean",
+		"Description": "Configures default business component transaction behavior",
+		"Default": "False"
+	},
+	"Button": {
+		"Type": "string",
+		"Description": "Web theme class applied to button controls in generated objects; template-dependent if omitted"
+	},
+	"ButtonClass": {
+		"Type": "string",
+		"Description": "Web theme class applied to the action button"
+	},
+	"ButtonFont": {
+		"Type": "string",
+		"Description": "Default font for Button controls",
+		"Default": "Microsoft Sans Serif,8"
+	},
+	"ButtonPrompt": {
+		"Type": "boolean",
+		"Description": "Shows prompt indicator (arrow) next to attributes"
+	},
+	"CacheExpirationLapse": {
+		"Type": "string",
+		"Description": "Cache validity duration before refresh"
+	},
+	"CacheProvider": {
+		"Type": "enum{In Process;Memcached;Redis}",
+		"Description": "Select the cache provider",
+		"Options": {
+			"In Process": "",
+			"Memcached": "",
+			"Redis": ""
+		}
+	},
+	"CallableFromWorkflow": {
+		"Type": "boolean",
+		"Description": "Allows agent to be called from [BPD node](./object-business-process.md)",
+		"Default": "False"
+	},
+	"CallProtocol": {
+		"Type": "enum{Internal;HTTP;Command Line;SOAP;Enterprise Java Bean}",
+		"Description": "Define how the object is invoked, and its output",
+		"Default": "Internal",
+		"Options": {
+			"Internal": "Executes internally within the application runtime",
+			"HTTP": "Exposes or invokes behavior over HTTP",
+			"Command Line": "Enables command-line invocation",
+			"SOAP": "Exposes or invokes behavior as SOAP service",
+			"Enterprise Java Bean": "Uses Enterprise Java Bean integration mode"
+		}
+	},
+	"CallTransactionsOnlyIfWorkWithApplied": {
+		"Type": "boolean",
+		"Description": "Generate calls only to transactions that have the `WorkWith` pattern applied",
+		"Default": "True"
+	},
+	"CallType": {
+		"Type": "enum{Auto;Call;Link}",
+		"Description": "How the invoked object is called when the action is triggered",
+		"Default": "Auto",
+		"Options": {
+			"Auto": "Uses `Link` for all objects except non-main Procedures",
+			"Call": "Generates an event that calls the object",
+			"Link": "Uses the web Link method in the grid load logic"
+		}
+	},
+	"Caption": {
+		"Type": "string",
+		"Description": "Human-readable label for various UI elements"
+	},
+	"CaseSensitive": {
+		"Type": "boolean",
+		"Description": "Apply case-sensitive matching to the search term",
+		"Default": "False"
+	},
+	"CellPadding": {
+		"Type": "string",
+		"Description": "Cell padding in pixels for generated grids",
+		"Default": "4"
+	},
+	"CellSpacing": {
+		"Type": "string",
+		"Description": "Cell spacing in pixels for generated grids",
+		"Default": "2"
+	},
+	"ChangeFrequency": {
+		"Type": "enum{0. Pretty Often;1. Time to Time;2. Hardly Ever;3. Almost Never}",
+		"Description": "Expected data volatility for caching heuristics",
+		"Default": "0. Pretty Often",
+		"Options": {
+			"0. Pretty Often": "Uses the highest suggested frequency level",
+			"1. Time to Time": "Uses a medium-high suggested frequency level",
+			"2. Hardly Ever": "Uses a low suggested frequency level",
+			"3. Almost Never": "Uses the minimum suggested frequency level"
+		}
+	},
+	"ChangePasswordObjectForSD": {
+		"Type": "string",
+		"Description": "Specifies the object automatically executed when a user password expires",
+		"Scope": "Native",
+		"Default": "(none)"
+	},
+	"Characters": {
+		"Type": "string",
+		"Description": "Character count used by associated setting"
+	},
+	"CharacterSet": {
+		"Type": "enum{OEM;ANSI}",
+		"Description": "Character encoding used to read text files",
+		"Default": "OEM",
+		"Options": {
+			"OEM": "OEM encoding",
+			"ANSI": "ANSI encoding"
+		}
+	},
+	"Check": {
+		"Type": "string",
+		"Description": "Name of `Procedure` object that checks user authorization; omit to skip checks"
+	},
+	"CheckForNewData": {
+		"Type": "boolean",
+		"Description": "Determines whether cached data is reused or the server is checked for changes",
+		"Require": {
+			"EnableDataCaching": "True"
+		}
+	},
+	"CheckTypeErrors": {
+		"Type": "boolean",
+		"Description": "Enable type checking"
+	},
+	"Class": {
+		"Type": "string",
+		"Description": "Class applied to rendering and menu styling"
+	},
+	"Classpath": {
+		"Type": "string",
+		"Description": "Set extra classpath entries for Android build"
+	},
+	"ClientSideValidation": {
+		"Type": "enum{Yes;No;Use Environment property value}",
+		"Description": "Runs validation in client before submit",
+		"Default": "Yes",
+		"Options": {
+			"Yes": "Enables this behavior",
+			"No": "Disables this behavior",
+			"Use Environment property value": "Uses the setting defined at environment level"
+		}
+	},
+	"CloseHandler": {
+		"Type": "string",
+		"Description": "Set the close handler"
+	},
+	"ClusterIndex": {
+		"Type": "string",
+		"Description": "Index used as clustering index"
+	},
+	"Code": {
+		"Type": "string",
+		"Description": "Unique single-word tab code used for switching and URL routing"
+	},
+	"Codepage": {
+		"Type": "int",
+		"Description": "ANSI code page associated to this language"
+	},
+	"Collection": {
+		"Type": "boolean",
+		"Description": "Indicates whether output is a collection",
+		"Default": "False"
+	},
+	"CollectionItemName": {
+		"Type": "string",
+		"Description": "Element name used inside collections",
+		"Require": {
+			"Collection": "True"
+		}
+	},
+	"CollectionSerialization": {
+		"Type": "enum{Wrapped;Sequence}",
+		"Description": "XML serialization for collections",
+		"Default": "Wrapped",
+		"Options": {
+			"Wrapped": "Collection wrapped by the collection name",
+			"Sequence": "Plain sequence of collection items"
+		},
+		"Require": {
+			"Collection": "True"
+		}
+	},
+	"Color": {
+		"Type": "enum{Default to color rule;White;Red;Green;Yellow;Blue;Cyan;Magenta}",
+		"Description": "Color used by associated control or section",
+		"Default": "Default to color rule",
+		"Options": {
+			"Default to color rule": "Uses color behavior defined by color rules",
+			"White": "Uses white color",
+			"Red": "Uses red color",
+			"Green": "Uses green color",
+			"Yellow": "Uses yellow color",
+			"Blue": "Uses blue color",
+			"Cyan": "Uses cyan color",
+			"Magenta": "Uses magenta color"
+		}
+	},
+	"ColoredPrompt": {
+		"Type": "boolean",
+		"Description": "Attribute color overrides colors defined for the attribute in any form"
+	},
+	"ColumnHeadings": {
+		"Type": "enum{Yes;No}",
+		"Description": "Whether first row is treated as column names",
+		"Default": "No",
+		"Options": {
+			"Yes": "First row is column names",
+			"No": "First row is data"
+		}
+	},
+	"ColumnTitle": {
+		"Type": "string",
+		"Description": "Column header shown in tabular UI"
+	},
+	"ColumnTitleDefault": {
+		"Type": "enum{From Description;From Parent}",
+		"Description": "Source of Column Title in grids",
+		"Default": "From Parent",
+		"Options": {
+			"From Description": "From Description",
+			"From Parent": "From Parent"
+		},
+		"ProductVersion": ">=15.6"
+	},
+	"Commitment": {
+		"Type": "enum{Enabled;Disabled}",
+		"Description": "Transaction handling mode for LUW boundaries",
+		"Default": "Enabled",
+		"Options": {
+			"Enabled": "Enables this feature",
+			"Disabled": "Disables this feature"
+		}
+	},
+	"CommitOnExit": {
+		"Type": "enum{Yes;No}",
+		"Description": "Commits transaction when object execution ends",
+		"Default": "Yes",
+		"Options": {
+			"Yes": "Enables this behavior",
+			"No": "Disables this behavior"
+		}
+	},
+	"CompilerOptions": {
+		"Type": "string",
+		"Description": "Set additional `javac` parameters"
+	},
+	"CompilerPath": {
+		"Type": "string",
+		"Description": "Set the path to `javac`"
+	},
+	"ComponentName": {
+		"Type": "string",
+		"Description": "A `WebComponent` object generated for this tab",
+		"Require": {
+			"Type": "Tabular"
+		}
+	},
+	"Condition": {
+		"Type": "string",
+		"Description": "Expression to control tab visibility and action enablement"
+	},
+	"Conditions": {
+		"Type": "string",
+		"Description": "GeneXus condition expression applied to filter grid rows"
+	},
+	"Confirmation": {
+		"Type": "enum{Never prompt;Always prompt;Do not prompt on first level;Use Environment property value}",
+		"Description": "Control Confirmation Behavior",
+		"Options": {
+			"Never prompt": "Do Not Show Prompts",
+			"Always prompt": "Always Request Confirmation",
+			"Do not prompt on first level": "Skip First Level Confirmations (Transactions Only)",
+			"Use Environment property value": "Inherit From Environment"
+		}
+	},
+	"ConfirmButtonBitmap": {
+		"Type": "string",
+		"Description": "Bitmap used by confirm action"
+	},
+	"ConfirmTransactions": {
+		"Type": "enum{No;Yes}",
+		"Description": "Asks confirmation before transaction commit",
+		"Default": "No",
+		"Options": {
+			"No": "Disables this behavior",
+			"Yes": "Enables this behavior"
+		}
+	},
+	"ConnectivitySupport": {
+		"Type": "enum{Online;Offline;Inherit}",
+		"Description": "Defines whether the object runs online, offline, or inherits behavior from the caller",
+		"Options": {
+			"Online": "Works with data from the application server",
+			"Offline": "Works with data from the local offline database",
+			"Inherit": "Uses the connectivity behavior of the caller object"
+		}
+	},
+	"ConnectToServer": {
+		"Type": "enum{At first request;At application startup}",
+		"Description": "Select connection mode to server",
+		"Options": {
+			"At first request": "Connect after the first request to the server",
+			"At application startup": "Connect during initialization before the main object is displayed"
+		}
+	},
+	"ConnectUsing": {
+		"Type": "string",
+		"Description": "Select the ODBC connection method"
+	},
+	"ContextualTitle": {
+		"Type": "string",
+		"Description": "Context-aware label shown in UI"
+	},
+	"Control": {
+		"Type": "enum{List;Tab;Table}",
+		"Description": "Defines how menu entries are rendered",
+		"Default": "List",
+		"Options": {
+			"List": "Renders menu actions as a vertical list",
+			"Tab": "Renders menu actions as top-level tabs",
+			"Table": "Renders menu actions as a table or grid-like launcher"
+		}
+	},
+	"ControlBox": {
+		"Type": "enum{Yes;No}",
+		"Description": "Enables standard form control box",
+		"Default": "Yes",
+		"Options": {
+			"Yes": "Enables this behavior",
+			"No": "Disables this behavior"
+		}
+	},
+	"ControlType": {
+		"Type": "enum{Combo Box;Radio Button;Edit;Check Box;Dynamic Combo Box;List Box;Dynamic List Box;Image}",
+		"Description": "UI control used to edit or display the value",
+		"Default": "Edit",
+		"Options": {
+			"Combo Box": "Renders a drop-down selector with fixed values",
+			"Radio Button": "Renders mutually exclusive options as radio buttons",
+			"Edit": "Renders a standard editable input field",
+			"Check Box": "Renders a boolean value as a checkbox",
+			"Dynamic Combo Box": "Renders a drop-down selector loaded dynamically",
+			"List Box": "Renders a visible list selector with fixed values",
+			"Dynamic List Box": "Renders a visible list selector loaded dynamically",
+			"Image": "Renders the value as an image"
+		}
+	},
+	"CopyAPKToCloud": {
+		"Type": "boolean",
+		"Description": "Upload the generated APK when using Deploy to Cloud"
+	},
+	"CopyTableGroups": {
+		"Type": "enum{If no unique index;Always;Never;Use Environment property value}",
+		"Description": "Copies table groups when generating code",
+		"Default": "If no unique index",
+		"Options": {
+			"If no unique index": "Copies only if no unique index exists",
+			"Always": "Copies table groups always",
+			"Never": "Does not copy table groups",
+			"Use Environment property value": "Inherits setting from environment"
+		}
+	},
+	"CreateAllPoolConnectionsAtStartup": {
+		"Type": "boolean",
+		"Description": "Pre-create pool connections"
+	},
+	"CreateDatabaseOption": {
+		"Type": "string",
+		"Description": "Set database creation execution flags"
+	},
+	"CreateSaveFile": {
+		"Type": "string",
+		"Description": "Configure save file creation"
+	},
+	"CreativityLevel": {
+		"Type": "number",
+		"Description": "Controls predictability; higher values introduce randomness/diversity",
+		"Default": "0.5"
+	},
+	"CurrencyDecimalSymbol": {
+		"Type": "string",
+		"Description": "Decimal separator used in currency values"
+	},
+	"CurrencyThousandSymbol": {
+		"Type": "string",
+		"Description": "Thousands separator used in currency values"
+	},
+	"CustomizableLayout": {
+		"Type": "enum{Yes;No;Use Environment property value}",
+		"Description": "Allows layout customization at runtime",
+		"Default": "No",
+		"Options": {
+			"Yes": "Enables this behavior",
+			"No": "Disables this behavior",
+			"Use Environment property value": "Uses the setting defined at environment level"
+		}
+	},
+	"CustomizableLayout#frontend": {
+		"Type": "boolean",
+		"Description": "Enable customizable layouts"
+	},
+	"CustomRender": {
+		"Type": "string",
+		"Description": "Name of the user control used to render the grid; omit to use the default grid renderer"
+	},
+	"CustomStartEventCode": {
+		"Type": "string",
+		"Description": "GeneXus code injected at the beginning of the generated object's `Start` event"
+	},
+	"DatabaseAccessCache": {
+		"Type": "enum{Yes;No}",
+		"Description": "Use database access cache",
+		"Options": {
+			"Yes": "Enable",
+			"No": "Disable"
+		}
+	},
+	"DatabaseName": {
+		"Type": "string",
+		"Description": "Set the database name (or library for iSeries)"
+	},
+	"DatabaseSchema": {
+		"Type": "string",
+		"Description": "Set the default schema"
+	},
+	"DatabaseType": {
+		"Type": "string",
+		"Description": "Set the Informix database type"
+	},
+	"DataFormat": {
+		"Type": "enum{Access;ADO;Text;Foxpro 2.6}",
+		"Description": "Source format",
+		"Default": "Access",
+		"Options": {
+			"Access": "Access database file",
+			"ADO": "ADO provider",
+			"Text": "Delimited or fixed-length text files",
+			"Foxpro 2.6": "FoxPro 2.6 tables"
+		}
+	},
+	"DataLibraryName": {
+		"Type": "string",
+		"Description": "Set the data library name"
+	},
+	"DataReceiveCriteria": {
+		"Type": "enum{On Application Launch;After Elapsed Time;Manual;Never}",
+		"Description": "Trigger strategy for receive synchronization",
+		"Default": "On Application Launch",
+		"Options": {
+			"On Application Launch": "Runs automatically when the application starts",
+			"After Elapsed Time": "Runs after the configured elapsed interval",
+			"Manual": "Runs only when explicitly requested",
+			"Never": "Does not run automatically"
+		}
+	},
+	"DataReceiveGranularity": {
+		"Type": "enum{By Row;By Table}",
+		"Description": "Defines sync granularity by row or by table",
+		"Default": "By Row",
+		"Options": {
+			"By Row": "Processes records row by row",
+			"By Table": "Processes records table by table"
+		}
+	},
+	"DataSelector": {
+		"Type": "string",
+		"Description": "A Data Selector object used to filter grid data in nodes"
+	},
+	"DataSelectorParameters": {
+		"Type": "string",
+		"Description": "Comma-separated parameters for DataSelector; can be constant, attribute, variable or expression"
+	},
+	"DataStore": {
+		"Type": "enum{SQL Server;PostgreSQL;MySQL;Oracle;SQLite;Informix;DB2 UDB;Demeng}",
+		"Description": "Name of the `Data Store` associated with the `Data View` object",
+		"Options": {
+			"SQL Server": "Microsoft SQL Server",
+			"PostgreSQL": "PostgreSQL database",
+			"MySQL": "MySQL database",
+			"Oracle": "Oracle database",
+			"SQLite": "SQLite embedded database",
+			"Informix": "IBM Informix",
+			"DB2 UDB": "IBM DB2 Universal Database",
+			"Dameng": "Dameng database"
+		}
+	},
+	"DataType": {
+		"Type": "string",
+		"Description": "Logical type used for storage and validation"
+	},
+	"DataTypeFilter": {
+		"Type": "string",
+		"Description": "Comma separated supported data types: character, varchar, longvarchar, numeric, date, datetime, image, video, ref(SDT)",
+		"Require": {
+			"IsControlType": "True"
+		}
+	},
+	"DateDataTypeDefinition": {
+		"Type": "string",
+		"Description": "Set the date data type definition"
+	},
+	"DateFormat": {
+		"Type": "string",
+		"Description": "Date format for parsing text-file date values",
+		"Options": {
+			"ENG": "English date format",
+			"POR": "Portuguese date format",
+			"SPA": "Spanish date format",
+			"ITA": "Italian date format",
+			"ANSI": "ANSI standard date format"
+		}
+	},
+	"DateFormatInCTOD": {
+		"Type": "enum{Language Dependent;mm/dd/yy;mm/dd/yyyy;dd/mm/yy;dd/mm/yyyy;yyyy/mm/dd;yy/mm/dd}",
+		"Description": "Set CTOD date format behavior",
+		"Options": {
+			"Language Dependent": "Use the current language date format",
+			"mm/dd/yy": "Parse dates as month/day/two-digit year",
+			"mm/dd/yyyy": "Parse dates as month/day/four-digit year",
+			"dd/mm/yy": "Parse dates as day/month/two-digit year",
+			"dd/mm/yyyy": "Parse dates as day/month/four-digit year",
+			"yyyy/mm/dd": "Parse dates as four-digit year/month/day",
+			"yy/mm/dd": "Parse dates as two-digit year/month/day"
+		}
+	},
+	"DatepickerImage": {
+		"Type": "string",
+		"Description": "Image for datepicker"
+	},
+	"DateTimeStorageTimezone": {
+		"Type": "string",
+		"Description": "Timezone for datetime database storage",
+		"Default": "0000"
+	},
+	"DBMS": {
+		"Type": "enum{SQL Server;PostgreSQL;MySQL;Oracle;SQLite;Informix;DB2 UDB;Dameng}",
+		"Description": "Database management system for the default data store",
+		"Options": {
+			"SQL Server": "Microsoft SQL Server",
+			"PostgreSQL": "PostgreSQL database",
+			"MySQL": "MySQL database",
+			"Oracle": "Oracle database",
+			"SQLite": "SQLite embedded database",
+			"Informix": "IBM Informix",
+			"DB2 UDB": "IBM DB2 Universal Database",
+			"Dameng": "Dameng database"
+		}
+	},
+	"Decimals": {
+		"Type": "integer",
+		"Description": "Decimal precision for numeric values",
+		"Default": "0"
+	},
+	"DecimalSeparator": {
+		"Type": "enum{Point;Comma}",
+		"Description": "Decimal separator symbol",
+		"Default": "Point",
+		"Options": {
+			"Point": "Use `.` separator",
+			"Comma": "Use `,` separator"
+		}
+	},
+	"DeclareReferentialIntegrity": {
+		"Type": "enum{Yes;No;Remove}",
+		"Description": "Generate referential integrity",
+		"Options": {
+			"Yes": "Declare all integrity references during creation/reorganization",
+			"No": "Do not declare referential integrity",
+			"Remove": "Remove integrity references for reorganized tables"
+		}
+	},
+	"DeclareVarcharAsVarchar2": {
+		"Type": "enum{Yes;No}",
+		"Description": "Use VARCHAR2 data type for VARCHAR",
+		"Options": {
+			"Yes": "Declare Varchar attributes as Varchar2",
+			"No": "Declare Varchar attributes as Varchar"
+		}
+	},
+	"DeepLinkName": {
+		"Type": "string",
+		"Description": "URL path registered for deep linking to this node"
+	},
+	"Default": {
+		"Type": "string",
+		"Description": "Default value used when no input value is provided"
+	},
+	"DefaultAgentsAIModel": {
+		"Type": "string",
+		"Description": "Default Agents AI model; see [Supported Chat Models](https://docs.globant.ai/en/wiki?200)",
+		"Default": "openai/gpt-4.1"
+	},
+	"DefaultFormLayout": {
+		"Type": "enum{Flat Template;Unanimo Template;Carmine Template;Fiori Template}",
+		"Description": "Specifies the form template used to generate default form",
+		"Options": {
+			"Flat Template": "Flat Template",
+			"Unanimo Template": "Unanimo Template",
+			"Carmine Template": "Carmine Template",
+			"Fiori Template": "Fiori Template"
+		}
+	},
+	"DefaultHtmlFormatTextBlocksOnly": {
+		"Type": "enum{Text;HTML;Raw HTML;Text with meaningful spaces}",
+		"Description": "Default text-block format mode for HTML output",
+		"Options": {
+			"Text": "Renders text blocks as plain text",
+			"HTML": "Renders text blocks as HTML with GeneXus formatting handling",
+			"Raw HTML": "Outputs text blocks as raw HTML without processing",
+			"Text with meaningful spaces": "Renders text blocks preserving spaces and line breaks"
+		}
+	},
+	"DefaultIndicesStorageArea": {
+		"Type": "string",
+		"Description": "Set default index storage"
+	},
+	"DefaultLayoutOrientation": {
+		"Type": "enum{Any;Landscape;Portrait}",
+		"Description": "Default screen orientation for generated objects on this platform",
+		"Default": "Any",
+		"Options": {
+			"Any": "No orientation constraint",
+			"Landscape": "Force landscape orientation",
+			"Portrait": "Force portrait orientation"
+		}
+	},
+	"DefaultMasterPage": {
+		"Type": "string",
+		"Description": "The Default Master Page"
+	},
+	"DefaultMode": {
+		"Type": "boolean",
+		"Description": "Include this action in the generated object by default",
+		"Default": "True"
+	},
+	"DefaultStyle": {
+		"Type": "string",
+		"Description": "Default style applied when no explicit style is defined"
+	},
+	"DefaultTablesStorageArea": {
+		"Type": "string",
+		"Description": "Set default table storage"
+	},
+	"DefaultTemplateLayout": {
+		"Type": "enum{FlatTemplate;UnanimoTemplate;CarmineTemplate;FioriTemplate}",
+		"Description": "Specifies a template used to generate default Transactions and WorkWith web layouts",
+		"Default": "UnanimoTemplate",
+		"Options": {
+			"FlatTemplate": "Uses the FlatTemplate form layout",
+			"UnanimoTemplate": "Uses the UnanimoTemplate form layout",
+			"CarmineTemplate": "Uses the CarmineTemplate form layout",
+			"FioriTemplate": "Uses the FioriTemplate form layout"
+		}
+	},
+	"DefaultTemporaryStorageArea": {
+		"Type": "string",
+		"Description": "Set default temp storage"
+	},
+	"DefaultWebFormEditor": {
+		"Type": "enum{Abstract Layout;HTML}",
+		"Description": "The web form editor to be used for new objects by default",
+		"Default": "Abstract Layout",
+		"Options": {
+			"Abstract Layout": "Abstract Layout",
+			"HTML": "HTML"
+		}
+	},
+	"Delete": {
+		"Type": "boolean",
+		"Description": "Enables deletion in the interface",
+		"Default": "True"
+	},
+	"DeleteButtonBitmap": {
+		"Type": "string",
+		"Description": "Bitmap used by delete action"
+	},
+	"DeleteColumnPositionInFreeStyleGrids": {
+		"Type": "enum{Bottom right;Bottom left;Top right;Top left}",
+		"Description": "Index for the delete-row column in FreeStyle Grid controls",
+		"Options": {
+			"Bottom right": "Bottom right",
+			"Bottom left": "Bottom left",
+			"Top right": "Top right",
+			"Top left": "Top left"
+		}
+	},
+	"DeleteColumnPositionInGrids": {
+		"Type": "enum{Leftmost column;Rightmost column}",
+		"Description": "Index for the delete-row column in Grid contols",
+		"Options": {
+			"Leftmost column": "Leftmost column",
+			"Rightmost column": "Rightmost column"
+		}
+	},
+	"DeleteColumnTitle": {
+		"Type": "string",
+		"Description": "Title displayed for the delete-row column in `Transaction` grids"
+	},
+	"DeleteColumnTooltipText": {
+		"Type": "string",
+		"Description": "Tooltip text for the delete-row column in `Transaction` grids"
+	},
+	"DeleteCondition": {
+		"Type": "string",
+		"Description": "GeneXus expression that must evaluate to `True` for the Delete action to be available"
+	},
+	"DeleteGridRowUI": {
+		"Type": "enum{Alternating images;Context menu - Delete}",
+		"Description": "Delete grid row method from UI",
+		"Options": {
+			"Alternating images": "Alternating images",
+			"Context menu - Delete": "Context menu - Delete"
+		}
+	},
+	"DeleteRowImage": {
+		"Type": "string",
+		"Description": "Image for deleting a grid row"
+	},
+	"Density": {
+		"Type": "enum{Unknown;75% (ldpi Android;.75x Web);100% (mdpi Android;1x iOS;1x Web);125% (1.25x Web);150% (hdpi Android;1.5x Web);200% (xhdpi Android;2x iOS;2x Web);300% (xxhdpi Android;3x iOS;3x Web);400% (xxxhdpi Android;4x Web)}",
+		"Description": "Screen pixel density for which this image variant is intended",
+		"Options": {
+			"Unknown": "Compatibility value; HDPI on Android and MDPI on iOS, avoid for new images",
+			"75% (ldpi Android;.75x Web)": "",
+			"100% (mdpi Android;1x iOS;1x Web)": "",
+			"125% (1.25x Web)": "",
+			"150% (hdpi Android;1.5x Web)": "",
+			"200% (xhdpi Android;2x iOS;2x Web)": "",
+			"300% (xxhdpi Android;3x iOS;3x Web)": "",
+			"400% (xxxhdpi Android;4x Web)": ""
+		}
+	},
+	"DeployToCloud": {
+		"Type": "boolean",
+		"Description": "Enable cloud deployment"
+	},
+	"Description": {
+		"Type": "string",
+		"Description": "Human-readable label for the description attribute"
+	},
+	"DescriptionAttribute": {
+		"Type": "string",
+		"Description": "Attribute displayed as the group header label for each control-break group"
+	},
+	"DetailDescription": {
+		"Type": "string",
+		"Description": "Detail view description format; default `<name> Information`, with `<name>` as the Transaction name"
+	},
+	"DeviceKind": {
+		"Type": "enum{Phone or Tablet;TV;Watch}",
+		"Description": "Device category this platform entry targets",
+		"Options": {
+			"Phone or Tablet": "Smartphones and tablets",
+			"TV": "Smart TV devices",
+			"Watch": "Wearable watch devices"
+		}
+	},
+	"DisabledClass": {
+		"Type": "string",
+		"Description": "Web theme class applied to the action when it is disabled; leave empty if not set",
+		"Default": ""
+	},
+	"DisabledImage": {
+		"Type": "string",
+		"Description": "Image resource shown when the action is disabled; omit if not applicable"
+	},
+	"DisabledWarnings": {
+		"Type": "boolean",
+		"Description": "Disable selected warnings"
+	},
+	"Display": {
+		"Type": "boolean",
+		"Description": "Supports read-only view in selection screen",
+		"Default": "True"
+	},
+	"Display#wwd": {
+		"Type": "enum{Inline;Link;Tabs;Platform Default}",
+		"Description": "How sections inside `Detail` are presented",
+		"Default": "Platform Default",
+		"Options": {
+			"Inline": "Renders sections stacked in a single view",
+			"Link": "Navigates to each section via a link",
+			"Tabs": "Renders sections as tab pages",
+			"Platform Default": "Inherits platform recommendation"
+		}
+	},
+	"DisplayAttribute": {
+		"Type": "enum{Default to color rule;Reverse Image;High;Blinking;No Display}",
+		"Description": "Attribute used as display value in UI",
+		"Default": "Default to color rule",
+		"Options": {
+			"Default to color rule": "Uses color behavior defined by color rules",
+			"Reverse Image": "Displays content using reverse video style",
+			"High": "Uses the high level for this setting",
+			"Blinking": "Displays content with blinking effect",
+			"No Display": "Hides content from display output"
+		}
+	},
+	"DisplayCondition": {
+		"Type": "string",
+		"Description": "GeneXus expression that must evaluate to `True` for the Display action to be available"
+	},
+	"Domain": {
+		"Type": "string",
+		"Description": "Domain name of the parameter attribute; used for type validation"
+	},
+	"DriverName": {
+		"Type": "string",
+		"Description": "Set the ODBC driver name"
+	},
+	"DWTransaction": {
+		"Type": "boolean",
+		"Description": "Enables Data Warehouse behavior for transaction",
+		"Default": "False"
+	},
+	"DynamicStructure": {
+		"Type": "boolean",
+		"Description": "Allows dynamic member structure at runtime",
+		"Default": "False"
+	},
+	"EmptyAsNull": {
+		"Type": "enum{No Nulls;Empty as Null;Blank as Null;Compatible}",
+		"Description": "Converts Empty Or Blank Input To Null",
+		"Options": {
+			"No Nulls": "Keeps Empty Values As Non-null",
+			"Empty as Null": "Converts Empty Input To Null",
+			"Blank as Null": "Converts Blank-only Input To Null",
+			"Compatible": "Preserves Legacy Null Handling"
+		}
+	},
+	"EmptyAsNullBehavior": {
+		"Type": "enum{Current Version;Version 8.0 and prior (Deprecated);Blank as Null}",
+		"Description": "Disambiguates how empty values are treated as null across versions",
+		"Default": "Current Version",
+		"Options": {
+			"Current Version": "Current Version",
+			"Version 8.0 and prior (Deprecated)": "Version 8.0 and prior (Deprecated)",
+			"Blank as Null": "Blank as Null"
+		}
+	},
+	"EnableAlphaIndexer": {
+		"Type": "boolean",
+		"Description": "Show an alphabetical side-scroller (A-Z index) for fast scrolling",
+		"Default": "False",
+		"Require": {
+			"BreakBy": "True"
+		}
+	},
+	"EnableConnectionPooling": {
+		"Type": "enum{True;False}",
+		"Description": "Enable connection pooling",
+		"Options": {
+			"True": "Enable GeneXus built-in connection pooling",
+			"False": "Disable GeneXus built-in connection pooling"
+		}
+	},
+	"Enabled": {
+		"Type": "boolean",
+		"Description": "Generate authorization check calls in each produced `WebPanel` object",
+		"Default": "True"
+	},
+	"EnableDataCaching": {
+		"Type": "boolean",
+		"Description": "Specifies whether native mobile data caching is used",
+		"Default": "True"
+	},
+	"EnableDatepicker": {
+		"Type": "enum{Yes;No;Use Environment property value}",
+		"Description": "Enables calendar picker for date and datetime controls",
+		"Default": "Yes",
+		"Options": {
+			"Yes": "Enables this behavior",
+			"No": "Disables this behavior",
+			"Use Environment property value": "Uses the setting defined at environment level"
+		}
+	},
+	"EnableDatepicker#frontend": {
+		"Type": "boolean",
+		"Description": "Enable the datepicker widget"
+	},
+	"EnabledByDefault": {
+		"Type": "boolean",
+		"Description": "Include this action in generated grids and forms by default",
+		"Default": "True"
+	},
+	"EnableIntegratedSecurity": {
+		"Type": "boolean",
+		"Description": "Enables GAM integrated security for the version",
+		"Default": "False"
+	},
+	"EnableNationalLanguageSupport": {
+		"Type": "enum{No;Yes}",
+		"Description": "National language support",
+		"Default": "No",
+		"Options": {
+			"No": "No",
+			"Yes": "Yes"
+		}
+	},
+	"EncryptOfflineDatabase": {
+		"Type": "boolean",
+		"Description": "Encrypts local offline database content",
+		"Default": "False"
+	},
+	"EncryptURLParameters": {
+		"Type": "enum{Use Environment property value;No;Session key;Site key}",
+		"Description": "Policy for Encrypting URL Parameters",
+		"Default": "No",
+		"Options": {
+			"Use Environment property value": "Inherit Encryption Behavior From Env",
+			"No": "Disable URL Parameter Encryption",
+			"Session key": "Encrypt With Session Key",
+			"Site key": "Encrypt With Site Key"
+		}
+	},
+	"EnumeratedDomains": {
+		"Type": "enum{Value;Description}",
+		"Description": "How enumerated domain values are exported",
+		"Default": "Description",
+		"Options": {
+			"Value": "Export the underlying numeric or string value",
+			"Description": "Export the human-readable description"
+		}
+	},
+	"EnumValues": {
+		"Type": "string",
+		"Description": "Allowed literals and labels for enumeration domains"
+	},
+	"Environment": {
+		"Type": "string",
+		"Description": "Target environment label used by deployment pipelines"
+	},
+	"ErrorHandler": {
+		"Type": "string",
+		"Description": "Set the error handler"
+	},
+	"ExecuteInNewLUW": {
+		"Type": "boolean",
+		"Description": "Run procedure in a new LUW; controls transaction boundary behavior for called",
+		"Default": "False"
+	},
+	"ExecutionOptions": {
+		"Type": "string",
+		"Description": "Configure prototyping in cloud and server URL"
+	},
+	"ExecutionType": {
+		"Type": "enum{Simulator (Mac);iOS Device (Mac);iTunes Sync (Local);Build IPA (Local);Build for Distribution (Local);Knowledge Base (Device)}",
+		"Description": "Select the iOS execution mode",
+		"Options": {
+			"Simulator (Mac)": "Run on iOS Simulator",
+			"iOS Device (Mac)": "Run on a physical device connected to Mac",
+			"iTunes Sync (Local)": "Build and sync .ipa via iTunes",
+			"Build IPA (Local)": "Build .ipa locally",
+			"Build for Distribution (Local)": "Build signed .zip for distribution",
+			"Knowledge Base (Device)": "Run on device using KBN and Service URL"
+		}
+	},
+	"ExpandDynamicCalls": {
+		"Type": "boolean",
+		"Description": "Expand dynamic calls during generation"
+	},
+	"Export": {
+		"Type": "boolean",
+		"Description": "Enable the Export action in the selection screen",
+		"Default": "True"
+	},
+	"Export#objects": {
+		"Type": "string",
+		"Description": "Export procedure naming pattern; default `Export<name>`, with `<name>` as the `Transaction` name"
+	},
+	"ExportCondition": {
+		"Type": "string",
+		"Description": "GeneXus expression that must evaluate to `True` for the Export action to be available"
+	},
+	"ExposeAsWebService": {
+		"Type": "boolean",
+		"Description": "Publishes the object as a web service endpoint",
+		"Default": "False"
+	},
+	"ExposeDescriptiveMetadata": {
+		"Type": "boolean",
+		"Description": "Expose descriptive metadata"
+	},
+	"ExposedName": {
+		"Type": "string",
+		"Description": "Name exposed to external interfaces"
+	},
+	"ExposedNamespace": {
+		"Type": "string",
+		"Description": "Namespace exposed to external interfaces"
+	},
+	"ExternalFileName": {
+		"Type": "string",
+		"Description": "Name of the file when it is extracted from the Knowledge Base to the file system"
+	},
+	"ExternalName": {
+		"Type": "string",
+		"Description": "Name used for service parameter when SDT item is exposed"
+	},
+	"ExternalPackageName": {
+		"Type": "string",
+		"Description": "Java package that contains the external class"
+	},
+	"ExtractForAndroidGenerator": {
+		"Type": "boolean",
+		"Description": "Includes this file in Android generator output"
+	},
+	"ExtractForIOSGenerator": {
+		"Type": "boolean",
+		"Description": "Includes this file in iOS generator output"
+	},
+	"ExtractForJavaGenerator": {
+		"Type": "boolean",
+		"Description": "Includes this file in Java generator output"
+	},
+	"ExtractForNetCoreGenerator": {
+		"Type": "boolean",
+		"Description": "Includes this file in .NET Core generator output"
+	},
+	"ExtractForNetGenerator": {
+		"Type": "boolean",
+		"Description": "Includes this file in .NET generator output"
+	},
+	"ExtractZip": {
+		"Type": "boolean",
+		"Description": "Extract zip file content when copying"
+	},
+	"FastFirstRows": {
+		"Type": "enum{Yes;No}",
+		"Description": "Optimize for fast first rows",
+		"Options": {
+			"Yes": "Enable",
+			"No": "Disable"
+		}
+	},
+	"FieldSeparation": {
+		"Type": "enum{Fixed Length;CSV Delimited;Tab Delimited;Comma Delimited;Space Delimited;Semicolon Delimited}",
+		"Description": "Delimiter strategy used to split text-file fields",
+		"Default": "Fixed Length",
+		"Options": {
+			"Fixed Length": "Fixed positions",
+			"CSV Delimited": "CSV rules",
+			"Tab Delimited": "Tab-separated values",
+			"Comma Delimited": "Comma-separated values",
+			"Space Delimited": "Space-separated values",
+			"Semicolon Delimited": "Semicolon-separated values"
+		}
+	},
+	"FileExtension": {
+		"Type": "enum{xls;xlsx;*}",
+		"Description": "File extension for the generated export file",
+		"Default": "xlsx",
+		"Options": {
+			"xls": "Legacy Excel 97-2003 format",
+			"xlsx": "Modern Excel Open XML format",
+			"*": "Any extension; determined at runtime"
+		}
+	},
+	"Fill": {
+		"Type": "boolean",
+		"Description": "Expands control to fill available layout space",
+		"Default": "True"
+	},
+	"FilterOperator": {
+		"Type": "enum{Begins with;Contains}",
+		"Description": "Match operator applied when filtering by the search term",
+		"Default": "Contains",
+		"Options": {
+			"Begins with": "",
+			"Contains": ""
+		}
+	},
+	"FirstDayOfWeek": {
+		"Type": "enum{Sunday;Monday;Use Environment property value}",
+		"Description": "Select first day of week for calendar",
+		"Default": "Sunday",
+		"Options": {
+			"Sunday": "Sets Sunday as the first day of week",
+			"Monday": "Sets Monday as the first day of week",
+			"Use Environment property value": "Uses the setting defined at environment level"
+		}
+	},
+	"FirstDayOfWeek#frontend": {
+		"Type": "enum{Sunday;Monday}",
+		"Description": "Set the first day of the week",
+		"Options": {
+			"Sunday": "",
+			"Monday": ""
+		}
+	},
+	"FirstExtentSize": {
+		"Type": "integer",
+		"Description": "Size of first extent allocation"
+	},
+	"FirstYearOf20thCentury": {
+		"Type": "integer",
+		"Description": "Set the first year of the 20th century for date parsing"
+	},
+	"FixVariableLoadCode": {
+		"Type": "boolean",
+		"Description": "Adds missing variable assignments in the generated load code",
+		"Default": "True"
+	},
+	"FlipsForRightToLeft": {
+		"Type": "boolean",
+		"Description": "Enables horizontal mirroring in RTL language contexts"
+	},
+	"FocusControl": {
+		"Type": "enum{Use Environment property value;First input att/var on the page;First input att/var on the page only if not embedded;Browser dependent}",
+		"Description": "Initial focus behavior for rendered controls",
+		"Default": "First input att/var on the page",
+		"Options": {
+			"Use Environment property value": "Uses the setting defined at environment level",
+			"First input att/var on the page": "Focuses the first input attribute or variable on the page",
+			"First input att/var on the page only if not embedded": "Focuses the first input only when the object is not embedded",
+			"Browser dependent": "Uses browser-dependent behavior"
+		}
+	},
+	"FocusControl#frontend": {
+		"Type": "enum{First input att/var on the page,First input att/var on the page only if not embedded,Browser dependent,Use environment property value}",
+		"Description": "Set focus control behavior",
+		"Options": {
+			"First input att/var on the page": "Focus the first input attribute/variable",
+			"First input att/var on the page only if not embedded": "Focus only when not embedded",
+			"Browser dependent": "Let the browser decide focus",
+			"Use Environment property value": "Inherit from the Environment setting"
+		}
+	},
+	"Folder": {
+		"Type": "string",
+		"Description": "Folder where the object is organized in the KB"
+	},
+	"Font": {
+		"Type": "string",
+		"Description": "Font family and style used for rendering"
+	},
+	"FooterOnLastPage": {
+		"Type": "enum{Yes;No}",
+		"Description": "Prints footer in last page output",
+		"Default": "Yes",
+		"Options": {
+			"Yes": "Enables this behavior",
+			"No": "Disables this behavior"
+		}
+	},
+	"ForeColor": {
+		"Type": "string",
+		"Description": "Foreground/text color applied to the control"
+	},
+	"Format": {
+		"Type": "enum{Text;HTML;Raw HTML;Text with meaningful spaces}",
+		"Description": "Text rendering format mode in UI",
+		"Options": {
+			"Text": "Renders content as plain text",
+			"HTML": "Renders content as HTML with GeneXus formatting handling",
+			"Raw HTML": "Outputs HTML without processing or escaping",
+			"Text with meaningful spaces": "Renders plain text preserving spaces and line breaks"
+		}
+	},
+	"FormClasses": {
+		"Type": "string",
+		"Description": "Form class mapping for multi-environment selection: Windows, Mobile, or Text modes"
+	},
+	"FormIcon": {
+		"Type": "string",
+		"Description": "Icon used in form window"
+	},
+	"FormLayout": {
+		"Type": "enum{FlatTemplate;UnanimoTemplate;CarmineTemplate;FioriTemplate}",
+		"Description": "Select template used to generate default form",
+		"Options": {
+			"FlatTemplate": "Uses the FlatTemplate form layout",
+			"UnanimoTemplate": "Uses the UnanimoTemplate form layout",
+			"CarmineTemplate": "Uses the CarmineTemplate form layout",
+			"FioriTemplate": "Uses the FioriTemplate form layout"
+		}
+	},
+	"FormTemplate": {
+		"Type": "enum{<default>;Carmine Template;Unanimo Template;Flat Template;Fiori Template}",
+		"Description": "Form layout template applied to generated web objects",
+		"Default": "<default>",
+		"Options": {
+			"<default>": "Default GeneXus template",
+			"Carmine Template": "Carmine design template",
+			"Unanimo Template": "Unanimo design template",
+			"Flat Template": "Flat design template",
+			"Fiori Template": "SAP Fiori-style template"
+		}
+	},
+	"Formula": {
+		"Type": "string",
+		"Description": "Expression used to calculate the value"
+	},
+	"GAMBackendStyleOverride": {
+		"Type": "string",
+		"Description": "Defines the Knowledge Base style object used to customize GAM backend style"
+	},
+	"GeneralTab": {
+		"Type": "string",
+		"Description": "Caption for the general tab in the detail view",
+		"Default": "General"
+	},
+	"GenerateAsAPopupWindow": {
+		"Type": "enum{No;Yes;automatic border;Yes;user defined border}",
+		"Description": "Generates object as popup window",
+		"Default": "No",
+		"Options": {
+			"No": "Disables this behavior",
+			"Yes": "Enables this behavior",
+			"automatic border": "Uses an automatically selected border style",
+			"user defined border": "Uses a border style defined by the user"
+		}
+	},
+	"GenerateAsOpenAIPlugin": {
+		"Type": "boolean",
+		"Description": "Generates Metadata for Use as OpenAI Plugin",
+		"Default": "False"
+	},
+	"GenerateCodeCoverageInformation": {
+		"Type": "enum{No;Yes}",
+		"Description": "Generate GeneXus source-level runtime code coverage information",
+		"Default": "No",
+		"Options": {
+			"Yes": "Enable",
+			"No": "Disable"
+		}
+	},
+	"GenerateCOMMENTONStatements": {
+		"Type": "boolean",
+		"Description": "Generate COMMENT ON statements"
+	},
+	"GenerateDeveloperMenu": {
+		"Type": "boolean",
+		"Description": "Enable the developer menu for generated apps"
+	},
+	"GenerateFORUPDATEClause": {
+		"Type": "enum{Use Environment property value;Yes;No}",
+		"Description": "Adds FOR UPDATE in generated SQL",
+		"Default": "Yes",
+		"Options": {
+			"Use Environment property value": "Uses the setting defined at environment level",
+			"Yes": "Enables this behavior",
+			"No": "Disables this behavior"
+		}
+	},
+	"GenerateFORUPDATEClause#datastore": {
+		"Type": "boolean",
+		"Description": "Generate FOR UPDATE clause in SQL statements"
+	},
+	"GenerateILERPGForISeries": {
+		"Type": "enum{Use Environment property value;No;Yes}",
+		"Description": "Generates ILE RPG artifacts for iSeries",
+		"Default": "No",
+		"Options": {
+			"Use Environment property value": "Uses the setting defined at environment level",
+			"No": "Disables this behavior",
+			"Yes": "Enables this behavior"
+		}
+	},
+	"GenerateMockableObjects": {
+		"Type": "enum{No;Yes}",
+		"Description": "Generate GeneXus source-level code to allow mock testing on objects",
+		"Default": "No",
+		"Options": {
+			"Yes": "Enable",
+			"No": "Disable"
+		}
+	},
+	"GenerateNoPromptRule": {
+		"Type": "boolean",
+		"Description": "Generates a `NoPrompt` rule in the source `Transaction` to suppress automatic prompt navigation",
+		"Default": "False"
+	},
+	"GenerateNullForNullvalue": {
+		"Type": "enum{No;Yes;Use Environment property value}",
+		"Description": "Generates database null when Nullvalue() is used",
+		"Default": "No",
+		"Options": {
+			"No": "Disables this behavior",
+			"Yes": "Enables this behavior",
+			"Use Environment property value": "Uses the setting defined at environment level"
+		}
+	},
+	"GenerateNullForNullvalue#backend": {
+		"Type": "boolean",
+		"Description": "Generate NULL instead of the nullvalue for null attributes"
+	},
+	"GenerateObject": {
+		"Type": "boolean",
+		"Description": "Enable or disable object specification and generation",
+		"Default": "True"
+	},
+	"GenerateObservabilitySpan": {
+		"Type": "enum{Yes;No}",
+		"Description": "Enables generation of OpenTelemetry spans for runtime tracing",
+		"Default": "No",
+		"Options": {
+			"Yes": "Enables this behavior",
+			"No": "Disables this behavior"
+		}
+	},
+	"GenerateOpenAPIInterface": {
+		"Type": "enum{Yes;No;Use Environment property value}",
+		"Description": "Generate OpenAPI documentation \\(default.yaml\\) for exposed services and components",
+		"Default": "Yes",
+		"Options": {
+			"Yes": "Generates the OpenAPI contract file for the service",
+			"No": "Does not generate the OpenAPI contract file",
+			"Use Environment property value": "Uses the model or environment-level OpenAPI setting"
+		}
+	},
+	"GenerateOpenAPIInterface#backend": {
+		"Type": "boolean",
+		"Description": "Generate OpenAPI interfaces for services"
+	},
+	"GeneratePromptPrograms": {
+		"Type": "boolean",
+		"Description": "Generate prompt programs"
+	},
+	"GeneratePromptPrograms#version": {
+		"Type": "enum{Yes;No}",
+		"Description": "Controls whether prompt objects are generated automatically or not",
+		"Default": "Yes",
+		"Options": {
+			"Yes": "Yes",
+			"No": "No"
+		}
+	},
+	"GenerateStrongName": {
+		"Type": "boolean",
+		"Description": "Generate a strong name for assemblies"
+	},
+	"Generator": {
+		"Type": "enum{.NET;Java}",
+		"Description": "Target code generation platform",
+		"Options": {
+			".NET": "Generates C# code targeting .NET platform",
+			"Java": "Generates Java code targeting JVM platform"
+		}
+	},
+	"GenexusIDEConnectionString": {
+		"Type": "string",
+		"Description": "Connection string used by IDE-level data access tools"
+	},
+	"GoogleAPIKey": {
+		"Type": "string",
+		"Description": "API key for Google Location services"
+	},
+	"GradleOptions": {
+		"Type": "string",
+		"Description": "Specify Additional Gradle Flags"
+	},
+	"Grid": {
+		"Type": "string",
+		"Description": "Web theme class applied to grids in generated objects; template-dependent if omitted"
+	},
+	"GridAction": {
+		"Type": "string",
+		"Description": "Web theme class applied to action controls rendered inside grids"
+	},
+	"GRPCProtocol": {
+		"Type": "boolean",
+		"Description": "Enables gRPC Protocol Support",
+		"Default": "False",
+		"Backend": {
+			"Supported": [ ".NET", "Java" ],
+			"Unsupported": [ ".NET Framework" ]
+		}
+	},
+	"GXBuildKBCreated": {
+		"Type": "string",
+		"Description": "GeneXus build number used when the knowledge base was created"
+	},
+	"Gxobject": {
+		"Type": "string",
+		"Description": "GeneXus object invoked when the action is executed; required for non-standard actions"
+	},
+	"Header": {
+		"Type": "string",
+		"Description": "Header image used by the menu"
+	},
+	"HeaderFileName": {
+		"Type": "string",
+		"Description": "iOS header file that declares the external implementation"
+	},
+	"Height": {
+		"Type": "string",
+		"Description": "Maximum Height of Rendered Control"
+	},
+	"HelpFilesBaseURL": {
+		"Type": "string",
+		"Description": "Set the base URL for help files"
+	},
+	"HorizontalAlignment": {
+		"Type": "enum{Left;Center;Right}",
+		"Description": "Horizontal alignment used for displayed text",
+		"Default": "Left",
+		"Options": {
+			"Left": "Aligns displayed content to the left",
+			"Center": "Centers displayed content horizontally",
+			"Right": "Aligns displayed content to the right"
+		}
+	},
+	"HTMLDocumentType": {
+		"Type": "enum{Do not specify;HTML 4.01 Transitional;HTML 4.01 Strict;XHTML 1.0 Transitional;HTML 5}",
+		"Description": "HTML document type declaration for generated web pages",
+		"Default": "HTML 5",
+		"Options": {
+			"Do not specify": "Do not specify",
+			"HTML 4.01 Transitional": "HTML 4.01 Transitional",
+			"HTML 4.01 Strict": "HTML 4.01 Strict",
+			"XHTML 1.0 Transitional": "XHTML 1.0 Transitional",
+			"HTML 5": "HTML 5"
+		}
+	},
+	"HttpErrorHandlers": {
+		"Type": "string",
+		"Description": "Enables custom handlers for HTTP error responses",
+		"Default": "Disabled"
+	},
+	"HttpErrorHandlersValues": {
+		"Type": "string",
+		"Description": "Maps HTTP status codes to handler objects"
+	},
+	"Image": {
+		"Type": "string",
+		"Description": "Image displayed on action button or when selected"
+	},
+	"ImporterVersion": {
+		"Type": "string",
+		"Description": "Importer version used to track the source metadata format"
+	},
+	"IncludeInMCPServer": {
+		"Type": "boolean",
+		"Description": "Publishes methods as MCP tools when enabled",
+		"Default": "False"
+	},
+	"IndicesStorageArea": {
+		"Type": "string",
+		"Description": "Storage area used for indexes"
+	},
+	"InferStructure": {
+		"Type": "enum{Yes, if SDT is dynamic;No}",
+		"Description": "Infers output SDT from assignment structure",
+		"Default": "No",
+		"Options": {
+			"Yes, if SDT is dynamic": "",
+			"No": "Disables this behavior"
+		}
+	},
+	"InformixVersion": {
+		"Type": "string",
+		"Description": "Set the Informix version for SQL generation"
+	},
+	"InGridClass": {
+		"Type": "string",
+		"Description": "Web theme class applied to the action when rendered as a column inside the grid"
+	},
+	"InitialCatalog": {
+		"Type": "string",
+		"Description": "Set the initial catalog"
+	},
+	"InitializeNotReferencedAttributes": {
+		"Type": "enum{Yes;No;Use Environment property value}",
+		"Description": "Initializes attributes not referenced in code",
+		"Default": "Yes",
+		"Options": {
+			"Yes": "Enables this behavior",
+			"No": "Disables this behavior",
+			"Use Environment property value": "Uses the setting defined at environment level"
+		}
+	},
+	"InitializeNotReferencedAttributes#backend": {
+		"Type": "boolean",
+		"Description": "Initialize attributes not referenced in the load"
+	},
+	"InitialSize": {
+		"Type": "integer",
+		"Description": "Initial storage allocation size"
+	},
+	"InitialValue": {
+		"Type": "string",
+		"Description": "Value assigned when no explicit value is provided"
+	},
+	"InputHistory": {
+		"Type": "boolean",
+		"Description": "Enables device input history suggestions",
+		"Default": "False"
+	},
+	"Insert": {
+		"Type": "boolean",
+		"Description": "Supports insertion in interface",
+		"Default": "True"
+	},
+	"InsertCondition": {
+		"Type": "string",
+		"Description": "GeneXus expression that must evaluate to `True` for the Insert action to be available"
+	},
+	"IntegratedSecurityLevel": {
+		"Type": "enum{None;Authentication;Authorization}",
+		"Description": "Security requirement level for native apps with offline synchronization",
+		"Options": {
+			"None": "Disables additional behavior for this setting",
+			"Authentication": "Requires user authentication",
+			"Authorization": "Requires authentication and permission checks"
+		}
+	},
+	"InternalName": {
+		"Type": "string",
+		"Description": "Internal identifier used in generated code"
+	},
+	"InternetExplorerCompatibility": {
+		"Type": "enum{IE7 Compatible;Do not specify}",
+		"Description": "Set IE compatibility mode",
+		"Options": {
+			"IE7 Compatible": "",
+			"Do not specify": ""
+		}
+	},
+	"InterpreterOptions": {
+		"Type": "string",
+		"Description": "Set additional JVM interpreter parameters"
+	},
+	"InterpreterPath": {
+		"Type": "string",
+		"Description": "Set the path to `java`"
+	},
+	"InviteMessage": {
+		"Type": "string",
+		"Description": "Text Prompting User Interaction"
+	},
+	"IOSExternalName": {
+		"Type": "string",
+		"Description": "iOS class name used to bind the external implementation"
+	},
+	"IOSPublicKeyFile": {
+		"Type": "string",
+		"Description": "File used to verify Mini App signatures on Apple"
+	},
+	"IsControlType": {
+		"Type": "boolean",
+		"Description": "Use as selectable ControlType for Attributes and Variables elements"
+	},
+	"IsInternal": {
+		"Type": "boolean",
+		"Description": "Accesible through URL (`False`) or not (`True`)"
+	},
+	"IsMain": {
+		"Type": "boolean",
+		"Description": "Marks this `Selection` as the main entry point of the level; controls which WW screen is the root",
+		"Default": "True"
+	},
+	"ISOCountryCode": {
+		"Type": "enum{AF;AX;AL;DZ;AS;AD;AO;AI;AQ;AG;AR;AM;AW;AU;AT;AZ;BS;BH;BD;BB;BY;BE;BZ;BJ;BM;BT;BO;BA;BW;BV;BR;IO;BN;BG;BF;BI;KH;CM;CA;CV;KY;CF;TD;CL;CN;CX;CC;CO;KM;CG;CD;CK;CR;CI;HR;CU;CY;CZ;DK;DJ;DM;DO;EC;EG;SV;GQ;ER;EE;ET;FK;FO;FJ;FI;FR;GF;PF;TF;GA;GM;GE;DE;GH;GI;GR;GL;GD;GP;GU;GT;GN;GW;GY;HT;HM;HN;HK;HU;IS;IN;ID;IR;IQ;IE;IL;IT;JM;JP;JO;KZ;KE;KI;KP;KR;KW;KG;LA;LV;LB;LS;LR;LY;LI;LT;LU;MO;MK;MG;MW;MY;MV;ML;MT;MH;MQ;MR;MU;YT;MX;FM;MD;MC;MN;MS;MA;MZ;MM;NA;NR;NP;NL;AN;NC;NZ;NI;NE;NG;NU;NF;MP;NO;OM;PK;PW;PS;PA;PG;PY;PE;PH;PN;PL;PT;PR;QA;RE;RO;RU;RW;SH;KN;LC;PM;VC;WS;SM;ST;SA;SN;CS;SC;SL;SG;SK;SI;SB;SO;ZA;GS;ES;LK;SD;SR;SJ;SZ;SE;CH;SY;TW;TJ;TZ;TH;TL;TG;TK;TO;TT;TN;TR;TM;TC;TV;UG;UA;AE;GB;US;UM;UY;UZ;VU;VA;VE;VN;VG;VI;WF;EH;YE;ZM;ZW}",
+		"Description": "ISO country identifier",
+		"Default": "US",
+		"Options": {
+			"AF": "Afghanistan",
+			"AX": "Åland Islands",
+			"AL": "Albania",
+			"DZ": "Algeria",
+			"AS": "American Samoa",
+			"AD": "Andorra",
+			"AO": "Angola",
+			"AI": "Anguilla",
+			"AQ": "Antarctica",
+			"AG": "Antigua and Barbuda",
+			"AR": "Argentina",
+			"AM": "Armenia",
+			"AW": "Aruba",
+			"AU": "Australia",
+			"AT": "Austria",
+			"AZ": "Azerbaijan",
+			"BS": "Bahamas",
+			"BH": "Bahrain",
+			"BD": "Bangladesh",
+			"BB": "Barbados",
+			"BY": "Belarus",
+			"BE": "Belgium",
+			"BZ": "Belize",
+			"BJ": "Benin",
+			"BM": "Bermuda",
+			"BT": "Bhutan",
+			"BO": "Bolivia",
+			"BA": "Bosnia and Herzegovina",
+			"BW": "Botswana",
+			"BV": "Bouvet Island",
+			"BR": "Brazil",
+			"IO": "British Indian Ocean Territory",
+			"BN": "Brunei Darussalam",
+			"BG": "Bulgaria",
+			"BF": "Burkina Faso",
+			"BI": "Burundi",
+			"KH": "Cambodia",
+			"CM": "Cameroon",
+			"CA": "Canada",
+			"CV": "Cabo Verde",
+			"KY": "Cayman Islands",
+			"CF": "Central African Republic",
+			"TD": "Chad",
+			"CL": "Chile",
+			"CN": "China",
+			"CX": "Christmas Island",
+			"CC": "Cocos (Keeling) Islands",
+			"CO": "Colombia",
+			"KM": "Comoros",
+			"CG": "Congo",
+			"CD": "Congo, The Democratic Republic of the",
+			"CK": "Cook Islands",
+			"CR": "Costa Rica",
+			"CI": "Côte d'Ivoire",
+			"HR": "Croatia",
+			"CU": "Cuba",
+			"CY": "Cyprus",
+			"CZ": "Czechia",
+			"DK": "Denmark",
+			"DJ": "Djibouti",
+			"DM": "Dominica",
+			"DO": "Dominican Republic",
+			"EC": "Ecuador",
+			"EG": "Egypt",
+			"SV": "El Salvador",
+			"GQ": "Equatorial Guinea",
+			"ER": "Eritrea",
+			"EE": "Estonia",
+			"ET": "Ethiopia",
+			"FK": "Falkland Islands (Malvinas)",
+			"FO": "Faroe Islands",
+			"FJ": "Fiji",
+			"FI": "Finland",
+			"FR": "France",
+			"GF": "French Guiana",
+			"PF": "French Polynesia",
+			"TF": "French Southern Territories",
+			"GA": "Gabon",
+			"GM": "Gambia",
+			"GE": "Georgia",
+			"DE": "Germany",
+			"GH": "Ghana",
+			"GI": "Gibraltar",
+			"GR": "Greece",
+			"GL": "Greenland",
+			"GD": "Grenada",
+			"GP": "Guadeloupe",
+			"GU": "Guam",
+			"GT": "Guatemala",
+			"GN": "Guinea",
+			"GW": "Guinea-Bissau",
+			"GY": "Guyana",
+			"HT": "Haiti",
+			"HM": "Heard Island and McDonald Islands",
+			"HN": "Honduras",
+			"HK": "Hong Kong",
+			"HU": "Hungary",
+			"IS": "Iceland",
+			"IN": "India",
+			"ID": "Indonesia",
+			"IR": "Iran",
+			"IQ": "Iraq",
+			"IE": "Ireland",
+			"IL": "Israel",
+			"IT": "Italy",
+			"JM": "Jamaica",
+			"JP": "Japan",
+			"JO": "Jordan",
+			"KZ": "Kazakhstan",
+			"KE": "Kenya",
+			"KI": "Kiribati",
+			"KP": "North Korea",
+			"KR": "South Korea",
+			"KW": "Kuwait",
+			"KG": "Kyrgyzstan",
+			"LA": "Laos",
+			"LV": "Latvia",
+			"LB": "Lebanon",
+			"LS": "Lesotho",
+			"LR": "Liberia",
+			"LY": "Libya",
+			"LI": "Liechtenstein",
+			"LT": "Lithuania",
+			"LU": "Luxembourg",
+			"MO": "Macao",
+			"MK": "North Macedonia",
+			"MG": "Madagascar",
+			"MW": "Malawi",
+			"MY": "Malaysia",
+			"MV": "Maldives",
+			"ML": "Mali",
+			"MT": "Malta",
+			"MH": "Marshall Islands",
+			"MQ": "Martinique",
+			"MR": "Mauritania",
+			"MU": "Mauritius",
+			"YT": "Mayotte",
+			"MX": "Mexico",
+			"FM": "Federated States of Micronesia",
+			"MD": "Moldova",
+			"MC": "Monaco",
+			"MN": "Mongolia",
+			"MS": "Montserrat",
+			"MA": "Morocco",
+			"MZ": "Mozambique",
+			"MM": "Myanmar",
+			"NA": "Namibia",
+			"NR": "Nauru",
+			"NP": "Nepal",
+			"NL": "Netherlands",
+			"AN": "Antillas Neerlandesas",
+			"NC": "New Caledonia",
+			"NZ": "New Zealand",
+			"NI": "Nicaragua",
+			"NE": "Niger",
+			"NG": "Nigeria",
+			"NU": "Niue",
+			"NF": "Norfolk Island",
+			"MP": "Northern Mariana Islands",
+			"NO": "Norway",
+			"OM": "Oman",
+			"PK": "Pakistan",
+			"PW": "Palau",
+			"PS": "Palestina",
+			"PA": "Panama",
+			"PG": "Papua New Guinea",
+			"PY": "Paraguay",
+			"PE": "Peru",
+			"PH": "Philippines",
+			"PN": "Pitcairn",
+			"PL": "Poland",
+			"PT": "Portugal",
+			"PR": "Puerto Rico",
+			"QA": "Qatar",
+			"RE": "Réunion",
+			"RO": "Romania",
+			"RU": "Russian Federation",
+			"RW": "Rwanda",
+			"SH": "Saint Helena, Ascension and Tristan da Cunha",
+			"KN": "Saint Kitts and Nevis",
+			"LC": "Saint Lucia",
+			"PM": "Saint Pierre and Miquelon",
+			"VC": "Saint Vincent and the Grenadines",
+			"WS": "Samoa",
+			"SM": "San Marino",
+			"ST": "Sao Tome and Principe",
+			"SA": "Saudi Arabia",
+			"SN": "Senegal",
+			"CS": "Serbia y Montenegro",
+			"SC": "Seychelles",
+			"SL": "Sierra Leone",
+			"SG": "Singapore",
+			"SK": "Slovakia",
+			"SI": "Slovenia",
+			"SB": "Solomon Islands",
+			"SO": "Somalia",
+			"ZA": "South Africa",
+			"GS": "South Georgia and the South Sandwich Islands",
+			"ES": "Spain",
+			"LK": "Sri Lanka",
+			"SD": "Sudan",
+			"SR": "Suriname",
+			"SJ": "Svalbard and Jan Mayen",
+			"SZ": "Eswatini",
+			"SE": "Sweden",
+			"CH": "Switzerland",
+			"SY": "Syria",
+			"TW": "Taiwan",
+			"TJ": "Tajikistan",
+			"TZ": "Tanzania",
+			"TH": "Thailand",
+			"TL": "Timor Oriental",
+			"TG": "Togo",
+			"TK": "Tokelau",
+			"TO": "Tonga",
+			"TT": "Trinidad and Tobago",
+			"TN": "Tunisia",
+			"TR": "Türkiye",
+			"TM": "Turkmenistan",
+			"TC": "Turks and Caicos Islands",
+			"TV": "Tuvalu",
+			"UG": "Uganda",
+			"UA": "Ukraine",
+			"AE": "United Arab Emirates",
+			"GB": "United Kingdom",
+			"US": "United States",
+			"UM": "U.S. Minor Outlying Islands",
+			"UY": "Uruguay",
+			"UZ": "Uzbekistan",
+			"VU": "Vanuatu",
+			"VA": "Holy See (Vatican City State)",
+			"VE": "Venezuela",
+			"VN": "Vietnam",
+			"VG": "Virgin Islands, British",
+			"VI": "Virgin Islands, U.S.",
+			"WF": "Wallis and Futuna",
+			"EH": "Western Sahara",
+			"YE": "Yemen",
+			"ZM": "Zambia",
+			"ZW": "Zimbabwe"
+		}
+	},
+	"ISOLanguageCode": {
+		"Type": "enum{AA;AB;AF;AM;AR;AS;AY;AZ;BA;BE;BG;BH;BI;BN;BO;BR;CA;CO;CS;CY;DA;DE;DZ;EL;EN;EO;ES;ET;EU;FA;FI;FJ;FO;FR;FY;GA;GD;GL;GN;GU;HA;HI;HR;HU;HY;IA;IE;IK;IN;IS;IT;IW;JA;JI;JW;KA;KK;KL;KM;KN;KO;KS;KU;KY;LA;LN;LO;LT;LV;MG;MI;MK;ML;MN;MO;MR;MS;MT;MY;NA;NE;NL;NO;OC;OM;OR;PA;PL;PS;PT;QU;RM;RN;RO;RU;RW;SA;SD;SG;SH;SI;SK;SL;SM;SN;SO;SQ;SR;SS;ST;SU;SV;SW;TA;TE;TG;TH;TI;TK;TL;TN;TO;TR;TS;TT;TW;UK;UR;UZ;VI;VO;WO;XH;YO;ZH;ZU}",
+		"Description": "ISO language identifier",
+		"Default": "EN",
+		"Options": {
+			"AA": "Afar",
+			"AB": "Abkhazian",
+			"AF": "Afrikaans",
+			"AM": "Amharic",
+			"AR": "Arabic",
+			"AS": "Assamese",
+			"AY": "Aymara",
+			"AZ": "Azerbaijani",
+			"BA": "Bashkir",
+			"BE": "Belarusian",
+			"BG": "Bulgarian",
+			"BH": "Bihari",
+			"BI": "Bislama",
+			"BN": "Bengali",
+			"BO": "Tibetan",
+			"BR": "Breton",
+			"CA": "Catalan",
+			"CO": "Corsican",
+			"CS": "Czech",
+			"CY": "Welsh",
+			"DA": "Danish",
+			"DE": "German",
+			"DZ": "Dzongkha",
+			"EL": "Modern Greek",
+			"EN": "English",
+			"EO": "Esperanto",
+			"ES": "Spanish",
+			"ET": "Estonian",
+			"EU": "Basque",
+			"FA": "Persian",
+			"FI": "Finnish",
+			"FJ": "Fijian",
+			"FO": "Faroese",
+			"FR": "French",
+			"FY": "Western Frisian",
+			"GA": "Irish",
+			"GD": "Scottish Gaelic",
+			"GL": "Galician",
+			"GN": "Guarani",
+			"GU": "Gujarati",
+			"HA": "Hausa",
+			"HI": "Hindi",
+			"HR": "Croatian",
+			"HU": "Hungarian",
+			"HY": "Armenian",
+			"IA": "Interlingua",
+			"IE": "Interlingue",
+			"IK": "Inupiaq",
+			"IN": "Indonesio",
+			"IS": "Icelandic",
+			"IT": "Italian",
+			"IW": "Hebreo",
+			"JA": "Japanese",
+			"JI": "Yiddish",
+			"JW": "Javanés",
+			"KA": "Georgian",
+			"KK": "Kazakh",
+			"KL": "Kalaallisut",
+			"KM": "Khmer",
+			"KN": "Kannada",
+			"KO": "Korean",
+			"KS": "Kashmiri",
+			"KU": "Kurdish",
+			"KY": "Kirghiz",
+			"LA": "Latin",
+			"LN": "Lingala",
+			"LO": "Lao",
+			"LT": "Lithuanian",
+			"LV": "Latvian",
+			"MG": "Malagasy",
+			"MI": "Maori",
+			"MK": "Macedonian",
+			"ML": "Malayalam",
+			"MN": "Mongolian",
+			"MO": "Moldavo",
+			"MR": "Marathi",
+			"MS": "Malay",
+			"MT": "Maltese",
+			"MY": "Burmese",
+			"NA": "Nauru",
+			"NE": "Nepali",
+			"NL": "Dutch",
+			"NO": "Norwegian",
+			"OC": "Occitan",
+			"OM": "Oromo",
+			"OR": "Oriya",
+			"PA": "Panjabi",
+			"PL": "Polish",
+			"PS": "Pushto",
+			"PT": "Portuguese",
+			"QU": "Quechua",
+			"RM": "Romansh",
+			"RN": "Rundi",
+			"RO": "Romanian",
+			"RU": "Russian",
+			"RW": "Kinyarwanda",
+			"SA": "Sanskrit",
+			"SD": "Sindhi",
+			"SG": "Sango",
+			"SH": "Serbocroata",
+			"SI": "Sinhala",
+			"SK": "Slovak",
+			"SL": "Slovenian",
+			"SM": "Samoan",
+			"SN": "Shona",
+			"SO": "Somali",
+			"SQ": "Albanian",
+			"SR": "Serbian",
+			"SS": "Swati",
+			"ST": "Southern Sotho",
+			"SU": "Sundanese",
+			"SV": "Swedish",
+			"SW": "Swahili",
+			"TA": "Tamil",
+			"TE": "Telugu",
+			"TG": "Tajik",
+			"TH": "Thai",
+			"TI": "Tigrinya",
+			"TK": "Turkmen",
+			"TL": "Tagalog",
+			"TN": "Tswana",
+			"TO": "Tonga",
+			"TR": "Turkish",
+			"TS": "Tsonga",
+			"TT": "Tatar",
+			"TW": "Twi",
+			"UK": "Ukrainian",
+			"UR": "Urdu",
+			"UZ": "Uzbek",
+			"VI": "Vietnamese",
+			"VO": "Volapük",
+			"WO": "Wolof",
+			"XH": "Xhosa",
+			"YO": "Yoruba",
+			"ZH": "Chinese",
+			"ZU": "Zulu"
+		}
+	},
+	"IsolationLevel": {
+		"Type": "enum{Read Committed;Read Uncommitted;Repeatable Read;Serializable}",
+		"Description": "Set the isolation level",
+		"Options": {
+			"Read Committed": "",
+			"Read Uncommitted": "",
+			"Repeatable Read": "",
+			"Serializable": ""
+		}
+	},
+	"IsolationLevelBehavior": {
+		"Type": "enum{Read Committed;Inherit from Generator}",
+		"Description": "Defines isolation level behavior when inherited from Data Store or Generator",
+		"Default": "Read Committed",
+		"Options": {
+			"Read Committed": "Uses `Read Committed` isolation when inherited behavior is resolved",
+			"Inherit from Generator": "Keeps isolation behavior defined by the target generator"
+		}
+	},
+	"IsPassword": {
+		"Type": "boolean",
+		"Description": "Masks text input as password"
+	},
+	"IsSapParameter": {
+		"Type": "boolean",
+		"Description": "Mark object as SAP parameter",
+		"Default": "False"
+	},
+	"JavaArtifactId": {
+		"Type": "string",
+		"Description": "Artifact id used to resolve Java dependency"
+	},
+	"JavaArtifactVersion": {
+		"Type": "string",
+		"Description": "Maven artifact version used to resolve the dependency"
+	},
+	"JavaConstructorParameters": {
+		"Type": "string",
+		"Description": "Constructor arguments used in Java runtime binding"
+	},
+	"JavaExternalName": {
+		"Type": "string",
+		"Description": "Java class name used to bind the external implementation"
+	},
+	"JavaPackageName": {
+		"Type": "string",
+		"Description": "Set the Android application package identifier"
+	},
+	"JavascriptDebugMode": {
+		"Type": "boolean",
+		"Description": "Enable JavaScript debug mode"
+	},
+	"JavascriptExternalName": {
+		"Type": "string",
+		"Description": "JavaScript symbol name used to bind the external implementation"
+	},
+	"JavascriptModuleName": {
+		"Type": "string",
+		"Description": "JavaScript module name used to import the dependency"
+	},
+	"JavascriptModulePath": {
+		"Type": "string",
+		"Description": "Path used to resolve the JavaScript module location"
+	},
+	"JavascriptModuleReference": {
+		"Type": "string",
+		"Description": "Reference used to install or resolve module dependency"
+	},
+	"JavascriptReferencedFile": {
+		"Type": "string",
+		"Description": "JavaScript file loaded for external object runtime"
+	},
+	"JDBCDriver": {
+		"Type": "enum{PostgreSQL JDBC Driver (Type 4);Custom Driver}",
+		"Description": "Select the PostgreSQL JDBC driver",
+		"Options": {
+			"PostgreSQL JDBC Driver (Type 4)": "",
+			"Custom Driver": ""
+		}
+	},
+	"JDKDirectory": {
+		"Type": "string",
+		"Description": "Specify the JDK installation path"
+	},
+	"JoinManagement": {
+		"Type": "enum{Use Environment property value;Join tables on the server;Join tables on the client}",
+		"Description": "Join execution strategy for navigations",
+		"Default": "Join tables on the server",
+		"Options": {
+			"Use Environment property value": "Uses the setting defined at environment level",
+			"Join tables on the server": "Performs table joins on the server side",
+			"Join tables on the client": "Performs table joins on the client side"
+		}
+	},
+	"JoinManagement#backend": {
+		"Type": "enum{Join tables on the server;Join tables on the client;Use Environment property value}",
+		"Description": "Set how joins are executed",
+		"Options": {
+			"Join tables on the server": "Execute joins on the database server",
+			"Join tables on the client": "Execute joins on the client/server side",
+			"Use Environment property value": "Inherit from the Environment setting"
+		}
+	},
+	"JoinType": {
+		"Type": "enum{Use Environment property value;Use default for server;Natural join;Outer join}",
+		"Description": "Join algorithm preference for query generation",
+		"Default": "Use default for server",
+		"Options": {
+			"Use Environment property value": "Uses the setting defined at environment level",
+			"Use default for server": "Uses the server default join behavior",
+			"Natural join": "Uses natural join strategy",
+			"Outer join": "Uses outer join strategy"
+		}
+	},
+	"JoinType#backend": {
+		"Type": "enum{Use default for server;Natural Join;Outer Join}",
+		"Description": "Select the join type strategy",
+		"Options": {
+			"Natural Join": "Use natural (inner) join semantics",
+			"Outer Join": "Use outer (left) join semantics"
+		}
+	},
+	"JsonInputFormat": {
+		"Type": "enum{Wrapped;Unwrapped}",
+		"Description": "Input JSON wrapping strategy for services",
+		"Default": "Wrapped",
+		"Options": {
+			"Wrapped": "Includes wrapper/root element in serialized output",
+			"Unwrapped": "Omits wrapper/root element in serialized output"
+		}
+	},
+	"JsonName": {
+		"Type": "string",
+		"Description": "JSON field name used in serialization; uses the `Name` value when unspecified"
+	},
+	"JsonNullSerialization": {
+		"Type": "enum{Empty;JSON null;No Property}",
+		"Description": "JSON serialization of null values",
+		"Default": "Empty",
+		"Options": {
+			"Empty": "Empty value or collection",
+			"JSON null": "JSON null value",
+			"No Property": "Property omitted from JSON"
+		},
+		"ProductVerion": ">=15.8"
+	},
+	"JsonCollectionSerialization": {
+		"Type": "enum{Wrapped;Sequence}",
+		"Description": "JSON serialization for collection",
+		"Default": "Wrapped",
+		"Options": {
+			"Wrapped": "Collection wrapped by the collection name",
+			"Sequence": "Plain sequence of collection items"
+		},
+		"Require": {
+			"Collection": "True"
+		}
+	},
+	"KbLanguage": {
+		"Type": "string",
+		"Description": "Knowledge Base language"
+	},
+	"Label": {
+		"Type": "string",
+		"Description": "Web theme class applied to attribute labels in generated objects",
+		"Default": "Label"
+	},
+	"LabelPosition": {
+		"Type": "enum{None;Left;Top;Right;Bottom;Float;Platform Default}",
+		"Description": "Default attribute label position for generated controls",
+		"Options": {
+			"None": "No label rendered",
+			"Left": "Label to the left of the control",
+			"Top": "Label above the control",
+			"Right": "Label to the right of the control",
+			"Bottom": "Label below the control",
+			"Float": "Floating placeholder label",
+			"Platform Default": "Inherit from the platform default"
+		}
+	},
+	"Language": {
+		"Type": "string",
+		"Description": "Name of a `Language` object used for localization context"
+	},
+	"LanguageLocalization": {
+		"Type": "string",
+		"Description": "Localization identifier or resource key"
+	},
+	"Lapse": {
+		"Type": "integer",
+		"Description": "Seconds of user inactivity before auto-refresh; `0` disables",
+		"Default": "0"
+	},
+	"LargeImageUploadSize": {
+		"Type": "string",
+		"Description": "Size in KBytes or Resolution (<Width> x <Height>) for Large value on Maximum Upload Size property",
+		"Default": "1024x1024"
+	},
+	"LastOpenGXBuild": {
+		"Type": "string",
+		"Description": "Last GeneXus build number used to open the knowledge base"
+	},
+	"LastOpenGXVersionID": {
+		"Type": "integer",
+		"Description": "Last GeneXus major version identifier used to open the knowledge base"
+	},
+	"LastOpenGXVersionName": {
+		"Type": "string",
+		"Description": "Last GeneXus version label used to open the knowledge base"
+	},
+	"Layer": {
+		"Type": "enum{None;Background;Middle;Foreground}",
+		"Description": "Visual stacking layer for multi-layer image compositions",
+		"Default": "None",
+		"Options": {
+			"None": "No layer assignment",
+			"Background": "Bottom layer",
+			"Middle": "Between background and foreground",
+			"Foreground": "Top layer"
+		}
+	},
+	"LayoutMetadataDir": {
+		"Type": "string",
+		"Description": "Set the layout metadata directory"
+	},
+	"LeftFill": {
+		"Type": "enum{Blank;Zero;Blank when Zero}",
+		"Description": "Padding strategy applied to numeric formatting",
+		"Default": "Blank",
+		"Options": {
+			"Blank": "Pads unused leading positions with blanks",
+			"Zero": "Pads unused leading positions with zeros",
+			"Blank when Zero": "Uses blanks when the numeric value is zero"
+		}
+	},
+	"Length": {
+		"Type": "integer",
+		"Description": "Maximum length for character or numeric values",
+		"Default": "4"
+	},
+	"LibraryList": {
+		"Type": "string",
+		"Description": "Set the library list"
+	},
+	"LibraryName": {
+		"Type": "string",
+		"Description": "iOS library name that contains the external implementation"
+	},
+	"LIKEEscapeCharacter": {
+		"Type": "string",
+		"Description": "Configures escape character usage in generated SQL LIKE expressions"
+	},
+	"LinkClass": {
+		"Type": "string",
+		"Description": "Theme or style class applied to the section item when rendered as a link"
+	},
+	"ListOfExternalStoredProcedures": {
+		"Type": "string",
+		"Description": "Register external stored procedures"
+	},
+	"LoadProcedure": {
+		"Type": "string",
+		"Description": "Name of the `Procedure` object loading the context variable value; omit if not applicable"
+	},
+	"Location": {
+		"Type": "string",
+		"Description": "Source location: file path, directory, library, or database name"
+	},
+	"LockMode": {
+		"Type": "enum{Do not specify lock level;Use page level locking;Use row level locking}",
+		"Description": "Set the lock mode",
+		"Options": {
+			"Do not specify lock level": "Do not generate a lock level clause",
+			"Use page level locking": "Generate Lock Mode Page clause",
+			"Use row level locking": "Generate Lock Mode Row clause"
+		}
+	},
+	"LockRetryCount": {
+		"Type": "integer",
+		"Description": "Set lock retry count"
+	},
+	"LockTimeOut": {
+		"Type": "integer",
+		"Description": "Set lock timeout"
+	},
+	"LogFile": {
+		"Type": "string",
+		"Description": "Set the log file name"
+	},
+	"LoginObjectForSD": {
+		"Type": "string",
+		"Description": "Panel object used as GAM login screen for native apps",
+		"Default": "GAMSDLogin",
+		"Scope": "Native",
+		"Require": {
+			"EnableIntegratedSecurity": "True"
+		}
+	},
+	"LoginObjectForWeb": {
+		"Type": "string",
+		"Description": "WebPanel object used as GAM login screen for web apps",
+		"Scope": "Web",
+		"Default": "GAMExampleLogin",
+		"Require": {
+			"EnableIntegratedSecurity": "True"
+		}
+	},
+	"LogLevel": {
+		"Type": "enum{0. Off;1. Fatal;2. Error;3. Warn;4. Info;5. Debug;6. All}",
+		"Description": "Set the generator log verbosity",
+		"Options": {
+			"0. Off": "Turns off logging (default)",
+			"1. Fatal": "Very severe errors that typically abort the application",
+			"2. Error": "Error events that might allow the application to continue",
+			"3. Warn": "Potentially harmful situations or warnings",
+			"4. Info": "Informational messages about progress",
+			"5. Debug": "Fine-grained informational events for debugging",
+			"6. All": "Enables all logging levels"
+		}
+	},
+	"LogOutput": {
+		"Type": "enum{File;Console;Azure Application Insights}",
+		"Description": "Select the log output provider",
+		"Options": {
+			"File": "Write logs to files",
+			"Console": "Write logs to console output",
+			"Azure Application Insights": "Send logs to Application Insights (.NET)"
+		}
+	},
+	"MacHost": {
+		"Type": "string",
+		"Description": "Set the Mac host name or IP for remote build"
+	},
+	"MacPassword": {
+		"Type": "string",
+		"Description": "Set the Mac user password for remote build"
+	},
+	"MacUser": {
+		"Type": "boolean",
+		"Description": "Set the Mac user for remote build"
+	},
+	"MainObject": {
+		"Type": "string",
+		"Description": "Primary object of the application"
+	},
+	"MainProgram": {
+		"Type": "boolean",
+		"Description": "Marks the Object as an Executable Entry Point",
+		"Default": "False"
+	},
+	"MasterPage": {
+		"Type": "string",
+		"Description": "The master page applied to the generated screen",
+		"Default": "<default>"
+	},
+	"MaximizeButton": {
+		"Type": "enum{Yes;No}",
+		"Description": "Shows maximize button in Win interface",
+		"Default": "Yes",
+		"Options": {
+			"Yes": "Enables this behavior",
+			"No": "Disables this behavior"
+		}
+	},
+	"MaximumCachedCursors": {
+		"Type": "integer",
+		"Description": "Set the max number of cached cursors"
+	},
+	"MaximumLongestBound": {
+		"Type": "string",
+		"Description": "Maximum longest screen dimension in dp that qualifies for this platform entry; omit if unbounded"
+	},
+	"MaximumMiniAppsCount": {
+		"Type": "integer",
+		"Description": "Maximum number of cached Mini Apps; `0` means no limit",
+		"Default": "0"
+	},
+	"MaximumNumericLength": {
+		"Type": "integer",
+		"Description": "Global default max length for numeric types",
+		"Default": "18"
+	},
+	"MaximumPoolSizePerHost": {
+		"Type": "integer",
+		"Description": "Set the max HttpClient pool size per host"
+	},
+	"MaximumShortestBound": {
+		"Type": "string",
+		"Description": "Maximum shortest screen dimension in dp that qualifies for this platform entry; omit if unbounded"
+	},
+	"MaximumWorkfileLines": {
+		"Type": "integer",
+		"Description": "Set the maximum number of workfile lines"
+	},
+	"MaxTokens": {
+		"Type": "integer",
+		"Description": "Controls max tokens in reponse; higher values allow more detailed answers",
+		"Default": "5000"
+	},
+	"MediumImageUploadSize": {
+		"Type": "string",
+		"Description": "Size in KBytes or Resolution (<Width> x <Height>) for Medium value on Maximum Upload Size property",
+		"Default": "640x640"
+	},
+	"Menubar": {
+		"Type": "string",
+		"Description": "Menu bar style applied in Win interface"
+	},
+	"MinimizeButton": {
+		"Type": "enum{Yes;No}",
+		"Description": "Shows minimize button in Win interface",
+		"Default": "Yes",
+		"Options": {
+			"Yes": "Enables this behavior",
+			"No": "Disables this behavior"
+		}
+	},
+	"MinimumLongestBound": {
+		"Type": "string",
+		"Description": "Minimum longest screen dimension in dp that qualifies for this platform entry; omit if unbounded"
+	},
+	"MinimumNumberOfExtents": {
+		"Type": "integer",
+		"Description": "Minimum extents kept for the object"
+	},
+	"MinimumShortestBound": {
+		"Type": "string",
+		"Description": "Minimum shortest screen dimension in dp that qualifies for this platform entry; omit if unbounded"
+	},
+	"MinimumTimeBetweenReceives": {
+		"Type": "integer",
+		"Description": "Minimum interval between receive synchronizations in seconds",
+		"Default": "600"
+	},
+	"MinimumTimeBetweenSends": {
+		"Type": "integer",
+		"Description": "Minimum interval between send synchronizations in seconds",
+		"Default": "0"
+	},
+	"MinimumTimeBetweenTablePurges": {
+		"Type": "integer",
+		"Description": "Minimum interval between server sync-table purges in seconds",
+		"Default": "3600"
+	},
+	"ModalDialog": {
+		"Type": "enum{Yes if parameters specified;Yes;No}",
+		"Description": "Opens form as modal dialog",
+		"Default": "Yes if parameters specified",
+		"Options": {
+			"Yes if parameters specified": "Enables this behavior only when parameters are present",
+			"Yes": "Enables this behavior",
+			"No": "Disables this behavior"
+		}
+	},
+	"ModuleAuthor": {
+		"Type": "string",
+		"Description": "Author metadata published with the module"
+	},
+	"ModuleDescription": {
+		"Type": "string",
+		"Description": "Functional description used as metadata"
+	},
+	"ModuleIdentifier": {
+		"Type": "guid",
+		"Description": "Stable module identifier used for packaging, import resolution, and references"
+	},
+	"ModuleLicenseURL": {
+		"Type": "string",
+		"Description": "License reference URL for the module"
+	},
+	"ModuleOwner": {
+		"Type": "string",
+		"Description": "Owner metadata for governance and maintenance"
+	},
+	"ModuleProjectURL": {
+		"Type": "string",
+		"Description": "Project homepage URL for the module"
+	},
+	"ModuleResources": {
+		"Type": "string",
+		"Description": "File object resources packaged with the module"
+	},
+	"ModuleServerURL": {
+		"Type": "string",
+		"Description": "GeneXus Server URL associated to the module"
+	},
+	"ModuleTags": {
+		"Type": "string",
+		"Description": "Tags used to categorize and discover the module"
+	},
+	"ModuleVersion": {
+		"Type": "string",
+		"Description": "Module semantic version used for packaging and distribution",
+		"Default": "1.0"
+	},
+	"MSBuildOptions": {
+		"Type": "string",
+		"Description": "Set additional MSBuild options (.NET)"
+	},
+	"MultiDexBuildInAndroid": {
+		"Type": "boolean",
+		"Description": "Enable MultiDex build"
+	},
+	"MultiTenant": {
+		"Type": "boolean",
+		"Description": "Enable Multi Tenant support",
+		"Default": "False"
+	},
+	"MySQLVersion": {
+		"Type": "enum{4.x to 5.0.2;5.0.3 to 5.7.6;5.7.7 to 5.7.23;8.x;9.x or higher}",
+		"Description": "Set the MySQL version for SQL generation",
+		"Default": "9.x or higher",
+		"Options": {
+			"4.x to 5.0.2": "",
+			"5.0.3 to 5.7.6": "",
+			"5.7.7 to 5.7.23": "",
+			"8.x": "",
+			"9.x or higher": ""
+		}
+	},
+	"Name": {
+		"Type": "string",
+		"Description": "Instance name; must be unique within the layout"
+	},
+	"Name#data": {
+		"Type": "string",
+		"Description": "Existing Attribute or Variable name"
+	},
+	"Name#dataview": {
+		"Type": "string",
+		"Description": "Physical external table name for selected platform"
+	},
+	"Name#level": {
+		"Type": "string",
+		"Description": "Existing Transaction level name"
+	},
+	"NameOfJournal": {
+		"Type": "string",
+		"Description": "Set the journal name"
+	},
+	"Namespace": {
+		"Type": "string",
+		"Description": "Namespace used when generating external references"
+	},
+	"NavigationStyle": {
+		"Type": "enum{Default,Flip,Split,Cascade,Slide}",
+		"Description": "Navigation transition style used for this platform",
+		"Default": "Default",
+		"Options": {
+			"Default": "Standard slide navigation",
+			"Flip": "Flip-card navigation transition",
+			"Split": "Split-view (master-detail) navigation",
+			"Cascade": "Cascading navigation",
+			"Slide": "Sliding-menu navigation"
+		}
+	},
+	"NETApplicationName": {
+		"Type": "string",
+		"Description": "Set the .NET application name/namespace"
+	},
+	"NetConstructorParameters": {
+		"Type": "string",
+		"Description": "Constructor arguments used in .NET runtime binding"
+	},
+	"NetCoreAssemblyName": {
+		"Type": "string",
+		"Description": ".NET assembly name that contains the external implementation"
+	},
+	"NetCoreConstructorParameters": {
+		"Type": "string",
+		"Description": "Constructor arguments used in .NET Core runtime binding"
+	},
+	"NetCoreExternalName": {
+		"Type": "string",
+		"Description": ".NET runtime type name used to bind the external implementation"
+	},
+	"NetCorePackageName": {
+		"Type": "string",
+		"Description": "NuGet package name used to resolve the dependency"
+	},
+	"NetCorePackageVersion": {
+		"Type": "string",
+		"Description": "NuGet package version used to resolve the dependency"
+	},
+	"NetExternalName": {
+		"Type": "string",
+		"Description": ".NET runtime type name used to bind the external implementation"
+	},
+	"NextExtentsPercentageIncrease": {
+		"Type": "integer",
+		"Description": "Growth percentage for next extents"
+	},
+	"NextTab": {
+		"Type": "string",
+		"Description": "Tooltip text for the next tab navigation button",
+		"Default": "Next Tab"
+	},
+	"NotAuthorized": {
+		"Type": "string",
+		"Description": "Name of the WebPanel object displayed when the authorization check returns false"
+	},
+	"NotAuthorizedObjectForSD": {
+		"Type": "string",
+		"Description": "Panel object shown in native apps when user lacks permission",
+		"Scope": "Native",
+		"Require": {
+			"EnableIntegratedSecurity": "True"
+		}
+	},
+	"NotAuthorizedObjectForWeb": {
+		"Type": "string",
+		"Description": "WebPanel object shown in web apps when user lacks permission",
+		"Scope": "Web",
+		"Require": {
+			"EnableIntegratedSecurity": "True"
+		}
+	},
+	"NotificationsProvider": {
+		"Type": "enum{None;OneSignal;JPush}",
+		"Description": "Select the notifications provider",
+		"Options": {
+			"None": "Disable notifications",
+			"OneSignal": "Use OneSignal notifications",
+			"JPush": "Use JPush notifications"
+		}
+	},
+	"NotifyContextChange": {
+		"Type": "boolean",
+		"Description": "Raises context-change notification for control updates"
+	},
+	"NullsBehavior": {
+		"Type": "enum{Current Version;Version 8.0 and prior (Deprecated)}",
+		"Description": "Null handling mode for legacy compatibility",
+		"Default": "Current Version",
+		"Options": {
+			"Current Version": "Current Version",
+			"Version 8.0 and prior (Deprecated)": "Version 8.0 and prior (Deprecated)"
+		}
+	},
+	"NullValue": {
+		"Type": "boolean",
+		"Description": "Accept null values for this parameter",
+		"Default": "False"
+	},
+	"NumberOfDaysToKeep": {
+		"Type": "integer",
+		"Description": "Maximum cached Mini App age in days"
+	},
+	"NumericDecimalSymbol": {
+		"Type": "string",
+		"Description": "Decimal separator used in numeric values"
+	},
+	"ObjectVisibility": {
+		"Type": "enum{Public;Private;Internal;KnowledgeBase}",
+		"Description": "Object visibility, scope, and distribution; inherited from containing `Module` unless overridden",
+		"Options": {
+			"Public": "Visible and accessible outside the module",
+			"Private": "Visible only within the defining object",
+			"Internal": "Visible within the module but not exposed externally",
+			"KnowledgeBase": "Visible across the knowledge base"
+		}
+	},
+	"ObservabilityProvider": {
+		"Type": "enum{None;OpenTelemetry;AWS Distro for OpenTelemetry;Azure Monitor Application Insights}",
+		"Description": "Select the observability provider",
+		"Options": {
+			"None": "Disable observability",
+			"OpenTelemetry": "Use OpenTelemetry SDK",
+			"AWS Distro for OpenTelemetry": "Use ADOT provider",
+			"Azure Monitor Application Insights": "Use Azure Monitor provider"
+		}
+	},
+	"OnlyVisible": {
+		"Type": "boolean",
+		"Description": "Export only visible attributes (`True`) or all attributes (`False`)",
+		"Default": "True"
+	},
+	"OnSessionTimeout": {
+		"Type": "enum{Ignore;Warn}",
+		"Description": "Action on session expiration",
+		"Default": "Ignore",
+		"Options": {
+			"Ignore": "Ignores Session Timeout",
+			"Warn": "Shows Warning for Session Timeout"
+		}
+	},
+	"OpenAPIVersion": {
+		"Type": "enum{3.0;2.0;APIGateway 2.0}",
+		"Description": "Set the OpenAPI version to generate",
+		"Options": {
+			"3.0": "Generate OpenAPI 3.0",
+			"2.0": "Generate OpenAPI 2.0",
+			"APIGateway 2.0": "Generate an OpenAPI 2.0 variant required by AWS API Gateway"
+		}
+	},
+	"OpenHandler": {
+		"Type": "string",
+		"Description": "Set the open handler"
+	},
+	"OptimizeForMultiTierExecution": {
+		"Type": "string",
+		"Description": "Optimizes rule execution strategy for multi-tier deployments to reduce remote round trips"
+	},
+	"OptionalColumn": {
+		"Type": "string",
+		"Description": "Web theme class applied to optional grid columns; template-dependent if omitted"
+	},
+	"OptionForIndividualFields": {
+		"Type": "boolean",
+		"Description": "Allows the user to restrict the search to a single field; `False` searches all fields simultaneously",
+		"Default": "False",
+		"Scope": "Apple"
+	},
+	"OracleVersion": {
+		"Type": "enum{12c or higher;8.1.5 to 8.x.x;9 to 11g}",
+		"Description": "Set the Oracle version for SQL generation",
+		"Options": {
+			"12c or higher": "",
+			"8.1.5 to 8.x.x": "",
+			"9 to 11g": ""
+		}
+	},
+	"OrderAttributesInFile": {
+		"Type": "string",
+		"Description": "Set attribute order in file"
+	},
+	"OrderedBy": {
+		"Type": "string",
+		"Description": "Label for the ordered-by indicator shown in the selection grid",
+		"Default": "Ordered By"
+	},
+	"OS": {
+		"Type": "enum{Any Platform;Android;Apple;Windows;Web}",
+		"Description": "Target operating system for this platform entry",
+		"Default": "Any Platform",
+		"Options": {
+			"Any Platform": "Applies to all operating systems",
+			"Android": "Android devices",
+			"Apple": "iOS / iPadOS / tvOS / watchOS devices",
+			"Windows": "Windows devices",
+			"Web": "Web browser targets"
+		}
+	},
+	"OSForISeriesVersion": {
+		"Type": "string",
+		"Description": "Set the iSeries OS version for SQL generation"
+	},
+	"Output": {
+		"Type": "string",
+		"Description": "Name of the SDT or Business Component returned by the Data Provider"
+	},
+	"OutputType": {
+		"Type": "enum{Card;Chart;Pivot Table}",
+		"Description": "Type selector that controls generation behavior",
+		"Options": {
+			"Card": "Displays results in card layout",
+			"Chart": "Displays results in chart layout",
+			"Pivot Table": "Displays results in pivot table layout"
+		}
+	},
+	"PackageName": {
+		"Type": "string",
+		"Description": "Package identifier used for module publishing"
+	},
+	"Page": {
+		"Type": "string",
+		"Description": "Number of rows per page in generated grids; use `'0'` to disable paging",
+		"Default": "10"
+	},
+	"PageName": {
+		"Type": "string",
+		"Description": "External wiki page name associated with this documentation object"
+	},
+	"PagingMode": {
+		"Type": "enum{One page at a time;Infinite scrolling}",
+		"Description": "Paging strategy applied to the selection grid",
+		"Default": "One page at a time",
+		"Options": {
+			"One page at a time": "",
+			"Infinite scrolling": ""
+		}
+	},
+	"Parameters": {
+		"Type": "string",
+		"Description": "Input parameters used by the selector"
+	},
+	"ParametersStyle": {
+		"Type": "enum{Use Environment property value;Named;Positional}",
+		"Description": "Use named parameters in environment routing configuration",
+		"Options": {
+			"Use Environment property value": "Inherit parameter style from environment",
+			"Named": "Use named parameters required by URL rewrite mappings",
+			"Positional": "Use ordered parameters without explicit names"
+		}
+	},
+	"ParametersStyle#environment": {
+		"Type": "enum{Named;Positional}",
+		"Description": "Defines whether generated URLs use named parameters or positional parameters",
+		"Default": "Named",
+		"Options": {
+			"Named": "Uses named parameter passing",
+			"Positional": "Uses positional parameter passing"
+		}
+	},
+	"ParentLanguage": {
+		"Type": "string",
+		"Description": "Language object name of which this one is a specialization"
+	},
+	"PDFReportsLibrary": {
+		"Type": "enum{iText (Legacy);iText 8;PDFBox;PDFPig}",
+		"Description": "Select the PDF reporting library",
+		"Options": {
+			"iText (Legacy)": "Use legacy iText",
+			"iText 8": "Use iText 8",
+			"PDFBox": "Use Apache PDFBox (Java)",
+			"PDFPig": "Use PDFPig (.NET)"
+		}
+	},
+	"PermissionPrefix": {
+		"Type": "string",
+		"Description": "Prefix used when generating permissions"
+	},
+	"Picture": {
+		"Type": "string",
+		"Description": "Format mask used for display and parsing"
+	},
+	"PlainText": {
+		"Type": "string",
+		"Description": "Web theme class applied to plain text elements in generated objects; template-dependent if omitted"
+	},
+	"PluralizeObjectName": {
+		"Type": "boolean",
+		"Description": "Attempt automatic pluralization of the object name in titles when enabled",
+		"Default": "False"
+	},
+	"PopulateData": {
+		"Type": "boolean",
+		"Description": "Allows controlling whether data population should be run as part of the build process",
+		"Default": "True"
+	},
+	"PostgreSQLExtensions": {
+		"Type": "string",
+		"Description": "Set enabled extensions"
+	},
+	"PostgreSQLVersion": {
+		"Type": "enum{7.x;8.0;8.1 or 8.2;8.3 or higher}",
+		"Description": "Set the PostgreSQL version for SQL generation",
+		"Options": {
+			"7.x": "",
+			"8.0": "",
+			"8.1 or 8.2": "",
+			"8.3 or higher": ""
+		}
+	},
+	"Predefined": {
+		"Type": "boolean",
+		"Description": "Marks this platform entry as predefined by the pattern; predefined entries must not be removed or renamed",
+		"Default": "False"
+	},
+	"Prefix": {
+		"Type": "string",
+		"Description": "Static prefix added in formatted output"
+	},
+	"PreserveTableCasing": {
+		"Type": "boolean",
+		"Description": "Preserves declared table letter casing in generated schema",
+		"Default": "True"
+	},
+	"PreviousTab": {
+		"Type": "string",
+		"Description": "Tooltip text for the previous tab navigation button",
+		"Default": "Previous Tab"
+	},
+	"PrimaryKeyDefinition": {
+		"Type": "enum{Primary Key;Index;Constraint}",
+		"Description": "Select primary key definition strategy",
+		"Options": {
+			"Primary Key": "Declare primary key using the PRIMARY KEY clause",
+			"Index": "Declare primary key using a unique index",
+			"Constraint": "Declare primary key using a CONSTRAINT clause"
+		}
+	},
+	"PrintUsingDDSs": {
+		"Type": "enum{Use Environment property value;No;Yes}",
+		"Description": "Uses DDS for report print generation",
+		"Default": "No",
+		"Options": {
+			"Use Environment property value": "Uses the setting defined at environment level",
+			"No": "Disables this behavior",
+			"Yes": "Enables this behavior"
+		}
+	},
+	"ProgramsLibraryName": {
+		"Type": "string",
+		"Description": "Set the programs library name"
+	},
+	"PromptColor": {
+		"Type": "string",
+		"Default": "Black",
+  		"Description": "Color used for prompt attributes; overrides form color settings"
+	},
+	"PromptImage": {
+		"Type": "string",
+		"Description": "Image for prompt"
+	},
+	"PromptsMasterPage": {
+		"Type": "string",
+		"Description": "Master page used for initialize generated prompts"
+	},
+	"PropertyType": {
+		"Type": "enum{Read/Write;Read;Write;Member}",
+		"Description": "Access mode for external object property",
+		"Default": "Read/Write",
+		"Options": {
+			"Read/Write": "Allows both read and write access",
+			"Read": "Allows read access only",
+			"Write": "Allows write access only",
+			"Member": "Exposes the item as a member"
+		}
+	},
+	"ProtocolSpecification": {
+		"Type": "string",
+		"Description": "The protocol used for services and absolute URLs"
+	},
+	"Provider": {
+		"Type": "string",
+		"Description": "Provider name used for `ADO` Access"
+	},
+	"ProvisioningUrl": {
+		"Type": "string",
+		"Description": "Mini App Center URL used to retrieve published Mini Apps"
+	},
+	"ReadOnlyAttribute": {
+		"Type": "string",
+		"Description": "Web theme class applied to read-only attribute controls in generated objects",
+		"Default": "ReadonlyAttribute"
+	},
+	"ReadOnlyAudioAttribute": {
+		"Type": "string",
+		"Description": "Web theme class applied to read-only audio attribute controls",
+		"Default": "ReadonlyAudioAttribute"
+	},
+	"ReadOnlyBlobAttribute": {
+		"Type": "string",
+		"Description": "Web theme class applied to read-only blob attribute controls",
+		"Default": "ReadonlyAttribute"
+	},
+	"ReadOnlyDownloadAttribute": {
+		"Type": "string",
+		"Description": "Web theme class applied to read-only downloadable attribute controls",
+		"Default": "ReadonlyDownloadAttribute"
+	},
+	"ReadOnlyGridAttribute": {
+		"Type": "string",
+		"Description": "Web theme class applied to read-only attribute controls inside grids; template-dependent if omitted"
+	},
+	"ReadOnlyGridBlobAttribute": {
+		"Type": "string",
+		"Description": "Web theme class applied to read-only blob attribute controls inside grids; template-dependent if omitted"
+	},
+	"ReadOnlyVideoAttribute": {
+		"Type": "string",
+		"Description": "Web theme class applied to read-only video attribute controls",
+		"Default": "ReadonlyVideoAttribute"
+	},
+	"ReadReplica": {
+		"Type": "boolean",
+		"Description": "Enable read replica usage"
+	},
+	"ReceivedHandler": {
+		"Type": "string",
+		"Description": "Set the received handler"
+	},
+	"ReceiveTimeout": {
+		"Type": "integer",
+		"Description": "Maximum wait time before operation timeout",
+		"Default": "0"
+	},
+	"RecordFormat": {
+		"Type": "string",
+		"Description": "Physical file record format name"
+	},
+	"RecordNotFound": {
+		"Type": "string",
+		"Description": "Text displayed in the View panel when the requested record does not exist",
+		"Default": "Record not found"
+	},
+	"RecyclePoolConnections": {
+		"Type": "boolean",
+		"Description": "Enable pool recycling"
+	},
+	"RecycleTime": {
+		"Type": "integer",
+		"Description": "Set recycle interval"
+	},
+	"RecycleType": {
+		"Type": "enum{By creation time;By idle time}",
+		"Description": "Select recycling strategy",
+		"Options": {
+			"By creation time": "Recycle by creation time",
+			"By idle time": "Recycle by idle time"
+		}
+	},
+	"References": {
+		"Type": "string",
+		"Description": "Semicolon-separated JS/CSS references with relative/absolute paths supported by this control"
+	},
+	"RegularExpression": {
+		"Type": "string",
+		"Description": "Validation pattern applied to accepted values"
+	},
+	"RemoteVersion": {
+		"Type": "string",
+		"Description": "Repository Version"
+	},
+	"RenderingMode": {
+		"Type": "enum{Automatic;Original;Template}",
+		"Description": "How image is drawn",
+		"Default": "Original",
+		"Options": {
+			"Automatic": "Context-dependent (Template in toolbars/tabs/buttons, Original elsewhere)",
+			"Original": "Draws with original colors",
+			"Template": "Renders as a mask tinted by the system"
+		}
+	},
+	"ReorganizationGenerator": {
+		"Type": "string",
+		"Description": "Generator used to execute database reorganizations"
+	},
+	"ReorganizationOption": {
+		"Type": "string",
+		"Description": "Set reorganization execution flags"
+	},
+	"ReorganizeServerTable": {
+		"Type": "boolean",
+		"Description": "Enable server table reorganization when requested by Impact Analysis"
+	},
+	"ReportAttributeFont": {
+		"Type": "string",
+		"Description": "Default font for Attribute controls in reports",
+		"Default": "Microsoft Sans Serif,8"
+	},
+	"ReportMaximumEditLength": {
+		"Type": "integer",
+		"Description": "Maximum edit control length for report output",
+		"Default": "255"
+	},
+	"ReportMaximumMultiLineEditLines": {
+		"Type": "integer",
+		"Description": "Maximum number of lines for report multiline controls",
+		"Default": "1"
+	},
+	"ReportOutput": {
+		"Type": "enum{Ask User;Only To Screen;Only To Printer;Only To File}",
+		"Description": "Output channel used for report generation",
+		"Options": {
+			"Ask User": "Prompts the user to choose output destination at runtime",
+			"Only To Screen": "Sends output to screen only",
+			"Only To Printer": "Sends output to printer only",
+			"Only To File": "Sends output to file only"
+		}
+	},
+	"ReportTextBlockFont": {
+		"Type": "string",
+		"Description": "Default font for TextBlock controls in reports",
+		"Default": "Microsoft Sans Serif,8"
+	},
+	"Required": {
+		"Type": "boolean",
+		"Description": "Marks The Service Parameter As Mandatory",
+		"Default": "False"
+	},
+	"RequiredFile": {
+		"Type": "string",
+		"Description": "Runtime file required by Ruby integration"
+	},
+	"RESTProtocol": {
+		"Type": "boolean",
+		"Description": "Enables REST endpoint generation for the object",
+		"Default": "True"
+	},
+	"RootModuleVisibility": {
+		"Type": "enum{Public;Knowledge Base;Internal;Private}",
+		"Description": "Object visibility value of Root module",
+		"Default": "Knowledge Base",
+		"Options": {
+			"Public": "Public",
+			"Knowledge Base": "Knowledge Base",
+			"Internal": "Internal",
+			"Private": "Private"
+		}
+	},
+	"Rows": {
+		"Type": "integer",
+		"Description": "Number of rows used by matrix or multiline controls",
+		"Default": "3"
+	},
+	"RowsPerPage": {
+		"Type": "string",
+		"Description": "Rows per page value: number, enum domain, `<default>` (inherits settings), or `<unlimited>` (no limit)",
+		"Default": "<default>"
+	},
+	"RPCDeclarationsPrefix": {
+		"Type": "string",
+		"Description": "Set the prefix for RPC declarations"
+	},
+	"RubyConstructorParameters": {
+		"Type": "string",
+		"Description": "Constructor arguments used in Ruby runtime binding"
+	},
+	"RubyExternalName": {
+		"Type": "string",
+		"Description": "Ruby class or module name used to bind the external implementation"
+	},
+	"RunTarget": {
+		"Type": "enum{Default;Angular Dev Server;Local Web Server;GeneXusDeployToCloud;AWS S3}",
+		"Description": "Select where the Angular app runs",
+		"Options": {
+			"Default": "Run on Angular Dev Server (or DeployToCloud when backend deploys)",
+			"Angular Dev Server": "Run on local Angular dev server",
+			"Local Web Server": "Run from the backend web server URL",
+			"GeneXusDeployToCloud": "Run from GeneXus DeployToCloud",
+			"AWS S3": "Prepare for manual upload to AWS S3"
+		}
+	},
+	"SameSiteCookieAttribute": {
+		"Type": "string",
+		"Description": "Set cookie scope for first-party and cross-site requests"
+	},
+	"SaveGridState": {
+		"Type": "boolean",
+		"Description": "Preserve the grid page, active filters, and sort order between successive visits",
+		"Default": "True"
+	},
+	"SchemaName": {
+		"Type": "string",
+		"Description": "Schema or owner qualifying the external object name"
+	},
+	"ScrollableForm": {
+		"Type": "enum{Use Environment property value;No;Auto}",
+		"Description": "Enables scroll bars in form container",
+		"Default": "No",
+		"Options": {
+			"Use Environment property value": "Uses the setting defined at environment level",
+			"No": "Disables this behavior",
+			"Auto": "Lets GeneXus decide the best behavior automatically"
+		}
+	},
+	"Searchable": {
+		"Type": "enum{True;False;Use Environment property value}",
+		"Description": "Enables search capabilities for the control",
+		"Options": {
+			"True": "Enables this behavior",
+			"False": "Disables this behavior",
+			"Use Environment property value": "Uses the setting defined at environment level"
+		}
+	},
+	"Searchable#backend": {
+		"Type": "enum{Yes;No}",
+		"Description": "Use full-text search",
+		"Options": {
+			"Yes": "Enable full text search",
+			"No": "Disable full text search"
+		}
+	},
+	"SearchViewer": {
+		"Type": "string",
+		"Description": "Viewer used for search interaction"
+	},
+	"SecurityClientID": {
+		"Type": "string",
+		"Description": "GAM client identifier used for authentication"
+	},
+	"SecurityClientSecret": {
+		"Type": "string",
+		"Description": "GAM client secret used for authentication"
+	},
+	"Selection#master": {
+		"Type": "string",
+		"Description": "Master page object assigned to generated Selection webpanels",
+		"Default": "AppMasterPage"
+	},
+	"Selection#objects": {
+		"Type": "string",
+		"Description": "Selection `WebPanel` naming pattern; default `WW<name>`, where `<name>` is the `Transaction` name"
+	},
+	"SelectionIsMain": {
+		"Type": "boolean",
+		"Description": "Treat Selection nodes as main objects in the navigation flow",
+		"Default": "False"
+	},
+	"SendChanges": {
+		"Type": "enum{When connected;Manual;Never}",
+		"Description": "Trigger strategy for send synchronization",
+		"Default": "When connected",
+		"Options": {
+			"When connected": "Runs only when network connectivity is available",
+			"Manual": "Runs only when explicitly requested",
+			"Never": "Does not run automatically"
+		}
+	},
+	"SendTimeout": {
+		"Type": "integer",
+		"Description": "Maximum wait time before operation timeout",
+		"Default": "0"
+	},
+	"Separator": {
+		"Type": "string",
+		"Description": "Web theme class applied to separator elements in generated objects",
+		"Default": "Separator"
+	},
+	"ServerConnectionPooling": {
+		"Type": "string",
+		"Description": "Configure connection pooling"
+	},
+	"ServerName": {
+		"Type": "string",
+		"Description": "Set the database server host"
+	},
+	"ServerTCPIPPort": {
+		"Type": "integer",
+		"Description": "Set the server port"
+	},
+	"ServicesBasePath": {
+		"Type": "string",
+		"Description": "Base path for web services"
+	},
+	"SessionStateProvider": {
+		"Type": "enum{In Process,Redis,Database}",
+		"Description": "Select the session state provider",
+		"Options": {
+			"In Process": "",
+			"Redis": "",
+			"Database": ""
+		}
+	},
+	"SessionTimeout": {
+		"Type": "integer",
+		"Description": "Set the session timeout (minutes)"
+	},
+	"SessionType": {
+		"Type": "enum{Read Only;Read Write;None}",
+		"Description": "Execution session mode for database access",
+		"Default": "Read Write",
+		"Options": {
+			"Read Only": "Allows read operations only",
+			"Read Write": "Allows both read and write operations",
+			"None": "Disables additional behavior for this setting"
+		}
+	},
+	"Share": {
+		"Type": "string",
+		"Description": "Content string passed to the native share sheet when the user triggers a share action"
+	},
+	"ShowAds": {
+		"Type": "boolean",
+		"Description": "Displays advertisements in the generated panel"
+	},
+	"ShowApplicationBars": {
+		"Type": "boolean",
+		"Description": "Shows or hides the native application bar for this menu"
+	},
+	"ShowConnectionDialog": {
+		"Type": "enum{never}",
+		"Description": "Show the connection dialog",
+		"Options": {
+			"Never": "Never show the dialog"
+		}
+	},
+	"ShowConnectionDialogInWinForms": {
+		"Type": "boolean",
+		"Description": "Prompt for connection in WinForms"
+	},
+	"ShowCurrentPage": {
+		"Type": "boolean",
+		"Description": "Show the current page indicator in the selection grid paging controls",
+		"Default": "False"
+	},
+	"ShowForm": {
+		"Type": "enum{Use Environment property value;Before Start Event;After Start Event}",
+		"Description": "Initial visibility state of the form",
+		"Default": "Before Start Event",
+		"Options": {
+			"Use Environment property value": "Uses the setting defined at environment level",
+			"Before Start Event": "Applies before the Start event executes",
+			"After Start Event": "Applies after the Start event executes"
+		}
+	},
+	"ShowInTaskBar": {
+		"Type": "enum{Yes;No}",
+		"Description": "Shows form in Windows taskbar in SDI mode",
+		"Default": "Yes",
+		"Options": {
+			"Yes": "Enables this behavior",
+			"No": "Disables this behavior"
+		}
+	},
+	"ShowMasterPageWhenPopUp": {
+		"Type": "boolean",
+		"Description": "Renders Master Page in Popup"
+	},
+	"ShowPrinterDialog": {
+		"Type": "boolean",
+		"Description": "Show the printer dialog before printing"
+	},
+	"ShowWeekNumber": {
+		"Type": "boolean",
+		"Description": "Show week number in datepicker"
+	},
+	"ShowWeekNumbers": {
+		"Type": "enum{Yes;No;Use Environment property value}",
+		"Description": "Show calendar week numbers",
+		"Default": "No",
+		"Options": {
+			"Yes": "Enables this behavior",
+			"No": "Disables this behavior",
+			"Use Environment property value": "Uses the setting defined at environment level"
+		}
+	},
+	"Signed": {
+		"Type": "boolean",
+		"Description": "Supports Negative Numeric Values",
+		"Default": "False"
+	},
+	"SignificantAttributeNameLength": {
+		"Type": "integer",
+		"Description": "Significant attributes & domains name length",
+		"Default": "30"
+	},
+	"SignificantObjectNameLength": {
+		"Type": "integer",
+		"Description": "Significant Trn/Wkp/Wbp/Rpt/Prc/Mnu/Mbar & Styles name length",
+		"Default": "128"
+	},
+	"SignificantTableNameLength": {
+		"Type": "integer",
+		"Description": "Significant table/index/data-View name length",
+		"Default": "30"
+	},
+	"Simulator": {
+		"Type": "enum{iPhone Retina (3.5-inch);iPhone Retina (4-inch);iPhone Retina (4-inch 64-bits);iPhone Retina (4.7-inch 64-bits);iPhone Retina HD (5.5-inch 64-bits);iPad;iPad Retina;iPad Retina (64-bits)}",
+		"Description": "Select the simulator device type",
+		"Options": {
+			"iPhone Retina (3.5-inch)": "Use iPhone Retina (3.5-inch)",
+			"iPhone Retina (4-inch)": "Use iPhone Retina (4-inch)",
+			"iPhone Retina (4-inch 64-bits)": "Use iPhone Retina (4-inch 64-bits)",
+			"iPhone Retina (4.7-inch 64-bits)": "Use iPhone Retina (4.7-inch 64-bits)",
+			"iPhone Retina HD (5.5-inch 64-bits)": "Use iPhone Retina HD (5.5-inch 64-bits)",
+			"iPad": "Use iPad",
+			"iPad Retina": "Use iPad Retina",
+			"iPad Retina (64-bits)": "Use iPad Retina (64-bits)"
+		}
+	},
+	"SimulatorSDK": {
+		"Type": "enum{8.0;Latest}",
+		"Description": "Select the iOS SDK for simulator",
+		"Options": {
+			"8.0": "",
+			"Latest": ""
+		}
+	},
+	"Size": {
+		"Type": "integer",
+		"Description": "Set max pool size"
+	},
+	"Size#platform": {
+		"Type": "enum{Small;Medium;Large}",
+		"Description": "Responsive size class assigned to this platform entry",
+		"Options": {
+			"Small": "Phone-sized screens",
+			"Medium": "7-inch tablet-sized screens",
+			"Large": "10-inch tablet, desktop, or TV screens"
+		}
+	},
+	"SmallImageUploadSize": {
+		"Type": "string",
+		"Description": "Size in KBytes or Resolution (<Width> x <Height>) for Small value on Maximum Upload Size property",
+		"Default": "320x320"
+	},
+	"SoapType": {
+		"Type": "string",
+		"Description": "SOAP XML type for serialization",
+		"Constraints": [
+			"Uses the default GeneXus XML type mapping when unspecified",
+			"Compatible types can serialize member contents as raw XML instead of an enclosing XML element",
+			"Use unrestricted XML types only when required; validate or sanitize untrusted XML contents"
+		]
+	},
+	"SourceURI": {
+		"Type": "string",
+		"Description": "Source URI used to import external object metadata"
+	},
+	"SQLServerDataStore": {
+		"Type": "string",
+		"Description": "Select the SQL Server Data Store used by the session state provider"
+	},
+	"SQLServerVersion": {
+		"Type": "enum{2012 or higher;2005 to 2008 R2}",
+		"Description": "Set the SQL Server version for SQL generation",
+		"Options": {
+			"2012 or higher": "",
+			"2005 to 2008 R2": ""
+		}
+	},
+	"StandardClassesSpecification": {
+		"Type": "string",
+		"Description": "Set the standard classes specification"
+	},
+	"StandardClassesUpdate": {
+		"Type": "enum{Defined by Generator;Custom}",
+		"Description": "Set how standard classes are updated",
+		"Options": {
+			"Defined by Generator": "",
+			"Custom": ""
+		}
+	},
+	"StandardFunctions": {
+		"Type": "enum{Use Environment property value;Only standard functions;Allow non-standard functions}",
+		"Description": "Standard functions checking",
+		"Default": "Use Environment property value",
+		"Options": {
+			"Use Environment property value": "Uses the setting defined at environment level",
+			"Only standard functions": "Allows only standard GeneXus functions",
+			"Allow non-standard functions": "Allows non-standard functions in expressions"
+		}
+	},
+	"StandardFunctions#backend": {
+		"Type": "enum{Error on non-standard functions;Allow non-standard functions;Only standard functions;Use Environment property value}",
+		"Description": "Set behavior for non-standard functions",
+		"Options": {
+			"Error on non-standard functions": "Fail on non-standard functions",
+			"Allow non-standard functions": "Allow non-standard functions",
+			"Only standard functions": "Allow only standard functions",
+			"Use Environment property value": "Inherit from the Environment setting"
+		}
+	},
+	"StandardFunctions#kb": {
+		"Type": "enum{Allows only standard functions on saving;Allows non-standard functions on saving}",
+		"Description": "Restricts usage to standard compatible functions",
+		"Default": "Allows only standard functions on saving",
+		"Options": {
+			"Allows only standard functions on saving": "Validates and saves only standard GeneXus functions",
+			"Allows non-standard functions on saving": "Allows saving expressions with non-standard functions"
+		}
+	},
+	"StartColumn": {
+		"Type": "string",
+		"Description": "Column number (1-based) in the Excel template where data export begins",
+		"Default": "1"
+	},
+	"StartRow": {
+		"Type": "string",
+		"Description": "Row number (1-based) in the Excel template where data export begins",
+		"Default": "1"
+	},
+	"StartupObject": {
+		"Type": "string",
+		"Description": "Default object executed when application starts"
+	},
+	"StaticContentBaseURL": {
+		"Type": "string",
+		"Description": "Set the base URL for static content"
+	},
+	"StaticContentCacheExpiration": {
+		"Type": "integer",
+		"Description": "Static content expiration (hours) for images, JavaScript, and CSS",
+		"Default": "36"
+	},
+	"StopOnError": {
+		"Type": "enum{Yes;No}",
+		"Description": "Prevent user from proceeding when validation fails",
+		"Default": "No",
+		"Options": {
+			"Yes": "Yes",
+			"No": "No"
+		}
+	},
+	"StorageArea": {
+		"Type": "string",
+		"Description": "Physical storage area used by the DBMS"
+	},
+	"StorageProvider": {
+		"Type": "enum{Local,Amazon S3,Amazon S3 V1 (Legacy),Microsoft Azure,Google Cloud Storage,IBM Cloud Object Storage}",
+		"Description": "Select the storage provider",
+		"Default": "local",
+		"Options": {
+			"Local": "Store multimedia files locally on the application server",
+			"Amazon S3": "Store files in Amazon S3 or compatible object storage services",
+			"Amazon S3 V1 (Legacy)": "Use the legacy Amazon S3 SDK v1 implementation for compatibility with existing projects",
+			"Microsoft Azure": "Store files in Microsoft Azure Storage",
+			"Google Cloud Storage": "Store files in Google Cloud Storage",
+			"IBM Cloud Object Storage": "Store files in IBM Cloud Object Storage"
+		}
+	},
+	"Style": {
+		"Type": "string",
+		"Description": "Name of a `DesignSystem` object used for styling"
+	},
+	"Subtitle": {
+		"Type": "string",
+		"Description": "Web theme class applied to subtitle text in generated objects; template-dependent if omitted"
+	},
+	"SuperAppAPIExternalObject": {
+		"Type": "string",
+		"Description": "External Object exposing the target Super App API"
+	},
+	"SuperAppAPIMock": {
+		"Type": "string",
+		"Description": "Super App object used as API mock during testing"
+	},
+	"SuperAppIdentifier": {
+		"Type": "string",
+		"Description": "Identifier used by the Mini App Center for this Super App"
+	},
+	"SuperAppVersion": {
+		"Type": "string",
+		"Description": "Version used to resolve published Mini Apps"
+	},
+	"SuperType": {
+		"Type": "string",
+		"Description": "Name of supertype"
+	},
+	"Supertype": {
+		"Type": "string",
+		"Description": "Type selector that controls generation behavior"
+	},
+	"SynchronizeWithExternalWiki": {
+		"Type": "boolean",
+		"Description": "Synchronizes documentation with configured external wiki"
+	},
+	"Table100": {
+		"Type": "string",
+		"Description": "Web theme class applied to 100%-width tables in generated objects",
+		"Default": "Table100x100"
+	},
+	"TableGridContainer": {
+		"Type": "string",
+		"Description": "Web theme class applied to the grid container table in generated objects; template-dependent if omitted"
+	},
+	"TableStorageType": {
+		"Type": "enum{Column Based;Row Based}",
+		"Description": "Storage strategy used by supported DB engines",
+		"Default": "Row Based",
+		"Options": {
+			"Column Based": "Uses column-based physical organization",
+			"Row Based": "Uses row-based physical organization"
+		}
+	},
+	"TabsDistribution": {
+		"Type": "enum{Platform Default;Fixed Size;Scroll}",
+		"Description": "Defines how tab options are distributed when the menu is rendered as tabs",
+		"Options": {
+			"Platform Default": "Uses the platform default tab distribution",
+			"Fixed Size": "Gives each tab the same width; intended for a small number of options",
+			"Scroll": "Gives each tab the required width and allows horizontal scrolling"
+		},
+		"Require": {
+			"Control": "Tab"
+		}
+	},
+	"TabsForParallelTransactions": {
+		"Type": "boolean",
+		"Description": "Add a section to the Detail for each parallel Transaction instead of a single view",
+		"Default": "False"
+	},
+	"Tabular#objects": {
+		"Type": "string",
+		"Description": "Tabular `WebPanel` naming pattern; default `<name>General`, where `<name>` is the `Transaction` name"
+	},
+	"TargetPath": {
+		"Type": "string",
+		"Description": "Base path where generated model resources are written"
+	},
+	"Template#export": {
+		"Type": "string",
+		"Description": "Path to the Excel template file used as the base for the export; omit if not applicable"
+	},
+	"TempMediaDirectory": {
+		"Type": "string",
+		"Description": "Set the temporary media directory"
+	},
+	"TextBlockFont": {
+		"Type": "string",
+		"Description": "Default font for TextBlock controls",
+		"Default": "Microsoft Sans Serif,8,style=Bold"
+	},
+	"TextStorageArea": {
+		"Type": "string",
+		"Description": "Storage area used for text segments"
+	},
+	"TextToLink": {
+		"Type": "string",
+		"Description": "Web theme class applied to text-to-link controls in generated objects; template-dependent if omitted"
+	},
+	"Theme": {
+		"Type": "string",
+		"Description": "Name of an existing Design System object applied to generated web UI"
+	},
+	"ThousandSeparator": {
+		"Type": "boolean",
+		"Description": "Displays group separator in numeric formatting",
+		"Default": "False"
+	},
+	"TimeFormat": {
+		"Type": "enum{12;24}",
+		"Description": "Time format convention",
+		"Default": "12",
+		"Options":  {
+			"12": "Display time using a 12-hour clock with AM/PM",
+			"24": "Display time using a 24-hour clock"
+		}
+	},
+	"TimeOnlyCompatibility": {
+		"Type": "boolean",
+		"Description": "True to activate time only bug for Smart Devices and rest calls (Android and .net)",
+		"Default": "True"
+	},
+	"Title": {
+		"Type": "string",
+		"Description": "Label displayed in UI and menus"
+	},
+	"ToolInputSchema": {
+		"Type": "string",
+		"Description": "The JSON sent as `inputSchema` when impacting this `Procedure` as a tool"
+	},
+	"Tooltip": {
+		"Type": "string",
+		"Description": "Tooltip text shown when the mouse hovers over the action"
+	},
+	"TooltipText": {
+		"Type": "string",
+		"Description": "Help text shown on hover or focus"
+	},
+	"Transaction#master": {
+		"Type": "string",
+		"Description": "Master page object assigned to generated Transaction webforms",
+		"Default": "AppMasterPage"
+	},
+	"TransactionalIntegrity": {
+		"Type": "boolean",
+		"Description": "Generate transaction/procedure logic with transactional integrity"
+	},
+	"TransactionIntegrity": {
+		"Type": "string",
+		"Description": "Generate transactional integrity in data access"
+	},
+	"TranslateToLanguage": {
+		"Type": "string",
+		"Description": "Target language for static translation of all literals",
+		"Require": {
+			"Translation type": "Static"
+		}
+	},
+	"TranslationExceptions": {
+		"Type": "string",
+		"Description": "List of regular expressions that are excluded from translation",
+		"Default": "@a[0-9A-F]{6}#0.*javascript.*#0[ \\t\\-_=x\\*]+#0[^\\p{L}]*#1&lt;.*&gt;#1",
+		"Require": {
+			"Translation type": "Static | Run-time"
+		}
+	},
+	"TranslationType": {
+		"Type": "enum{No translation;Run-time;Static}",
+		"Description": "Type of literal translation support",
+		"Default": "No translation",
+		"Options": {
+			"No translation": "Disable literal translation",
+			"Run-time": "Translate literals at runtime",
+			"Static": "Translate literals for the current environment"
+		}
+	},
+	"Type": {
+		"Type": "enum{Component;Web Page;Master Page}",
+		"Description": "Specifies Web Panel Mode",
+		"Default": "Web Page",
+		"Options": {
+			"Component": "Generates Reusable Component",
+			"Web Page": "Generates Web Page",
+			"Master Page": "Generates Master Page Template"
+		}
+	},
+	"Type#exo": {
+		"Type": "enum{Native Object;Stored Procedure;WSDL;Java Session Bean;SAP Connector Interface}",
+		"Description": "Integration kind used to consume the external implementation",
+		"Default": "Native Object",
+		"Options": {
+			"Native Object": "Uses native object integration",
+			"Stored Procedure": "Uses database stored procedure integration",
+			"WSDL": "Uses WSDL-based service definition",
+			"Java Session Bean": "Uses Java Session Bean integration mode",
+			"SAP Connector Interface": "Uses SAP Connector Interface integration"
+		}
+	},
+	"Type#variable": {
+		"Type": "string",
+		"Description": "GeneXus data type of the context variable; e.g. `Numeric`, `Character`, SDT name, etc"
+	},
+	"Type#www": {
+		"Type": "enum{Tabular;Grid;UserDefined}",
+		"Description": "Rendering type for the tab content",
+		"Options": {
+			"Tabular": "",
+			"Grid": "",
+			"UserDefined": ""
+		}
+	},
+	"UndeleteRowImage": {
+		"Type": "string",
+		"Description": "Image for undeleting a grid row"
+	},
+	"UnlimitedSize": {
+		"Type": "boolean",
+		"Description": "Allow unlimited pool size"
+	},
+	"UnselectedImage": {
+		"Type": "string",
+		"Description": "Image displayed for unselected tab-style actions",
+		"Require": {
+			"Control": "Tab"
+		}
+	},
+	"Update": {
+		"Type": "boolean",
+		"Description": "Supports updating records in the interface",
+		"Default": "True"
+	},
+	"UpdateButtonBitmap": {
+		"Type": "string",
+		"Description": "Bitmap used by update action"
+	},
+	"UpdateCondition": {
+		"Type": "string",
+		"Description": "GeneXus expression that must evaluate to `True` for the Update action to be available"
+	},
+	"UpdatePolicy": {
+		"Type": "enum{Updatable;Read Only}",
+		"Description": "Choose between Updatable and Read Only",
+		"Default": "Updatable",
+		"Options": {
+			"Updatable": "Allows data updates",
+			"Read Only": "Allows read operations only"
+		}
+	},
+	"UpdateTransaction": {
+		"Type": "enum{Do not update;Only rules and events;Apply WW Style;Create default}",
+		"Description": "How the pattern updates the source Transaction object when regenerating",
+		"Default": "Only rules and events",
+		"Options": {
+			"Do not update": "Leave the Transaction object unchanged",
+			"Only rules and events": "Update only the rules and events sections",
+			"Apply WW Style": "Apply WorkWith style settings to the Transaction",
+			"Create default": "Recreate a default Transaction layout"
+		}
+	},
+	"URLAccess": {
+		"Type": "enum{Yes;No}",
+		"Description": "Object can be accessed through the URL",
+		"Default": "No",
+		"Options": {
+			"Yes": "Yes",
+			"No": "No"
+		}
+	},
+	"UseClientLoginAsUserid": {
+		"Type": "boolean",
+		"Description": "Use client login as user id for auditing"
+	},
+	"UseCustomJDBCURL": {
+		"Type": "boolean",
+		"Description": "Enable a custom JDBC URL"
+	},
+	"UseDatasourceForWebBasedApplications": {
+		"Type": "enum{True;False}",
+		"Description": "Use a datasource in web apps",
+		"Options": {
+			"True": "Use an application server JDBC Datasource",
+			"False": "Use the standard JDBC connection"
+		}
+	},
+	"UseDecimalArithmetic": {
+		"Type": "boolean",
+		"Description": "Use decimal arithmetic in generated code"
+	},
+	"UseDefaultBrowser": {
+		"Type": "boolean",
+		"Description": "Use the default browser for execution"
+	},
+	"UseDefaultSettings": {
+		"Type": "boolean",
+		"Description": "Uses inherited default settings when enabled",
+		"Default": "True"
+	},
+	"UseDockerContainers": {
+		"Type": "enum{Yes;No}",
+		"Description": "Prototype using Docker containers",
+		"Default": "No",
+		"Options": {
+			"Yes": "Enables this behavior",
+			"No": "Disables this behavior"
+		}
+	},
+	"UseExternalName": {
+		"Type": "enum{Yes;No}",
+		"Description": "Use external or internal table name",
+		"Default": "Yes",
+		"Options": {
+			"Yes": "Use the external name",
+			"No": "Use the internal name"
+		}
+	},
+	"UseInitialValue": {
+		"Type": "boolean",
+		"Description": "Initialize the context variable with its defined initial value",
+		"Default": "True"
+	},
+	"UserAgentHeader": {
+		"Type": "string",
+		"Description": "Sends default User-Agent header in outgoing HTTP requests"
+	},
+	"UseReadReplica": {
+		"Type": "string",
+		"Description": "Indicates which Read Replica datastore use when using this Data Selector"
+	},
+	"UserId": {
+		"Type": "string",
+		"Description": "Set the database user"
+	},
+	"UserInterface": {
+		"Type": "enum{Web;Win;Smart Devices}",
+		"Description": "Type of user interface for the generated application",
+		"Options": {
+			"Web": "Web interface",
+			"Win": "Windows interface (ProductVersion: `<15`)",
+			"Smart Devices": "Native interface; Mobile and Angular"
+		}
+	},
+	"UserLogLevel": {
+		"Type": "string",
+		"Description": "Set the user log verbosity; same values as [Log Level](#log-level)"
+	},
+	"UserPassword": {
+		"Type": "string",
+		"Description": "Set the database password"
+	},
+	"UseTransactionContext": {
+		"Type": "boolean",
+		"Description": "Use the navigation context as insert parameters in transaction calls",
+		"Default": "True"
+	},
+	"UseTrustedConnection": {
+		"Type": "boolean",
+		"Description": "Enable Windows authentication instead of using user/password"
+	},
+	"ValidationFailedMessage": {
+		"Type": "string",
+		"Description": "Message shown when validation fails"
+	},
+	"ValidationMessageDisplay": {
+		"Type": "enum{All at once;One at a time}",
+		"Description": "Controls how validation messages are displayed",
+		"Default": "One at a time",
+		"Options": {
+			"All at once": "All at once",
+			"One at a time": "One at a time"
+		}
+	},
+	"ValidationMessageOverlapAdjacentControls": {
+		"Type": "enum{Yes;No}",
+		"Description": "Controls whether validation messages can overlap adjacent controls",
+		"Default": "Yes",
+		"Options": {
+			"Yes": "Fixed position",
+			"No": "Avoid overlap"
+		}
+	},
+	"ValidationMessagePosition": {
+		"Type": "enum{Top;Right;Bottom;Left}",
+		"Description": "Position of validation error and warning messages",
+		"Default": "Right",
+		"Options": {
+			"Top": "Top",
+			"Right": "Right",
+			"Bottom": "Bottom",
+			"Left": "Left"
+		}
+	},
+	"Value": {
+		"Type": "string",
+		"Description": "GeneXus condition expression applied as a filter; may reference filter variables with `&` prefix"
+	},
+	"ValueRange": {
+		"Type": "string",
+		"Description": "Allowed value interval for validation"
+	},
+	"Version": {
+		"Type": "string",
+		"Description": "Deployment unit version used by release and deployment pipelines"
+	},
+	"View#master": {
+		"Type": "string",
+		"Description": "Master page object assigned to generated View webpanels",
+		"Default": "AppMasterPage"
+	},
+	"View#objects": {
+		"Type": "string",
+		"Description": "View `WebPanel` naming pattern; default `View<name>` with `<name>` as the `Transaction` name"
+	},
+	"ViewDescription": {
+		"Type": "string",
+		"Description": "View panel description format; default `<name> Information` with `<name>` as the `Transaction` name"
+	},
+	"ViewTable": {
+		"Type": "string",
+		"Description": "Web theme class applied to the outer table in the View panel; template-dependent if omitted"
+	},
+	"Visible": {
+		"Type": "boolean",
+		"Description": "Show or hide the column in the grid",
+		"Default": "True"
+	},
+	"WarningsTreatedAsErrors": {
+		"Type": "boolean",
+		"Description": "Treat warnings as errors"
+	},
+	"WebFormDefaults": {
+		"Type": "enum{Responsive Web Design;Previous versions compatible}",
+		"Description": "Selects default rendering mode for web forms",
+		"Default": "Responsive Web Design",
+		"Options": {
+			"Responsive Web Design": "Uses Responsive Web Design",
+			"Previous versions compatible": "Uses Legacy-Compatible Rendering"
+		}
+	},
+	"WebMaximumEditLength": {
+		"Type": "integer",
+		"Description": "Maximum edit control length before horizontal scrolling in web UI",
+		"Default": "80"
+	},
+	"WebMaximumMultiLineEditLines": {
+		"Type": "integer",
+		"Description": "Maximum number of lines for web multiline edit controls",
+		"Default": "10"
+	},
+	"WebMaximumSingleLineEditLength": {
+		"Type": "integer",
+		"Description": "Maximum web single-line edit length before switching to multiline",
+		"Default": "159"
+	},
+	"WebNotificationsProvider": {
+		"Type": "enum{None;InProcess}",
+		"Description": "Select the web notifications provider",
+		"Options": {
+			"None": "Use none",
+			"InProcess": "Use in-process web notifications"
+		}
+	},
+	"WebRoot": {
+		"Type": "string",
+		"Description": "Set the web root URL"
+	},
+	"WebSecurityLevel": {
+		"Type": "enum{Use Environment property value;High;Medium}",
+		"Description": "Security strictness for web runtime behavior",
+		"Default": "High",
+		"Options": {
+			"Use Environment property value": "Uses the setting defined at environment level",
+			"High": "Uses the high level for this setting",
+			"Medium": "Uses the medium level for this setting"
+		}
+	},
+	"WebServer": {
+		"Type": "string",
+		"Description": "Select the target web server"
+	},
+	"WebServerToBeUsed": {
+		"Type": "boolean",
+		"Description": "Select the target web server for deployment"
+	},
+	"WebUserExperience": {
+		"Type": "enum{Smooth;Previous versions compatible}",
+		"Description": "Smooth Navigation Mode",
+		"Options": {
+			"Smooth": "Modern Web Experience Behavior",
+			"Previous versions compatible": "Legacy Compatibility Mode"
+		}
+	},
+	"Width": {
+		"Type": "string",
+		"Description": "Calculated Width Of Rendered Control"
+	},
+	"WinMaximumEditLength": {
+		"Type": "integer",
+		"Description": "Maximum edit control length before horizontal scrolling in Win UI",
+		"Default": "60"
+	},
+	"WinMaximumMultiLineEditLines": {
+		"Type": "integer",
+		"Description": "Maximum number of lines for Win multiline edit controls",
+		"Default": "5"
+	},
+	"WinMaximumSingleLineEditLength": {
+		"Type": "integer",
+		"Description": "Maximum Win single-line edit length before switching to multiline",
+		"Default": "119"
+	},
+	"WorkWithTitle": {
+		"Type": "string",
+		"Description": "Work With selection title format; default `Work With <Object>` with `<Object>` as the `Transaction` name",
+		"Default": "Work With <Object>"
+	},
+	"XMLDateSerialization": {
+		"Type": "enum{Date & Time;Date & Time with Timezone;Date & Time with Timezone and Milliseconds}",
+		"Description": "XML Date/Time serialization format",
+		"Default": "Date & Time",
+		"Options": {
+			"Date & Time": "No timezone",
+			"Date & Time with Timezone": "Adds offset",
+			"Date & Time with Timezone and Milliseconds": "Adds offset and milliseconds"
+		}
+	},
+	"XMLName": {
+		"Type": "string",
+		"Description": "XML field name used in serialization; uses the `Name` value when unspecified"
+	},
+	"XMLNamespace": {
+		"Type": "string",
+		"Description": "Custom XML namespace used in serialziation"
+	},
+	"XMLNullSerialization": {
+		"Type": "enum{Empty Tag;No Tag;Nil Tag}",
+		"Description": "XML serialization of null values",
+		"Default": "Empty Tag",
+		"Options": {
+			"Empty Tag": "Serialize always",
+			"No Tag": "Omit when empty",
+			"Nil Tag": "Serialize as xsi:nil"
+		},
+		"ProductVerion": ">=12.2"
+	},
+	"XMLCollectionItemName": {
+		"Type": "string",
+		"Description": "XML field name for collection item in serialziation",
+		"Require": {
+			"Collection": "True"
+		}
+	}
+}

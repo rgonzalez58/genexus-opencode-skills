@@ -1,0 +1,928 @@
+{
+	"agent": {
+		"Description": "Configurable Agent object properties",
+		"Properties": [
+			"Description",
+			"ObjectVisibility",
+			"MainProgram",
+			"AIModel",
+			"CreativityLevel",
+			"MaxTokens",
+			"CallableFromWorkflow"
+		],
+		"ProductVersion": ">=19"
+	},
+	"api": {
+		"Description": "Configurable API object properties",
+		"Properties": [
+			"Description",
+			"ObjectVisibility",
+			"MainProgram",
+			"RESTProtocol",
+			"IncludeInMCPServer",
+			"GRPCProtocol",
+			"GenerateOpenAPIInterface",
+			"GenerateAsOpenAIPlugin",
+			"ServicesBasePath",
+			"GenerateObject",
+			"IntegratedSecurityLevel",
+			"PermissionPrefix",
+			"DisabledWarnings"
+		],
+		"ProductVersion": ">=17.2"
+	},
+	"attribute": {
+		"Description": "Configurable Attribute object properties",
+		"Properties": [
+			"Description",
+			"ObjectVisibility",
+			"Title",
+			"ColumnTitle",
+			"ContextualTitle",
+			"Formula",
+			"AllowNull",
+			"EmptyAsNull",
+			"Class",
+			"SuperType",
+			"BasedOn",
+			"DataType",
+			"Length",
+			"Decimals",
+			"Signed",
+			"Autonumber",
+			"AutonumberStart",
+			"AutonumberStep",
+			"AutonumbeForReplication",
+			"Rows",
+			"InitialValue",
+			"ValueRange",
+			"ValidationFailedMessage",
+			"LeftFill",
+			"ThousandSeparator",
+			"Prefix",
+			"Picture",
+			"ControlType",
+			"NotifyContextChange",
+			"InputHistory",
+			"IsPassword",
+			"AutoResize",
+			"Width",
+			"Height",
+			"Fill",
+			"BackColor",
+			"ForeColor",
+			"Font",
+			"HorizontalAlignment",
+			"Format",
+			"TooltipText",
+			"InviteMessage",
+			"ExternalName",
+			"Required"
+		]
+	},
+	"data-provider": {
+		"Description": "Configurable DataProvider object properties",
+		"Properties": [
+			"Description",
+			"ObjectVisibility",
+			"ExposeAsWebService",
+			"MainProgram",
+			"CallProtocol",
+			"InferStructure",
+			"Output",
+			"Collection",
+			"ConnectivitySupport",
+			"GenerateObservabilitySpan",
+			"IntegratedSecurityLevel",
+			"PermissionPrefix",
+			"DisabledWarnings"
+		]
+	},
+	"data-selector": {
+		"Description": "Configurable DataDelector object properties",
+		"Properties": [
+			"Description",
+			"ObjectVisibility",
+			"DataSelector",
+			"Parameters",
+			"UseReadReplica"
+		]
+	},
+	"data-view": {
+		"Description": "Configurable DataView object properties",
+		"Properties": [
+			"Description",
+			"Name#dataview",
+			"ObjectVisibility",
+			"AssociatedTable",
+			"Datastore"
+		]
+	},
+	"data-view#index": {
+		"Description": "Configurable DataView index properties",
+		"Properties": [
+			"Description",
+			"ObjectVisibility"
+		]
+	},
+	"data-view#platform": {
+		"Description": "Configurable DataView platform properties",
+		"Properties": [
+			"Description",
+			"ObjectVisibility",
+			"Location",
+			"RecordFormat",
+			"SchemaName",
+			"UseExternalName",
+			"DataFormat",
+			"CharacterSet",
+			"DateFormat",
+			"ColumnHeadings",
+			"FieldSeparation",
+			"CurrencyDecimalSymbol",
+			"CurrencyThousandSymbol",
+			"NumericDecimalSymbol",
+			"Provider"
+		]
+	},
+	"deployment-unit": {
+		"Description": "Configurable DeploymentUnit object properties",
+		"Properties": [
+			"Description",
+			"ObjectVisibility",
+			"Version",
+			"Environment"
+		]
+	},
+	"design-system": {
+		"Description": "Configurable DesignSystem object properties",
+		"Properties": [
+			"Description",
+			"ObjectVisibility",
+			"Folder",
+			"BaseCSS",
+			"DefaultTemplateLayout"
+		]
+	},
+	"documentation": {
+		"Description": "Configurable Documentation object properties",
+		"Properties": [
+			"Description",
+			"ObjectVisibility",
+			"SynchronizeWithExternalWiki",
+			"PageName"
+		]
+	},
+	"domain": {
+		"Description": "Configurable Domain object properties",
+		"Properties": [
+			"Description",
+			"ObjectVisibility",
+			"DataType",
+			"Length",
+			"Decimals",
+			"Signed",
+			"Default",
+			"RegularExpression",
+			"Picture",
+			"EnumValues"
+		]
+	},
+	"external-object": {
+		"Description": "Configurable ExternalObject object properties",
+		"Properties": [
+			"Description",
+			"ObjectVisibility",
+			"Type#exo",
+			"Namespace",
+			"ImporterVersion",
+			"SourceURI",
+			"NetExternalName",
+			"AssemblyName",
+			"NetConstructorParameters",
+			"NetCoreExternalName",
+			"NetCoreAssemblyName",
+			"NetCorePackageName",
+			"NetCorePackageVersion",
+			"NetCoreConstructorParameters",
+			"JavaExternalName",
+			"JavaArtifactId",
+			"JavaArtifactVersion",
+			"ExternalPackageName",
+			"JavaConstructorParameters",
+			"RubyExternalName",
+			"RequiredFile",
+			"RubyConstructorParameters",
+			"IOSExternalName",
+			"LibraryName",
+			"HeaderFileName",
+			"AndroidExternalName",
+			"JavascriptExternalName",
+			"JavascriptReferencedFile",
+			"JavascriptModuleName",
+			"JavascriptModulePath",
+			"JavascriptModuleReference",
+			"InternalName",
+			"BasedOn",
+			"XMLName",
+			"PropertyType",
+			"CollectionItemName",
+			"ControlType"
+		]
+	},
+	"file": {
+		"Description": "Configurable File object properties",
+		"Properties": [
+			"Description",
+			"ObjectVisibility",
+			"ExternalFileName",
+			"ExtractForJavaGenerator",
+			"ExtractForNetGenerator",
+			"ExtractForNetCoreGenerator",
+			"ExtractForIOSGenerator",
+			"ExtractForAndroidGenerator",
+			"ExtractZip"
+		]
+	},
+	"image": {
+		"Description": "Configurable Image object properties",
+		"Properties": [
+			"Description",
+			"ObjectVisibility"
+		]
+	},
+	"image#entry": {
+		"Description": "Configurable Image entry properties",
+		"Properties": [
+			"Description",
+			"IsInternal",
+			"Style",
+			"Language",
+			"Density",
+			"Layer",
+			"RenderingMode",
+			"FlipsForRightToLeft"
+		]
+	},
+	"language": {
+		"Description": "Configurable Language object properties",
+		"Properties": [
+			"Description",
+			"ObjectVisibility",
+			"ParentLanguage",
+			"ISOLanguageCode",
+			"ISOCountryCode",
+			"Codepage",
+			"LanguageLocalization",
+			"DateFormat",
+			"TimeFormat",
+			"DecimalSeparator"
+		]
+	},
+	"menu": {
+		"Description": "Configurable Menu object properties",
+		"Properties": [
+			"Description",
+			"ObjectVisibility",
+			"MainProgram",
+			"ConnectivitySupport",
+			"EnableDataCaching",
+			"CheckForNewData",
+			"Title",
+			"Background",
+			"Header",
+			"Class",
+			"Control",
+			"TabsDistribution",
+			"ShowApplicationBars",
+			"ApplicationBarsClass",
+			"ShowAds",
+			"AdsPosition"
+		],
+		"Scope": "Native"
+	},
+	"menu#action": {
+		"Description": "Configurable Menu action properties",
+		"Properties": [
+			"Description",
+			"Class",
+			"Image",
+			"UnselectedImage"
+		],
+		"Scope": "Native"
+	},
+	"mini-app": {
+		"Description": "Configurable MiniApp object properties",
+		"Properties": [
+			"Description",
+			"ObjectVisibility",
+			"MainObject",
+			"SuperAppAPIMock",
+			"SuperAppAPIExternalObject"
+		],
+		"Scope": "Native"
+	},
+	"module": {
+		"Description": "Configurable Module object properties",
+		"Properties": [
+			"Description",
+			"ObjectVisibility",
+			"PackageName",
+			"ModuleVersion",
+			"ModuleDescription",
+			"ModuleAuthor",
+			"ModuleLicenseURL",
+			"ModuleProjectURL",
+			"ModuleServerURL",
+			"ModuleTags",
+			"ModuleOwner",
+			"ModuleResources",
+			"ModuleIdentifier"
+		]
+	},
+	"panel": {
+		"Description": "Configurable Panel object properties",
+		"Constraints": [
+			"Supports Panel/MasterPanel objects for Native generators (Android, Apple, and Angular)",
+			"Supports WebPanel/WebComponent/MasterPage objects for Web generators",
+			"Supports Stencil object for any generators"
+		],
+		"Properties": [
+			"Description",
+			"ObjectVisibility",
+			"Folder",
+			"MainProgram",
+			"SessionType",
+			"Theme",
+			"Type",
+			"MasterPage",
+			"ShowMasterPageWhenPopUp",
+			"OnSessionTimeout",
+			"FocusControl",
+			"CacheExpirationLapse",
+			"AutomaticRefresh",
+			"AutoCompressHttpTraffic",
+			"WebUserExperience",
+			"EncryptURLParameters",
+			"IntegratedSecurityLevel",
+			"PermissionPrefix",
+			"SecurityClientID",
+			"SecurityClientSecret",
+			"EncryptOfflineDatabase",
+			"DataReceiveCriteria",
+			"MinimumTimeBetweenReceives",
+			"DataReceiveGranularity",
+			"MinimumTimeBetweenTablePurges",
+			"ReceiveTimeout",
+			"SendChanges",
+			"MinimumTimeBetweenSends",
+			"SendTimeout"
+		]
+	},
+	"procedure": {
+		"Description": "Configurable Procedure object properties",
+		"Properties": [
+			"Description",
+			"ObjectVisibility",
+			"Folder",
+			"SessionType",
+			"MainProgram",
+			"CallProtocol",
+			"ExecuteInNewLUW",
+			"EncryptURLParameters",
+			"ProtocolSpecification",
+			"ExposeAsWebService",
+			"IntegratedSecurityLevel",
+			"PermissionPrefix",
+			"ConnectivitySupport",
+			"GenerateObservabilitySpan",
+			"ReportOutput",
+			"CustomizableLayout",
+			"Confirmation",
+			"AllowUserToCancelProcessing",
+			"FooterOnLastPage",
+			"AutocenterObjectsIn",
+			"CommitOnExit",
+			"DisabledWarnings",
+			"StandardFunctions",
+			"InitializeNotReferencedAttributes",
+			"GenerateNullForNullvalue",
+			"Commitment",
+			"PrintUsingDDSs",
+			"GenerateILERPGForISeries",
+			"BeepOnMessages",
+			"JoinManagement",
+			"JoinType",
+			"CopyTableGroups",
+			"GenerateFORUPDATEClause",
+			"ToolInputSchema"
+		]
+	},
+	"query": {
+		"Description": "Configurable Query object properties",
+		"Properties": [
+			"Description",
+			"ObjectVisibility",
+			"Title",
+			"OutputType",
+			"CacheExpirationLapse"
+		],
+		"Scope": "Web"
+	},
+	"structured-data-type": {
+		"Description": "Configurable StructuredDataType object properties",
+		"Properties": [
+			"Description",
+			"ObjectVisibility",
+			"ExposedName",
+			"ExposedNamespace",
+			"JsonInputFormat",
+			"IsSapParameter",
+			"DynamicStructure"
+		]
+	},
+	"structured-data-type#level": {
+		"Description": "Configurable StructuredDataType level properties",
+		"Properties": [
+			"Description",
+			"Collection",
+			"CollectionItemName",
+			"CollectionSerialization",
+			"XMLName",
+			"XMLNamespace",
+			"XMLNullSerialization",
+			"XMLCollectionItemName",
+			"JsonName",
+			"JsonNullSerialization",
+			"JsonCollectionSerialization"
+		]
+	},
+	"structured-data-type#item": {
+		"Description": "Configurable StructureDataType items properties",
+		"Properties": [
+			"Description",
+			"Collection",
+			"CollectionItemName",
+			"CollectionSerialization",
+			"Title",
+			"ColumnTitle",
+			"ContextualTitle",
+			"Formula",
+			"AllowNull",
+			"EmptyAsNull",
+			"Class",
+			"Supertype",
+			"BasedOn",
+			"DataType",
+			"Length",
+			"Decimals",
+			"Signed",
+			"Autonumber",
+			"AutonumberStart",
+			"AutonumberStep",
+			"AutonumberForReplication",
+			"Rows",
+			"InitialValue",
+			"ValueRange",
+			"ValidationFailedMessage",
+			"LeftFill",
+			"ThousandSeparator",
+			"Prefix",
+			"Picture",
+			"ControlType",
+			"NotifyContextChange",
+			"InputHistory",
+			"IsPassword",
+			"AutoResize",
+			"Width",
+			"Height",
+			"Fill",
+			"BackColor",
+			"ForeColor",
+			"Font",
+			"HorizontalAlignment",
+			"Format",
+			"TooltipText",
+			"InviteMessage",
+			"ExternalName",
+			"Required",
+			"XMLName",
+			"XMLNamespace",
+			"XMLNullSerialization",
+			"XMLCollectionItemName",
+			"SoapType",
+			"JsonName",
+			"JsonNullSerialization",
+			"JsonCollectionSerialization"
+		]
+	},
+	"subtype-group": {
+		"Description": "Configurable SubtypeGroup object properties",
+		"Properties": [
+			"Description",
+			"ObjectVisibility"
+		]
+	},
+	"super-app": {
+		"Description": "Configurable SuperApp object properties",
+		"Properties": [
+			"Description",
+			"ObjectVisibility",
+			"SuperAppIdentifier",
+			"SuperAppVersion",
+			"ProvisioningUrl",
+			"AndroidPublicKeyFile",
+			"IOSPublicKeyFile",
+			"MainObject",
+			"MaximumMiniAppsCount",
+			"NumberOfDaysToKeep"
+		],
+		"Scope": "Native"
+	},
+	"table": {
+		"Description": "Configurable Table object properties",
+		"Properties": [
+			"Description",
+			"ObjectVisibility",
+			"ClusterIndex",
+			"StorageArea",
+			"IndicesStorageArea",
+			"TextStorageArea",
+			"InitialSize",
+			"FirstExtentSize",
+			"NextExtentsPercentageIncrease",
+			"MinimumNumberOfExtents",
+			"ChangeFrequency",
+			"TableStorageType"
+		]
+	},
+	"table#index": {
+		"Description": "Configurable Table index properties",
+		"Properties": [
+			"Description",
+			"ObjectVisibility",
+			"StorageArea",
+			"InitialSize",
+			"FirstExtentSize",
+			"NextExtentsPercentageIncrease",
+			"MinimumNumberOfExtents"
+		]
+	},
+	"transaction": {
+		"Description": "Configurable Transaction object properties",
+		"Properties": [
+			"Description",
+			"ObjectVisibility",
+			"Folder",
+			"BusinessComponent",
+			"SessionType",
+			"MainProgram",
+			"IntegratedSecurityLevel",
+			"PermissionPrefix",
+			"ConnectivitySupport",
+			"CallProtocol",
+			"ExposedName",
+			"ExposedNamespace",
+			"ExposeAsWebService",
+			"Display",
+			"Insert",
+			"Update",
+			"Delete",
+			"GenerateObservabilitySpan",
+			"Theme",
+			"FormLayout",
+			"Type",
+			"MasterPage",
+			"ShowMasterPageWhenPopUp",
+			"OnSessionTimeout",
+			"EncryptURLParameters",
+			"ProtocolSpecification",
+			"WebSecurityLevel",
+			"UpdatePolicy",
+			"DWTransaction",
+			"CommitOnExit",
+			"ConfirmTransactions",
+			"Confirmation",
+			"ClientSideValidation",
+			"WebUserExperience",
+			"WebFormDefaults",
+			"EnableDatepicker",
+			"ShowWeekNumbers",
+			"FirstDayOfWeek",
+			"AssignFunctionKeysToStandardEvents",
+			"Menubar",
+			"BorderStyle",
+			"MaximizeButton",
+			"MinimizeButton",
+			"ShowInTaskBar",
+			"FormIcon",
+			"ControlBox",
+			"ModalDialog",
+			"ShowForm",
+			"ScrollableForm",
+			"AddButtonBitmap",
+			"UpdateButtonBitmap",
+			"ConfirmButtonBitmap",
+			"DeleteButtonBitmap",
+			"AutocenterObjectsIn",
+			"GenerateAsAPopupWindow",
+			"Color",
+			"DisplayAttribute",
+			"Characters",
+			"DisabledWarnings",
+			"StandardFunctions",
+			"InitializeNotReferencedAttributes",
+			"GenerateNullForNullvalue",
+			"OptimizeForMultiTierExecution",
+			"Searchable",
+			"SearchViewer",
+			"ApplyWorkWithForWebPatternOnSave",
+			"ApplyWorkWithPatternOnSave"
+		]
+	},
+	"url-rewrite": {
+		"Description": "Configurable UrlRewrite object properties",
+		"Properties": [
+			"Description",
+			"ObjectVisibility",
+			"EncryptURLParameters",
+			"ParametersStyle",
+			"WebUserExperience"
+		],
+		"Scope": "Web"
+	},
+	"user-control": {
+		"Description": "Configurable UserControl object properties",
+		"Properties": [
+			"Description",
+			"ObjectVisibility",
+			"IsControlType",
+			"DataTypeFilter",
+			"References",
+			"BaseControlType",
+			"BaseStyle"
+		],
+		"Scope": "Web"
+	},
+	"workwithdevices": {
+		"Description": "Configurable WorkWithDevices object properties",
+		"Properties": [
+			"Description",
+			"ObjectVisibility",
+			"Caption",
+			"Lapse",
+			"ShowAds",
+			"AdsPosition",
+			"Share",
+			"DeepLinkName"
+		],
+		"Scope": "Native"
+	},
+	"workwithdevices#breakby": {
+		"Description": "Configurable BreakBy node properties in WorkWithDevices object",
+		"Properties": [
+			"DescriptionAttribute"
+		],
+		"Scope": "Native"
+	},
+	"workwithdevices#detail": {
+		"Description": "Configurable Detail node properties in WorkWithDevices object",
+		"Properties": [
+			"Caption",
+			"Lapse",
+			"ShowAds",
+			"AdsPosition",
+			"Share",
+			"DeepLinkName",
+			"DataSelector",
+			"Display#wwd"
+		],
+		"Scope": "Native"
+	},
+	"workwithdevices#griddata": {
+		"Description": "Configurable GridData node properties in WorkWithDevices object",
+		"Properties": [
+			"Lapse",
+			"Conditions",
+			"BaseTrn"
+		],
+		"Scope": "Native"
+	},
+	"workwithdevices#level": {
+		"Description": "Configurable Level node properties in WorkWithDevices object",
+		"Properties": [
+			"Name#level",
+			"Description"
+		],
+		"Scope": "Native"
+	},
+	"workwithdevices#list": {
+		"Description": "Configurable List node properties in WorkWithDevices object",
+		"Properties": [
+			"Caption",
+			"Lapse",
+			"ShowAds",
+			"AdsPosition",
+			"Share",
+			"DeepLinkName",
+			"DataSelector",
+			"DataSelectorParameters"
+		],
+		"Scope": "Native"
+	},
+	"workwithdevices#order": {
+		"Description": "Configurable Order node properties in WorkWithDevices object",
+		"Properties": [
+			"Name#data",
+			"BreakBy",
+			"EnableAlphaIndexer",
+			"BreakByUpTo",
+			"DescriptionAttribute"
+		],
+		"Scope": "Native"
+	},
+	"workwithdevices#search": {
+		"Description": "Configurable Search node properties in WorkWithDevices object",
+		"Properties": [
+			"Caption",
+			"OptionForIndividualFields",
+			"AlwaysVisible",
+			"FilterOperator",
+			"CaseSensitive",
+			"BreakBy#wwd"
+		],
+		"Scope": "Native"
+	},
+	"workwithdevices#section": {
+		"Description": "Configurable Section node properties in WorkWithDevices object",
+		"Properties": [
+			"Caption",
+			"Lapse",
+			"ShowAds",
+			"AdsPosition",
+			"Share",
+			"DeepLinkName",
+			"Name",
+			"DataSelector",
+			"DataSelectorParameters",
+			"LinkClass",
+			"Image",
+			"UnselectedImage"
+		],
+		"Scope": "Native"
+	},
+	"workwithweb": {
+		"Description": "Configurable WorkWithWeb object properties",
+		"Properties": [
+			"Description",
+			"ObjectVisibility",
+			"MasterPage",
+			"CustomStartEventCode",
+			"RowsPerPage"
+		],
+		"Scope": "Web"
+	},
+	"workwithweb#action": {
+		"Description": "Configurable tab Action node properties in WorkWithWeb object",
+		"Properties": [
+			"Name",
+			"Caption",
+			"Gxobject",
+			"Image",
+			"Tooltip",
+			"Condition",
+			"ButtonClass",
+			"InGridClass",
+			"CallType"
+		],
+		"Scope": "Web"
+	},
+	"workwithweb#attribute": {
+		"Description": "Configurable Attribute node properties in WorkWithWeb object",
+		"Properties": [
+			"Attribute",
+			"Description",
+			"Autolink",
+			"Visible"
+		],
+		"Scope": "Web"
+	},
+	"workwithweb#descriptor": {
+		"Description": "Configurable AttributeDescription node properties in WorkWithWeb object",
+		"Properties": [
+			"Attribute",
+			"Description"
+		],
+		"Scope": "Web"
+	},
+	"workwithweb#filter": {
+		"Description": "Configurable Filter node properties in WorkWithWeb object",
+		"Properties": [
+			"Name#data",
+			"Description",
+			"Default"
+		],
+		"Scope": "Web"
+	},
+	"workwithweb#condition": {
+		"Description": "Configurable Condition node properties under Filter node in WorkWithWeb object",
+		"Properties": [
+			"Value"
+		],
+		"Scope": "Web"
+	},
+	"workwithweb#instance": {
+		"Description": "Configurable WorkWithPatternInstance node properties in WorkWithWeb object",
+		"Properties": [
+			"UpdateTransaction"
+		],
+		"Scope": "Web"
+	},
+	"workwithweb#level": {
+		"Description": "Configurable Level node properties in WorkWithWeb object",
+		"Properties": [
+			"Name#level",
+			"Description"
+		],
+		"Scope": "Web"
+	},
+	"workwithweb#modes": {
+		"Description": "Configurable Modes node properties in WorkWithWeb object",
+		"Properties": [
+			"Insert",
+			"Update",
+			"Delete",
+			"Display",
+			"Export",
+			"InsertCondition",
+			"UpdateCondition",
+			"DeleteCondition",
+			"DisplayCondition",
+			"ExportCondition"
+		],
+		"Scope": "Web"
+	},
+	"workwithweb#order": {
+		"Description": "Configurable Order attribute properties in WorkWithWeb object",
+		"Properties": [
+			"Attribute",
+			"Description",
+			"Ascending"
+		],
+		"Scope": "Web"
+	},
+	"workwithweb#parameter": {
+		"Description": "Configurable Parameter node properties in WorkWithWeb object",
+		"Properties": [
+			"Domain",
+			"NullValue"
+		],
+		"Scope": "Web"
+	},
+	"workwithweb#selection": {
+		"Description": "Configurable Selection node properties WorkWithWeb object",
+		"Properties": [
+			"MasterPage",
+			"CustomStartEventCode",
+			"RowsPerPage",
+			"Description",
+			"PagingMode",
+			"ShowCurrentPage",
+			"IsMain"
+		],
+		"Scope": "Web"
+	},
+	"workwithweb#tab": {
+		"Description": "Configurable Tab node properties in WorkWithWeb object",
+		"Properties": [
+			"MasterPage",
+			"CustomStartEventCode",
+			"RowsPerPage",
+			"Caption",
+			"Code",
+			"Description",
+			"Type#www",
+			"ComponentName",
+			"Condition"
+		],
+		"Scope": "Web"
+	},
+	"workwithweb#transaction": {
+		"Description": "Configurable Transaction node properties in WorkWithWeb object",
+		"Properties": [
+			"GenerateNoPromptRule"
+		],
+		"Scope": "Web"
+	},
+	"workwithweb#view": {
+		"Description": "Configurable View node properties WorkWithWeb object",
+		"Properties": [
+			"MasterPage",
+			"CustomStartEventCode",
+			"Caption",
+			"Description",
+			"BackToSelection"
+		],
+		"Scope": "Web"
+	}
+}
